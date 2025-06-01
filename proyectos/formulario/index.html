@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulario de Contacto | Proyecto 2</title>
+  <title>Contact Form | Project 2</title>
   <link rel="stylesheet" href="./style.css" />
-
+  <script>
+    // Mostrar alerta y redirigir después del envío
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Your request is being processed. You will receive a response shortly.");
+      window.location.href = "../../index.html"; // Redirección a la página principal
+    }
+  </script>
 </head>
 <body>
   <header>
-    <h1>Contáctame</h1>
-    <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+    <h1>Contact Me</h1>
+    <p>Do you have a project in mind? Let’s talk!</p>
   </header>
 
   <section>
-    
-<form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required />
+    <form action="https://formspree.io/f/xqabkklv" method="POST" onsubmit="handleSubmit(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
 
-  <label for="subject">Subject:</label>
-  <input type="text" id="subject" name="subject" required />
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required />
 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-  <button type="submit">Send</button>
-</form>
+      <button type="submit">Send</button>
+    </form>
 
+    <br />
+    <a href="../../index.html" class="btn-back">← Back to Home</a>
   </section>
 
   <footer>
