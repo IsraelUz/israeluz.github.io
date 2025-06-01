@@ -2,47 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio exclusivo de Israel</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #fafafa; }
-    #contenidoPrivado { display: none; margin-top: 20px; padding: 15px; background: #e0ffe0; border: 2px solid #4CAF50; }
-    #mensajeAcceso { color: red; margin-top: 10px; }
-    button { padding: 10px 15px; font-size: 16px; cursor: pointer; }
-    input { padding: 10px; font-size: 16px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Israel Uzcátegui - Ingeniero Informático</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Bienvenido a mi portafolio</h1>
-  <p>Para ver el contenido exclusivo, ingresa la clave personal.</p>
+  <header>
+    <h1>Israel Uzcátegui</h1>
+    <p>Ingeniero Informático | Abierto a nuevas oportunidades | Aprendiz constante</p>
+  </header>
 
-  <input type="password" id="claveInput" placeholder="Ingresa tu clave" />
-  <button onclick="validarClave()">Acceder</button>
+  <section class="info">
+    <h2>Sobre mí</h2>
+    <p>Soy Ingeniero en Informática, graduado en 2017. Actualmente me encuentro en constante aprendizaje y crecimiento profesional, en búsqueda de oportunidades para aplicar mis conocimientos y seguir desarrollándome en el mundo de la tecnología.</p>
+  </section>
 
-  <p id="mensajeAcceso"></p>
+  <section class="contacto">
+    <h2>Contacto</h2>
+    <ul>
+      <li>📧 Correo: <a href="mailto:uzcateguiisrael06@gmail.com">uzcateguiisrael06@gmail.com</a></li>
+      <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/israel-uzcategui" target="_blank">israel-uzcategui</a></li>
+    </ul>
+  </section>
 
-  <div id="contenidoPrivado">
-    <h2>Contenido Exclusivo</h2>
-    <p>¡Hola Israel! Este contenido es solo para ti. Aquí puedes mostrar proyectos privados, links secretos o cualquier cosa exclusiva.</p>
-  </div>
+  <section class="proyectos">
+    <h2>Proyectos de muestra</h2>
+    <ul>
+      <li><a href="proyectos/proyecto1.html">Proyecto 1: Landing Page simple</a></li>
+      <li><a href="proyectos/proyecto2.html">Proyecto 2: Página con formulario</a></li>
+    </ul>
+  </section>
 
-  <script>
-    function validarClave() {
-      const claveCorrecta = "Israel_Uzca_2025!Unique";
-      const claveIngresada = document.getElementById("claveInput").value;
-      const mensaje = document.getElementById("mensajeAcceso");
-      const contenido = document.getElementById("contenidoPrivado");
-
-      if (claveIngresada === claveCorrecta) {
-        contenido.style.display = "block";
-        mensaje.style.color = "green";
-        mensaje.textContent = "¡Acceso concedido! Bienvenido, Israel.";
-      } else {
-        contenido.style.display = "none";
-        mensaje.style.color = "red";
-        mensaje.textContent = "Clave incorrecta. Inténtalo otra vez.";
-      }
-    }
-  </script>
+  <footer>
+    <p>© 2025 Israel Uzcátegui. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
