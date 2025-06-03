@@ -1,10 +1,11 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+  background-image: url('proyectos/img/fondo1.jpg'); /* Ruta correcta */
+  background-size: cover; /* Que ocupe toda la pantalla */
+  background-position: center; /* Centrar la imagen */
+  background-attachment: fixed; /* Que el fondo no se desplace */
+  color: white; /* Texto blanco para contraste */
 }
 
 header {
@@ -49,16 +50,6 @@ footer {
   margin-top: 30px;
 }
 
-
-/* Estilo general */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-image: url('ruta/de/tu/imagen.jpg'); /* Usa la ruta correcta */
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
 
 /* Estilo del encabezado */
 .hero {
