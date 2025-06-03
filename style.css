@@ -50,11 +50,13 @@ footer {
 }
 
 .foto-perfil {
-  width: 380px;        /* ajusta según prefieras */
-  height: 400px;
+  width: 180px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10%;  /* hace la imagen circular */
+  object-position: center top; /* Esto enfoca más arriba */
+  border-radius: 50%;
   display: block;
-  margin: 0 auto 20px; /* centra y separa del texto abajo */
+  margin: 0 auto 20px;
 }
+
 
