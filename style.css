@@ -67,19 +67,23 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  color: #00bcd4;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-  color: #00bcd4; 
+  position: relative;
+  margin-top: 20px;
+}
 
 /* Imagen de perfil */
 
 .foto-perfil {
-  width: 220px;
+  width: 220px; /* Tamaño adecuado */
   height: 260px;
   object-fit: cover;
-  object-position: center top; /* Esto enfoca más arriba */
+  object-position: center top; /* Ajusta el foco */
   border-radius: 50%;
   display: block;
   margin: 0 auto 20px;
+  border: 5px solid white;
 }
 
 body {
@@ -120,7 +124,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Mantiene los botones dentro de la pantalla */
+  height: 100vh;
 }
 
 
