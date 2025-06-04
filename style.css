@@ -86,19 +86,10 @@ button:hover {
   color: #00bcd4;
 }
 
-/* Año 2025 debajo de los botones */
-.year {
-  font-size: 1.5em;
-  margin-top: 15px;
-  color: white;
-}
-
-/* Footer */
+/* Footer debajo de los botones */
 footer {
   text-align: center;
-  padding: 10px;
-  background-color: transparent;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: white;
 }
