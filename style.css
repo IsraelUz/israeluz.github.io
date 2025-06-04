@@ -62,16 +62,21 @@ footer {
 .welcome-text {
   font-size: 3em;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif; /* Usa una fuente moderna */
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  color: #00bcd4; /* Azul moderno */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #00bcd4;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 10%;
+  width: 100%;
 }
 
 /* Imagen de perfil */
+
 .foto-perfil {
-  width: 180px;
-  height: 220px;
+  width: 220px;
+  height: 260px;
   object-fit: cover;
   object-position: center top; /* Esto enfoca más arriba */
   border-radius: 50%;
@@ -79,6 +84,10 @@ footer {
   margin: 0 auto 20px;
 }
 
+body {
+  overflow: hidden; /* Evita el scroll */
+  height: 100vh; /* Usa toda la altura de la pantalla */
+}
 
 /* Secciones */
 .info, .contacto, .proyectos {
