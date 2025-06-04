@@ -6,6 +6,8 @@ body {
   background-position: center; /* Centrar la imagen */
   background-attachment: fixed; /* Que el fondo no se desplace */
   color: white; /* Texto blanco para contraste */
+  overflow: visible; /* Permite mostrar los elementos */
+  height: 100vh; /* Mantiene el tamaño de la pantalla */
 }
 
 header {
