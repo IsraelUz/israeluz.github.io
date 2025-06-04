@@ -20,7 +20,7 @@ body {
   position: relative;
 }
 
-/* Overlay grande con margen reducido */
+/* Overlay grande con márgenes correctos */
 .overlay {
   background: rgba(0, 0, 0, 0.6);
   padding: 5%;
@@ -46,8 +46,8 @@ body {
 /* Imagen de perfil (ajustada para evitar corte de cabeza) */
 .foto-perfil {
   width: 220px;
-  height: 260px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain; /* Evita cortar la imagen */
   border-radius: 50%;
   display: block;
   margin: 30px auto;
@@ -91,4 +91,14 @@ button:hover {
   font-size: 1.5em;
   margin-top: 15px;
   color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
