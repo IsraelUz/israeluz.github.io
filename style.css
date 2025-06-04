@@ -18,15 +18,8 @@ header {
 }
 
 header h1 {
-  margin: 10;
+  margin: 4;
   font-size: 2.5em;
-}
-
-.nombre {
-  display: inline-block;
-  position: relative;
-  top: -10px; /* Desplaza el texto hacia arriba */
-  margin-top: 0;
 }
 
 header p {
