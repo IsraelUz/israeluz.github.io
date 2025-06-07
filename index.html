@@ -3,44 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Israel Uzcátegui - Web Developer</title>
-
+  <title>Israel Uzcategui - Web Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="nav-content">
-      <nav>
-        <a href="#"><i class='bx bx-home'></i> Home</a>
-        <a href="#"><i class='bx bx-user'></i> About</a>
-        <a href="#"><i class='bx bx-code'></i> Projects</a>
-        <a href="#"><i class='bx bx-envelope'></i> Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
+  <div class="hero">
+    <!-- Sidebar - 20% -->
     <div class="hero-left">
       <div class="photo-wrapper">
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui">
         <div class="photo-overlay"></div>
-        <img src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcátegui" class="profile-img">
-        <div class="name-tag">Israel Uzcátegui</div>
+        <div class="name-tag">Israel Uzcategui</div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="content"> 
-        <h1 class="centered-line">Hey, I am <span class="animated-gradient" id="changing-text">Front-End Developer</span></h1>
-        <h2>We Make Your Idea <br><span class="pixel">A REALITY !</span></h2>
-        <button><i class='bx bx-right-arrow'></i> Read More</button>
-      </div>
+
+    <!-- Main content - 80% -->
+    <div class="hero-right" style="background-image: url('proyectos/img/fondo1.jpg'); background-size: cover; background-position: center;">
       <div class="background-grid"></div>
+      <div class="content">
+        <div class="navbar">
+          <div class="nav-content">
+            <nav>
+              <a href="#"><i class='bx bx-home'></i>Home</a>
+              <a href="#"><i class='bx bx-user'></i>About</a>
+              <a href="#"><i class='bx bx-code'></i>Projects</a>
+              <a href="#"><i class='bx bx-envelope'></i>Contact</a>
+            </nav>
+          </div>
+        </div>
+
+        <p class="intro">Welcome to my portfolio</p>
+        <h1 class="centered-line animated-gradient" id="changing-text">I'm a Front-End Developer</h1>
+        <h2>We Make Your Idea</h2>
+        <h2><span class="pixel">A REALITY!</span></h2>
+        <button><i class='bx bx-right-arrow-alt'></i>Read More</button>
+      </div>
     </div>
-  </section>
+  </div>
 
   <script>
-    const roles = ["Front-End Developer", "Computer Engineer", "Detail-oriented."];
+    const roles = [
+      "I'm a Computer Engineer",
+      "I'm a Front-End Developer",
+      "I'm Detail-oriented."
+    ];
     let index = 0;
     const textElement = document.getElementById("changing-text");
 
@@ -49,9 +58,6 @@
       textElement.textContent = roles[index];
     }, 2000);
   </script>
-</body>
-</html>
-
 </body>
 </html>
 
