@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Israel Uzcategui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Israel Uzcategui - Web Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <style>
     * {
@@ -14,27 +13,21 @@
       box-sizing: border-box;
     }
 
-    body, html {
-      height: 100%;
+    body {
+      background: #000;
+      color: #00ff88;
       font-family: 'Fira Code', monospace;
-      background-color: #000;
-      color: #fff;
-      font-size: 115%;
       overflow: hidden;
     }
 
     .hero {
       display: flex;
       height: 100vh;
-      width: 100%;
     }
 
-    /* Left Sidebar */
     .hero-left {
       width: 20%;
-      height: 100%;
       position: relative;
-      overflow: hidden;
     }
 
     .profile-img {
@@ -42,13 +35,8 @@
       height: 100%;
       object-fit: cover;
       filter: brightness(0.5);
-      /* El filtro oscurece la imagen un 50%, que es más oscuro */
-      position: relative;
-      z-index: 0;
-      animation: fadeIn 3s ease forwards;
     }
 
-    /* Gradiente oscuro a claro encima, 40% más oscuro */
     .photo-overlay {
       position: absolute;
       inset: 0;
@@ -56,236 +44,197 @@
       z-index: 1;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
     .name-tag {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: rgba(10, 10, 10, 0.85);
       text-align: center;
-      padding: 0.7rem 0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0.5rem;
       color: #00ff88;
-      font-size: 1.1rem;
-      font-family: 'Press Start 2P', cursive;
-      font-weight: 400;
-      user-select: none;
-      z-index: 2;
-      letter-spacing: 1.5px;
     }
 
-    /* Right Content */
     .hero-right {
       width: 80%;
-      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center; /* centrar horizontal */
-      justify-content: center; /* centrar verticalmente */
+      align-items: center;
+      justify-content: center;
       position: relative;
-      color: #00ff88;
-      padding: 0 2rem;
-      gap: 2rem;
+      padding: 2rem;
     }
 
-    /* Navbar arriba derecha */
     .navbar {
       position: absolute;
       top: 1.5rem;
       right: 2rem;
       display: flex;
       gap: 1.5rem;
-      z-index: 10;
     }
 
     .navbar a {
-      text-decoration: none;
-      color: #00ff88;
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
+      color: #00ff88;
+      text-decoration: none;
       font-size: 1.05rem;
       display: flex;
       align-items: center;
       gap: 0.3rem;
       transition: color 0.3s;
-      user-select: none;
     }
 
     .navbar a:hover {
       color: #fff;
-      text-decoration: none;
     }
 
-    /* Welcome arriba con fuente pixelada */
     .welcome {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 1.1rem;
-      color: #00ff88;
-      font-weight: 400;
-      letter-spacing: 2px;
-      user-select: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #00ff88, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
     }
 
-    /* Contenedor del texto con GIF fondo */
+    .welcome:hover {
+      background: linear-gradient(to right, #00ff88, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .content-box {
-      position: relative;
       background: url('proyectos/img/fondo.gif') center/cover no-repeat;
-      border-radius: 10px;
-      padding: 2.5rem 3.5rem;
+      padding: 3rem 2rem;
       width: 600px;
-      max-width: 90vw;
-      color: #fff;
-      overflow: hidden;
-      box-shadow: 0 0 20px #00ff88aa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ff8877;
+      position: relative;
+      text-align: center;
     }
 
     .content-box::before {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
+      background-color: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
+      z-index: 0;
     }
 
     .content {
       position: relative;
       z-index: 1;
-      width: 100%;
-      text-align: center;
     }
 
-    /* Texto cambiante: "I'm ..." */
     .changing-text {
+      font-size: 1.5rem;
       font-family: 'Fira Code', monospace;
-      font-weight: 400;
-      font-size: 2.5rem;
-      margin-bottom: 0.6rem;
-      user-select: none;
-      color: #00ff88;
-      letter-spacing: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ff88;
+      width: 0;
+      animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
+      background: linear-gradient(to right, #00ff88, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
     }
 
-    /* Fuente pixelada para el texto cambiante "I'm" solo */
-    .changing-text .im {
-      font-family: 'Fira Code', monospace;
-      font-weight: 400;
-      color: #00ff88;
+    @keyframes typing {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
     }
 
-    /* Welcome, texto cambiante y botón con fuente pixelada */
-    .pixelated {
-      font-family: 'Press Start 2P', cursive;
-      user-select: none;
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
-    /* El texto "We Make Your Idea A Reality" */
     .subtext {
       font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
       font-weight: 600;
-      font-size: 1.4rem;
-      color: #00ff88;
-      user-select: none;
-      margin: 0.2rem 0;
+      background: linear-gradient(to right, #00ff88, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 0.8rem;
     }
 
-    .subtext span.pixel {
-      font-family: 'Press Start 2P', cursive;
-      color: #00ff88;
-      user-select: none;
-    }
-
-    /* Botón Read More */
     .btn-readmore {
-      background-color: transparent;
+      margin-top: 1.2rem;
+      padding: 0.7rem 2rem;
       border: 2px solid #00ff88;
+      background: transparent;
       color: #00ff88;
-      font-family: 'Press Start 2P', cursive;
-      font-weight: 400;
-      padding: 0.8rem 2rem;
-      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
+      border-radius: 8px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      user-select: none;
-      align-self: center;
-      margin-top: 0.7rem;
-      width: fit-content;
+      transition: all 0.3s;
+      background-clip: padding-box;
+      letter-spacing: 1px;
     }
 
     .btn-readmore:hover {
       background-color: #00ff88;
       color: #000;
     }
-
   </style>
 </head>
 <body>
   <div class="hero">
-    <!-- Left Sidebar -->
+    <!-- Izquierda -->
     <div class="hero-left">
-      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui" />
+      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
       <div class="photo-overlay"></div>
-      <div class="name-tag pixelated">Israel Uzcategui</div>
+      <div class="name-tag">Israel Uzcategui</div>
     </div>
 
-    <!-- Right Content -->
+    <!-- Derecha -->
     <div class="hero-right">
       <!-- Navbar -->
-      <nav class="navbar">
+      <div class="navbar">
         <a href="#"><i class='bx bx-home'></i>Home</a>
         <a href="#"><i class='bx bx-user'></i>About</a>
         <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
         <a href="#"><i class='bx bx-envelope'></i>Contact</a>
-      </nav>
-
-      <!-- Welcome arriba -->
-      <p class="welcome pixelated">Welcome to my portfolio</p>
-
-      <!-- Content box with GIF background -->
-      <div class="content-box">
-        <div class="content">
-          <h1 class="changing-text">
-            <span class="im">I'm</span> a <span class="pixelated">Front-End Developer</span>
-          </h1>
-          <h2 class="subtext">We Make Your Idea <span class="pixel">A REALITY!</span></h2>
-        </div>
-        <button class="btn-readmore pixelated">Read More</button>
       </div>
 
+      <!-- Welcome -->
+      <div class="welcome">Welcome to my portfolio</div>
+
+      <!-- Cuadro con GIF -->
+      <div class="content-box">
+        <div class="content">
+          <div class="changing-text" id="typingText">I'm a Front-End Developer</div>
+          <div class="subtext">We Make Your Idea <span style="font-family: 'Poppins', sans-serif;">A REALITY!</span></div>
+        </div>
+        <button class="btn-readmore">Read More</button>
+      </div>
     </div>
   </div>
 
   <script>
     const roles = [
-      "I'm a Computer Engineer",
       "I'm a Front-End Developer",
-      "I'm Detail-oriented."
+      "I'm a Computer Engineer",
+      "I'm Detail-Oriented"
     ];
     let index = 0;
-    const textElement = document.querySelector(".changing-text");
+    const text = document.getElementById("typingText");
 
     setInterval(() => {
       index = (index + 1) % roles.length;
-
-      // Dividimos para que "I'm" mantenga monospace y resto pixelada
-      let fullText = roles[index];
-      if (fullText.startsWith("I'm")) {
-        let rest = fullText.slice(3).trim();
-        textElement.innerHTML = `<span class="im">I'm</span> <span class="pixelated">${rest}</span>`;
-      } else {
-        textElement.innerHTML = `<span class="pixelated">${fullText}</span>`;
-      }
-    }, 2500);
+      text.innerText = roles[index];
+    }, 4000);
   </script>
 </body>
 </html>
