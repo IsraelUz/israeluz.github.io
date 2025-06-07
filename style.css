@@ -1,218 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Press+Start+2P&display=swap');
-
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
 body {
+  font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #00ff88;
-  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Layout principal */
+.hero {
+  display: flex;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
-/* Container principal */
-.container {
-  display: flex;
-  width: 90vw;
-  max-width: 1200px;
-  height: 70vh;
-  background: #111;
-  border-radius: 15px;
-  box-shadow: 0 0 40px #00ff88aa;
-  overflow: hidden;
-}
-
-/* Left panel 20% */
-.left-panel {
+/* Imagen izquierda */
+.hero-left {
   width: 20%;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: #111;
 }
 
-.profile-photo {
+.profile-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(0.7);
+  filter: brightness(0.5);
 }
 
-.name {
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #00ff88;
-  margin: 1rem 0;
-  user-select: none;
-  font-family: 'Poppins', sans-serif;
+.name-tag {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.4rem;
+  color: #00ff88;
 }
 
-/* Right panel 80% */
-.right-panel {
+/* Contenido derecho */
+.hero-right {
   width: 80%;
-  padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
   position: relative;
 }
 
 /* Navbar */
 .navbar {
-  width: 100%;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
 }
 
 .navbar a {
   color: #00ff88;
-  font-weight: 600;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.7rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
-  user-select: none;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #55ff88;
-}
-
-/* Iconos navbar (emoji simple) */
-.icon {
-  font-size: 1.3rem;
-  user-select: none;
+  color: #fff;
 }
 
 /* Welcome */
 .welcome {
-  font-size: 3.5rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #00ff88, #008844);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.4rem;
+  background: linear-gradient(to right, #00ff88, #ccc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  user-select: none;
-  width: 100%;
-  text-align: center;
   margin-bottom: 2rem;
-}
-
-/* Content box */
-.content-box {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: 140px;
-  border: 2px solid rgba(0, 255, 136, 0.7);
-  border-radius: 15px;
-  overflow: hidden;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  user-select: none;
-}
-
-/* GIF fondo dentro del cuadro */
-.background-gif {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.25;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Texto dentro del cuadro */
-.text-content {
-  position: relative;
-  z-index: 1;
+  cursor: pointer;
   text-align: center;
-  width: 90%;
-  max-width: 580px;
+  transition: all 0.3s;
 }
 
-/* Texto estático en blanco */
-.static-text {
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  user-select: none;
+.welcome:hover {
+  background: linear-gradient(to right, #00ff88, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Texto dinámico pixelado */
-.changing-text {
-  font-family: 'Press Start 2P', cursive;
+/* Cuadro de contenido con gif */
+.content-box {
+  background: url('proyectos/img/fondo.gif') center/cover no-repeat;
+  border: 2px solid #00ff88;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+}
+
+/* Texto fijo */
+.intro-text {
   font-size: 1rem;
-  color: #00ff88;
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+/* Texto cambiante con animación tipo máquina de escribir */
+.changing-text {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.9rem;
+  background: linear-gradient(to right, #00ff88, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  border-right: 2px solid #00ff88;
+  animation: typing 4s steps(30, end), blink 0.8s step-end infinite;
   max-width: 100%;
-  margin: 0 auto;
-  user-select: none;
+  margin-bottom: 1rem;
 }
 
-/* Botón fuera del cuadro */
+.typing {
+  animation: typing 4s steps(30, end), blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Subtexto */
+.subtext {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #00ff88, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bold {
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* Botón */
 .btn-readmore {
+  margin-top: 1.5rem;
   padding: 0.8rem 2rem;
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.7rem;
   border-radius: 8px;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-  user-select: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-readmore:hover {
-  background: linear-gradient(to right, #00ff88, #009933);
+  background: linear-gradient(to right, #00ff88, #1aff99);
   color: #000;
-  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  border-color: #00ff88;
 }
 
-/* Responsive simple */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-    max-width: 90vw;
-  }
-  .left-panel, .right-panel {
-    width: 100%;
-  }
-  .profile-photo {
-    height: 250px;
-    object-fit: cover;
-  }
-  .welcome {
-    font-size: 2.5rem;
-  }
-  .content-box {
-    height: 120px;
-  }
-}
