@@ -5,45 +5,37 @@
   <title>Israel Uzcategui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="hero">
     <!-- Izquierda -->
     <div class="hero-left">
-      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
-      <div class="photo-overlay"></div>
+      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui" />
       <div class="name-tag pixel-font">Israel Uzcategui</div>
     </div>
 
     <!-- Derecha -->
     <div class="hero-right">
-      <!-- Navbar -->
       <div class="navbar">
-        <a href="#"><i class='bx bx-home'></i>Home</a>
-        <a href="#"><i class='bx bx-user'></i>About</a>
-        <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
-        <a href="#"><i class='bx bx-envelope'></i>Contact</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
       </div>
 
-      <!-- Welcome -->
       <div class="welcome">Welcome to my portfolio</div>
 
-      <!-- GIF fuera del cuadro -->
-      <div class="gif-container">
-        <img src="proyectos/img/fondo.gif" alt="Animated background" />
-      </div>
-
-      <!-- Cuadro con texto -->
+      <!-- Cuadro con GIF como fondo -->
       <div class="content-box">
+        <img src="proyectos/img/fondo.gif" alt="Animated Background" class="background-gif" />
         <div class="content">
           <div class="static-text">Hi there, I'm</div>
           <div class="changing-text" id="typingText">Detail-Oriented Front End Developer and Computer Engineer</div>
-          <div class="subtext">We Make Your Idea a Reality!</div>
         </div>
-        <button class="btn-readmore" onclick="alert('Page coming soon!')">Read More</button>
       </div>
+
+      <button class="btn-readmore" onclick="alert('Page coming soon!')">Read More</button>
     </div>
   </div>
 
@@ -54,18 +46,25 @@
       "Computer Engineer"
     ];
     let index = 0;
-    const text = document.getElementById("typingText");
+    const textElement = document.getElementById("typingText");
 
-    function typeWriter(textElement, textToType, i = 0) {
-      if (i < textToType.length) {
-        textElement.innerHTML = textToType.substring(0, i + 1);
-        setTimeout(() => typeWriter(textElement, textToType, i + 1), 100);
+    function typeWriter(textEl, text, i = 0) {
+      if (i <= text.length) {
+        textEl.textContent = text.substring(0, i);
+        setTimeout(() => typeWriter(textEl, text, i + 1), 80);
       } else {
         setTimeout(() => {
-          typeWriter(textElement, roles[(index = (index + 1) % roles.length)]);
+          index = (index + 1) % roles.length;
+          typeWriter(textEl, roles[index]);
         }, 2000);
       }
     }
+
+    typeWriter(textElement, roles[index]);
+  </script>
+</body>
+</html>
+
 
     typeWriter(text, roles[index]);
   </script>
