@@ -49,6 +49,7 @@ body, html {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .content {
@@ -56,20 +57,22 @@ body, html {
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.4;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 400;
 }
 
 .animated-gradient {
-  background: linear-gradient(to right, #00ff88, #000);
+  background: linear-gradient(to right, #00ff88, #cccccc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease-in-out;
+  display: inline-block;
 }
 
 .pixel {
@@ -86,7 +89,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Fira Code', monospace;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
@@ -120,4 +123,3 @@ button:hover {
     background-position: 0 1000px;
   }
 }
-
