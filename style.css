@@ -112,25 +112,27 @@ h2.modern-text {
 }
 
 /* Botón */
+
 button {
   margin-top: 2rem;
   padding: 0.8rem 1.5rem;
-  background-color: #2e2e2e;
-  border: none;
-  border-radius: 5px;
+  background-color: #1f1f1f;
+  border: 1px solid #888;
+  border-radius: 4px;
   font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #eee;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(to right, #00ff88, #888888);
-  color: #000;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 button:hover {
   background-color: #00ff88;
   color: #000;
+  border-color: #00ff88;
 }
 
 /* Fondo tipo grid */
