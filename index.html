@@ -19,8 +19,8 @@
       font-family: 'Fira Code', monospace;
       background-color: #000;
       color: #fff;
-      overflow: hidden;
       font-size: 115%;
+      overflow: hidden;
     }
 
     .hero {
@@ -33,35 +33,27 @@
     .hero-left {
       width: 20%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #111;
-    }
-
-    .photo-wrapper {
-      width: 100%;
-      height: 100%;
       position: relative;
       overflow: hidden;
-    }
-
-    /* Más marcado el degradado: más oscuro a claro */
-    .photo-overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.6), transparent);
-      z-index: 1;
     }
 
     .profile-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 0;
+      filter: brightness(0.5);
+      /* El filtro oscurece la imagen un 50%, que es más oscuro */
       position: relative;
+      z-index: 0;
       animation: fadeIn 3s ease forwards;
+    }
+
+    /* Gradiente oscuro a claro encima, 40% más oscuro */
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+      z-index: 1;
     }
 
     @keyframes fadeIn {
@@ -76,30 +68,34 @@
       width: 100%;
       background-color: rgba(10, 10, 10, 0.85);
       text-align: center;
-      padding: 0.5rem 0;
-      font-weight: 700;
+      padding: 0.7rem 0;
       color: #00ff88;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+      user-select: none;
       z-index: 2;
+      letter-spacing: 1.5px;
     }
 
     /* Right Content */
     .hero-right {
       width: 80%;
       height: 100%;
-      padding: 2rem 2rem 2rem 4rem;
-      position: relative;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      justify-content: start;
+      align-items: center; /* centrar horizontal */
+      justify-content: center; /* centrar verticalmente */
+      position: relative;
       color: #00ff88;
+      padding: 0 2rem;
+      gap: 2rem;
     }
 
-    /* Navbar corregido para que no salga subrayado ni azul */
+    /* Navbar arriba derecha */
     .navbar {
       position: absolute;
-      top: 1rem;
+      top: 1.5rem;
       right: 2rem;
       display: flex;
       gap: 1.5rem;
@@ -109,11 +105,14 @@
     .navbar a {
       text-decoration: none;
       color: #00ff88;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
       font-size: 1.05rem;
       display: flex;
       align-items: center;
       gap: 0.3rem;
       transition: color 0.3s;
+      user-select: none;
     }
 
     .navbar a:hover {
@@ -126,26 +125,26 @@
       font-family: 'Press Start 2P', cursive;
       font-size: 1.1rem;
       color: #00ff88;
-      margin-bottom: 1.5rem;
-      align-self: flex-start;
-      margin-left: 2rem;
       font-weight: 400;
       letter-spacing: 2px;
       user-select: none;
     }
 
-    /* Contenedor del texto con GIF fondo solo dentro del cuadro (más pequeño) */
+    /* Contenedor del texto con GIF fondo */
     .content-box {
       position: relative;
       background: url('proyectos/img/fondo.gif') center/cover no-repeat;
       border-radius: 10px;
-      padding: 2rem 3rem;
-      width: fit-content;
-      max-width: 600px;
+      padding: 2.5rem 3.5rem;
+      width: 600px;
+      max-width: 90vw;
       color: #fff;
       overflow: hidden;
       box-shadow: 0 0 20px #00ff88aa;
-      margin-bottom: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
     }
 
     .content-box::before {
@@ -160,55 +159,67 @@
     .content {
       position: relative;
       z-index: 1;
+      width: 100%;
       text-align: center;
+    }
+
+    /* Texto cambiante: "I'm ..." */
+    .changing-text {
       font-family: 'Fira Code', monospace;
-    }
-
-    .centered-line {
-      font-size: 2.4rem;
-      margin-bottom: 0.7rem;
       font-weight: 400;
-      margin: 0;
+      font-size: 2.5rem;
+      margin-bottom: 0.6rem;
+      user-select: none;
+      color: #00ff88;
+      letter-spacing: 1px;
     }
 
-    h2 {
-      font-size: 1.6rem;
-      font-family: 'Poppins', sans-serif;
-      margin: 0.3rem 0;
+    /* Fuente pixelada para el texto cambiante "I'm" solo */
+    .changing-text .im {
+      font-family: 'Fira Code', monospace;
       font-weight: 400;
-    }
-
-    .pixel {
       color: #00ff88;
     }
 
-    .animated-gradient {
-      background: linear-gradient(to right, #00ff88, #555);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: all 0.5s ease-in-out;
+    /* Welcome, texto cambiante y botón con fuente pixelada */
+    .pixelated {
+      font-family: 'Press Start 2P', cursive;
+      user-select: none;
     }
 
-    /* Botón read more abajo, centrado */
-    .btn-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: auto;
+    /* El texto "We Make Your Idea A Reality" */
+    .subtext {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #00ff88;
+      user-select: none;
+      margin: 0.2rem 0;
     }
 
+    .subtext span.pixel {
+      font-family: 'Press Start 2P', cursive;
+      color: #00ff88;
+      user-select: none;
+    }
+
+    /* Botón Read More */
     .btn-readmore {
       background-color: transparent;
       border: 2px solid #00ff88;
       color: #00ff88;
-      font-family: 'Fira Code', monospace;
-      font-weight: 600;
-      padding: 0.6rem 1.5rem;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+      padding: 0.8rem 2rem;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
+      user-select: none;
+      align-self: center;
+      margin-top: 0.7rem;
+      width: fit-content;
     }
 
     .btn-readmore:hover {
@@ -222,16 +233,13 @@
   <div class="hero">
     <!-- Left Sidebar -->
     <div class="hero-left">
-      <div class="photo-wrapper">
-        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui" />
-        <div class="photo-overlay"></div>
-        <div class="name-tag">Israel Uzcategui</div>
-      </div>
+      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui" />
+      <div class="photo-overlay"></div>
+      <div class="name-tag pixelated">Israel Uzcategui</div>
     </div>
 
     <!-- Right Content -->
     <div class="hero-right">
-
       <!-- Navbar -->
       <nav class="navbar">
         <a href="#"><i class='bx bx-home'></i>Home</a>
@@ -240,21 +248,18 @@
         <a href="#"><i class='bx bx-envelope'></i>Contact</a>
       </nav>
 
-      <!-- Welcome text arriba -->
-      <p class="welcome">Welcome to my portfolio</p>
+      <!-- Welcome arriba -->
+      <p class="welcome pixelated">Welcome to my portfolio</p>
 
-      <!-- Content box with GIF background ONLY in the box -->
+      <!-- Content box with GIF background -->
       <div class="content-box">
         <div class="content">
-          <h1 class="centered-line animated-gradient" id="changing-text">I'm a Front-End Developer</h1>
-          <h2>We Make Your Idea</h2>
-          <h2><span class="pixel">A REALITY!</span></h2>
+          <h1 class="changing-text">
+            <span class="im">I'm</span> a <span class="pixelated">Front-End Developer</span>
+          </h1>
+          <h2 class="subtext">We Make Your Idea <span class="pixel">A REALITY!</span></h2>
         </div>
-      </div>
-
-      <!-- Botón read more abajo centrado -->
-      <div class="btn-container">
-        <button class="btn-readmore">Read More</button>
+        <button class="btn-readmore pixelated">Read More</button>
       </div>
 
     </div>
@@ -267,12 +272,20 @@
       "I'm Detail-oriented."
     ];
     let index = 0;
-    const textElement = document.getElementById("changing-text");
+    const textElement = document.querySelector(".changing-text");
 
     setInterval(() => {
       index = (index + 1) % roles.length;
-      textElement.textContent = roles[index];
-    }, 2000);
+
+      // Dividimos para que "I'm" mantenga monospace y resto pixelada
+      let fullText = roles[index];
+      if (fullText.startsWith("I'm")) {
+        let rest = fullText.slice(3).trim();
+        textElement.innerHTML = `<span class="im">I'm</span> <span class="pixelated">${rest}</span>`;
+      } else {
+        textElement.innerHTML = `<span class="pixelated">${fullText}</span>`;
+      }
+    }, 2500);
   </script>
 </body>
 </html>
