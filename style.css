@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 
 html, body {
   height: 100%;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
   overflow: hidden;
@@ -49,7 +49,7 @@ html, body {
 
 /* Izquierda */
 .hero-left {
-  width: 20%;
+  width: 35%;
   background-color: #111;
   position: relative;
 }
@@ -86,15 +86,14 @@ html, body {
   padding: 0.8rem 0;
   font-weight: 700;
   color: #00ff88;
-  font-size: 1rem;
+  font-size: 1.3rem;
   z-index: 2;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Derecha */
 .hero-right {
-  width: 80%;
+  width: 65%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -106,18 +105,10 @@ html, body {
 /* Welcome */
 .welcome {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
   background: linear-gradient(to right, #00ff88, #888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.welcome:hover {
-  background: linear-gradient(to right, #00ff88, #00ff88);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -125,25 +116,25 @@ html, body {
 /* Cuadro de contenido */
 .content-box {
   background-color: #111;
-  padding: 2rem;
-  width: 600px;
-  max-width: 90%;
+  width: auto;
+  max-width: 700px;
   border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
   box-shadow: 0 0 20px #00ff8877;
   position: relative;
-  text-align: center;
   z-index: 2;
 }
 
 .gif-container {
   position: relative;
   display: inline-block;
+  width: 100%;
+  max-width: 500px;
 }
 
 .gif-text-bg {
   width: 100%;
-  max-height: 180px;
-  object-fit: cover;
   border-radius: 10px;
   opacity: 0.25;
   position: absolute;
@@ -161,22 +152,23 @@ html, body {
 /* Texto fijo */
 .intro-static {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
 /* Texto dinámico */
 .changing-text {
-  font-size: 1.3rem;
-  font-family: 'Press Start 2P', monospace;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #00ff88, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #00ff88;
   width: 0;
   animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
-  background: linear-gradient(to right, #00ff88, #888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
@@ -197,13 +189,12 @@ html, body {
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: 0.8rem;
 }
 
 /* Botón */
 .btn-readmore {
-  margin-top: 1.2rem;
-  padding: 0.7rem 2rem;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
@@ -213,8 +204,6 @@ html, body {
   border-radius: 8px;
   text-transform: uppercase;
   transition: all 0.4s ease;
-  background-clip: padding-box;
-  letter-spacing: 1px;
 }
 
 .btn-readmore:hover {
@@ -223,7 +212,7 @@ html, body {
   border-color: #00cc66;
 }
 
-/* Fondo grid */
+/* Fondo grid animado */
 .background-grid {
   position: absolute;
   top: 0;
