@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Israel Uzcategui - Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <style>
     * {
@@ -121,17 +121,20 @@
       text-decoration: none;
     }
 
-    /* Welcome arriba de todo */
+    /* Welcome arriba con fuente pixelada */
     .welcome {
-      font-size: 1.2rem;
-      color: #ccc;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.1rem;
+      color: #00ff88;
       margin-bottom: 1.5rem;
       align-self: flex-start;
       margin-left: 2rem;
-      font-weight: 500;
+      font-weight: 400;
+      letter-spacing: 2px;
+      user-select: none;
     }
 
-    /* Contenedor del texto con GIF fondo solo dentro del cuadro */
+    /* Contenedor del texto con GIF fondo solo dentro del cuadro (más pequeño) */
     .content-box {
       position: relative;
       background: url('proyectos/img/fondo.gif') center/cover no-repeat;
@@ -142,6 +145,7 @@
       color: #fff;
       overflow: hidden;
       box-shadow: 0 0 20px #00ff88aa;
+      margin-bottom: 1.8rem;
     }
 
     .content-box::before {
@@ -185,6 +189,33 @@
       transition: all 0.5s ease-in-out;
     }
 
+    /* Botón read more abajo, centrado */
+    .btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+    }
+
+    .btn-readmore {
+      background-color: transparent;
+      border: 2px solid #00ff88;
+      color: #00ff88;
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+      padding: 0.6rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .btn-readmore:hover {
+      background-color: #00ff88;
+      color: #000;
+    }
+
   </style>
 </head>
 <body>
@@ -219,6 +250,11 @@
           <h2>We Make Your Idea</h2>
           <h2><span class="pixel">A REALITY!</span></h2>
         </div>
+      </div>
+
+      <!-- Botón read more abajo centrado -->
+      <div class="btn-container">
+        <button class="btn-readmore">Read More</button>
       </div>
 
     </div>
