@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Israel Uzcategui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,11 +12,9 @@
   <div class="hero">
     <!-- Izquierda -->
     <div class="hero-left">
-      <div class="photo-wrapper">
-        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
-        <div class="photo-overlay"></div>
-        <div class="name-tag">Israel Uzcategui</div>
-      </div>
+      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
+      <div class="photo-overlay"></div>
+      <div class="name-tag pixel-font">Israel Uzcategui</div>
     </div>
 
     <!-- Derecha -->
@@ -32,29 +30,23 @@
       <!-- Welcome -->
       <div class="welcome">Welcome to my portfolio</div>
 
-      <!-- Cuadro con mensaje -->
+      <!-- Cuadro con GIF -->
       <div class="content-box">
-        <div class="gif-container">
-          <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
-          <div class="content">
-            <div class="intro-static">Hi there, I'm</div>
-            <div class="changing-text" id="typingText">a Front-End Developer</div>
-            <div class="subtext">We make your idea a reality!</div>
-          </div>
+        <div class="content">
+          <div class="static-text">Hi there, I'm</div>
+          <div class="changing-text" id="typingText">Detail-Oriented</div>
+          <div class="subtext">We Make Your Idea <span style="font-family: 'Poppins', sans-serif;">A REALITY!</span></div>
         </div>
+        <button class="btn-readmore" onclick="alert('Page coming soon!')">Read More</button>
       </div>
-
-      <button class="btn-readmore">Read More</button>
     </div>
   </div>
 
-  <div class="background-grid"></div>
-
   <script>
     const roles = [
-      "a Front-End Developer",
-      "a Computer Engineer",
-      "Detail-Oriented"
+      "Detail-Oriented",
+      "Front-End Developer",
+      "Computer Engineer"
     ];
     let index = 0;
     const text = document.getElementById("typingText");
@@ -66,4 +58,5 @@
   </script>
 </body>
 </html>
+
 
