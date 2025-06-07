@@ -7,35 +7,188 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Fira Code', monospace;
+      background-color: #000;
+      color: #fff;
+      overflow: hidden;
+      font-size: 115%;
+    }
+
+    .hero {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .hero-left {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #111;
+    }
+
+    .photo-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.7), transparent);
+      z-index: 1;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      position: relative;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .name-tag {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(10, 10, 10, 0.85);
+      text-align: center;
+      padding: 0.5rem 0;
+      font-weight: 700;
+      color: #00ff88;
+      font-size: 1rem;
+      z-index: 2;
+    }
+
     .hero-right {
-      background-image: url('proyectos/img/fondo.gif');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      width: 80%;
+      height: 100%;
+      padding: 2rem 2rem 2rem 4rem;
       position: relative;
     }
 
-    /* Para oscurecer sutilmente el gif */
-    .hero-right::before {
+    .navbar {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #00ff88;
+      font-size: 1.05rem;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #fff;
+    }
+
+    .welcome {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 3rem;
+      text-align: right;
+      margin-right: 2rem;
+    }
+
+    .content-box {
+      background: url('proyectos/img/fondo.gif') center/cover no-repeat;
+      position: relative;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-right: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .content-box::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.4);
       z-index: 0;
     }
 
-    .content {
+    .content-box .content {
       position: relative;
       z-index: 2;
+      text-align: center;
+    }
+
+    .centered-line {
+      font-size: 2.4rem;
+      margin-bottom: 0.7rem;
+      font-weight: 400;
+      margin: 0 8%;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .pixel {
+      color: #00ff88;
+    }
+
+    .animated-gradient {
+      background: linear-gradient(to right, #00ff88, #555);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #1f1f1f;
+      border: 1px solid #888;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: #eee;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background-color: #00ff88;
+      color: #000;
+      border-color: #00ff88;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
   <div class="hero">
-    <!-- Sidebar - 20% -->
+    <!-- Left Sidebar -->
     <div class="hero-left">
       <div class="photo-wrapper">
         <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui">
@@ -44,25 +197,27 @@
       </div>
     </div>
 
-    <!-- Main content - 80% -->
+    <!-- Right Content -->
     <div class="hero-right">
-      <div class="content">
-        <div class="navbar">
-          <div class="nav-content">
-            <nav>
-              <a href="#"><i class='bx bx-home'></i>Home</a>
-              <a href="#"><i class='bx bx-user'></i>About</a>
-              <a href="#"><i class='bx bx-code'></i>Projects</a>
-              <a href="#"><i class='bx bx-envelope'></i>Contact</a>
-            </nav>
-          </div>
-        </div>
+      <!-- Navbar -->
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </div>
 
-        <p class="intro">Welcome to my portfolio</p>
-        <h1 class="centered-line animated-gradient" id="changing-text">I'm a Front-End Developer</h1>
-        <h2>We Make Your Idea</h2>
-        <h2><span class="pixel">A REALITY!</span></h2>
-        <button><i class='bx bx-right-arrow-alt'></i>Read More</button>
+      <!-- Welcome text -->
+      <p class="welcome">Welcome to my portfolio</p>
+
+      <!-- Content area with GIF background -->
+      <div class="content-box">
+        <div class="content">
+          <h1 class="centered-line animated-gradient" id="changing-text">I'm a Front-End Developer</h1>
+          <h2>We Make Your Idea</h2>
+          <h2><span class="pixel">A REALITY!</span></h2>
+          <button><i class='bx bx-right-arrow-alt'></i>Read More</button>
+        </div>
       </div>
     </div>
   </div>
