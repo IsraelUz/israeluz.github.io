@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -154,41 +154,31 @@ html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 /* Texto dinámico */
 .changing-text {
   font-size: 1.4rem;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #00ff88, #888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Fira Code', monospace;
+  color: #00ff88;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #00ff88;
-  width: 0;
-  animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
+  animation: blink 0.7s step-end infinite;
   margin-bottom: 1rem;
-}
-
-@keyframes typing {
-  0% { width: 0; }
-  50% { width: 100%; }
-  100% { width: 0; }
 }
 
 @keyframes blink {
   50% { border-color: transparent; }
 }
 
+/* Subtexto */
 .subtext {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
-  background: linear-gradient(to right, #00ff88, #888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
 }
 
 /* Botón */
