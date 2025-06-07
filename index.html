@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>Israel Uzcategui</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="hero">
-    <!-- Imagen izquierda -->
+    <!-- Izquierda -->
     <div class="hero-left">
-      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto de Israel">
-      <div class="name-tag">Israel Uzcategui</div>
+      <div class="photo-wrapper">
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
+        <div class="photo-overlay"></div>
+        <div class="name-tag">Israel Uzcategui</div>
+      </div>
     </div>
 
-    <!-- Contenido derecho -->
+    <!-- Derecha -->
     <div class="hero-right">
+      <!-- Navbar -->
       <div class="navbar">
         <a href="#"><i class='bx bx-home'></i>Home</a>
         <a href="#"><i class='bx bx-user'></i>About</a>
@@ -25,19 +29,26 @@
         <a href="#"><i class='bx bx-envelope'></i>Contact</a>
       </div>
 
-      <div class="welcome">WELCOME TO MY PORTFOLIO</div>
+      <!-- Welcome -->
+      <div class="welcome">Welcome to my portfolio</div>
 
+      <!-- Cuadro con mensaje -->
       <div class="content-box">
-        <div class="content">
-          <div class="intro-text">Hi there, I'm</div>
-          <div class="changing-text" id="typingText">a Front-End Developer</div>
-          <div class="subtext">We make your idea <span class="gradient-bold">A REALITY!</span></div>
+        <div class="gif-container">
+          <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
+          <div class="content">
+            <div class="intro-static">Hi there, I'm</div>
+            <div class="changing-text" id="typingText">a Front-End Developer</div>
+            <div class="subtext">We make your idea a reality!</div>
+          </div>
         </div>
       </div>
 
       <button class="btn-readmore">Read More</button>
     </div>
   </div>
+
+  <div class="background-grid"></div>
 
   <script>
     const roles = [
@@ -49,15 +60,13 @@
     const text = document.getElementById("typingText");
 
     setInterval(() => {
-      text.classList.remove("typing");
-      void text.offsetWidth; // reinicia animación
-      text.innerText = roles[index];
-      text.classList.add("typing");
       index = (index + 1) % roles.length;
+      text.innerText = roles[index];
     }, 4000);
   </script>
 </body>
 </html>
+
 
 
     typeWriter(text, roles[index]);
