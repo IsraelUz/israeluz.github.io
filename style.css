@@ -12,7 +12,6 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Navbar */
 .navbar {
   position: absolute;
   top: 0;
@@ -62,7 +61,7 @@ nav a:hover {
 }
 
 .hero-left {
-  width: 25%;
+  width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,13 +70,23 @@ nav a:hover {
 
 .profile-img {
   width: 90%;
-  max-width: 250px;
+  max-width: 150px;
   border-radius: 10px;
   border: 2px solid #00ff88;
+  opacity: 0;
+  filter: brightness(0.5) blur(1px);
+  animation: fadeIn 3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    filter: brightness(0.8) blur(0);
+  }
 }
 
 .hero-right {
-  width: 75%;
+  width: 90%;
   display: flex;
   justify-content: flex-end;
   padding-right: 5%;
@@ -112,7 +121,6 @@ h2 {
   color: #00ff88;
 }
 
-/* Button */
 button {
   margin-top: 2rem;
   padding: 0.8rem 1.5rem;
@@ -135,7 +143,6 @@ button:hover {
   border-color: #00ff88;
 }
 
-/* Grid Background */
 .background-grid {
   position: absolute;
   top: 0;
