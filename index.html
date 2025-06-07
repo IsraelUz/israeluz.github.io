@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Israel Uzcategui - Web Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -23,44 +23,13 @@
       font-size: 115%;
     }
 
-    /* Navbar */
-    .navbar {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-      width: 100%;
-      z-index: 10;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .nav-content {
-      text-align: right;
-    }
-
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #00ff88;
-      font-size: 1.05rem;
-      transition: color 0.3s;
-    }
-
-    nav a i {
-      margin-right: 0.3rem;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    /* Hero Layout */
     .hero {
       display: flex;
       height: 100vh;
       width: 100%;
     }
 
+    /* Left Sidebar */
     .hero-left {
       width: 20%;
       height: 100%;
@@ -77,15 +46,13 @@
       overflow: hidden;
     }
 
-    /* Aquí aumenté la opacidad y el rango del degradado para un efecto más marcado */
+    /* Más marcado el degradado: más oscuro a claro */
     .photo-overlay {
       position: absolute;
       width: 100%;
       height: 100%;
-      /* Más oscuro al inicio y más claro al final */
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.25));
+      background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.6), transparent);
       z-index: 1;
-      pointer-events: none;
     }
 
     .profile-img {
@@ -116,38 +83,99 @@
       z-index: 2;
     }
 
-    /* Hero Right Side */
+    /* Right Content */
     .hero-right {
       width: 80%;
       height: 100%;
+      padding: 2rem 2rem 2rem 4rem;
       position: relative;
       display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: start;
+      color: #00ff88;
+    }
+
+    /* Navbar corregido para que no salga subrayado ni azul */
+    .navbar {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #00ff88;
+      font-size: 1.05rem;
+      display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding-right: 5%;
-      text-align: right;
+      gap: 0.3rem;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Welcome arriba de todo */
+    .welcome {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 1.5rem;
+      align-self: flex-start;
+      margin-left: 2rem;
+      font-weight: 500;
+    }
+
+    /* Contenedor del texto con GIF fondo solo dentro del cuadro */
+    .content-box {
+      position: relative;
+      background: url('proyectos/img/fondo.gif') center/cover no-repeat;
+      border-radius: 10px;
+      padding: 2rem 3rem;
+      width: fit-content;
+      max-width: 600px;
+      color: #fff;
+      overflow: hidden;
+      box-shadow: 0 0 20px #00ff88aa;
+    }
+
+    .content-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+      border-radius: 10px;
     }
 
     .content {
-      z-index: 2;
-      width: 100%;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-family: 'Fira Code', monospace;
     }
 
     .centered-line {
       font-size: 2.4rem;
       margin-bottom: 0.7rem;
       font-weight: 400;
-      font-family: 'Fira Code', monospace;
-      text-align: center;
-      margin-left: 8%;
-      margin-right: 8%;
+      margin: 0;
     }
 
     h2 {
       font-size: 1.6rem;
-      font-weight: 400;
       font-family: 'Poppins', sans-serif;
-      text-align: center;
+      margin: 0.3rem 0;
+      font-weight: 400;
+    }
+
+    .pixel {
+      color: #00ff88;
     }
 
     .animated-gradient {
@@ -157,95 +185,6 @@
       transition: all 0.5s ease-in-out;
     }
 
-    .pixel {
-      color: #00ff88;
-    }
-
-    /* Button */
-    button {
-      margin-top: 2rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #1f1f1f;
-      border: 1px solid #888;
-      border-radius: 4px;
-      font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
-      color: #eee;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s;
-    }
-
-    button:hover {
-      background-color: #00ff88;
-      color: #000;
-      border-color: #00ff88;
-    }
-
-    /* Grid Background */
-    .background-grid {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-      background-position: center;
-      transform: perspective(800px) rotateX(60deg);
-      z-index: 1;
-      animation: moveGrid 20s linear infinite;
-      opacity: 0.25;
-    }
-
-    @keyframes moveGrid {
-      from {
-        background-position: 0 0;
-      }
-      to {
-        background-position: 0 1000px;
-      }
-    }
-
-    /* Welcome text */
-    .welcome {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-top: 3rem;
-      text-align: right;
-      margin-right: 2rem;
-    }
-
-    /* Content box with gif background */
-    .content-box {
-      background: url('proyectos/img/fondo.gif') center/cover no-repeat;
-      position: relative;
-      padding: 2rem;
-      margin-top: 2rem;
-      margin-right: 2rem;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .content-box::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    .content-box .content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-
   </style>
 </head>
 <body>
@@ -253,7 +192,7 @@
     <!-- Left Sidebar -->
     <div class="hero-left">
       <div class="photo-wrapper">
-        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui">
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui" />
         <div class="photo-overlay"></div>
         <div class="name-tag">Israel Uzcategui</div>
       </div>
@@ -261,26 +200,27 @@
 
     <!-- Right Content -->
     <div class="hero-right">
-      <!-- Navbar -->
-      <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-      </div>
 
-      <!-- Welcome text -->
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="#"><i class='bx bx-home'></i>Home</a>
+        <a href="#"><i class='bx bx-user'></i>About</a>
+        <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
+        <a href="#"><i class='bx bx-envelope'></i>Contact</a>
+      </nav>
+
+      <!-- Welcome text arriba -->
       <p class="welcome">Welcome to my portfolio</p>
 
-      <!-- Content area with GIF background -->
+      <!-- Content box with GIF background ONLY in the box -->
       <div class="content-box">
         <div class="content">
           <h1 class="centered-line animated-gradient" id="changing-text">I'm a Front-End Developer</h1>
           <h2>We Make Your Idea</h2>
           <h2><span class="pixel">A REALITY!</span></h2>
-          <button><i class='bx bx-right-arrow-alt'></i>Read More</button>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -300,5 +240,4 @@
   </script>
 </body>
 </html>
-
 
