@@ -1,56 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: 'Poppins', sans-serif;
   background-color: #000;
-  color: #00ff88;
+  color: #fff;
   overflow: hidden;
-}
-
-/* Layout principal */
-.hero {
-  display: flex;
-  height: 100vh;
-}
-
-/* Imagen izquierda */
-.hero-left {
-  width: 20%;
-  position: relative;
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5);
-}
-
-.name-tag {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.75rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0.4rem;
-  color: #00ff88;
-}
-
-/* Contenido derecho */
-.hero-right {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  position: relative;
+  font-size: 115%;
 }
 
 /* Navbar */
@@ -60,106 +22,173 @@ body {
   right: 2rem;
   display: flex;
   gap: 1.5rem;
+  z-index: 10;
 }
 
 .navbar a {
-  color: #00ff88;
   text-decoration: none;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.7rem;
+  color: #00ff88;
+  font-size: 1.05rem;
   display: flex;
   align-items: center;
+  gap: 0.3rem;
   transition: color 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar a:hover {
   color: #fff;
 }
 
+/* Hero */
+.hero {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Izquierda */
+.hero-left {
+  width: 20%;
+  background-color: #111;
+  position: relative;
+}
+
+.photo-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: 0;
+  position: relative;
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+  z-index: 1;
+}
+
+.name-tag {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.85);
+  text-align: center;
+  padding: 0.8rem 0;
+  font-weight: 700;
+  color: #00ff88;
+  font-size: 1.3rem;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Derecha */
+.hero-right {
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
 /* Welcome */
 .welcome {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 1.4rem;
-  background: linear-gradient(to right, #00ff88, #ccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
   margin-bottom: 2rem;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.welcome:hover {
-  background: linear-gradient(to right, #00ff88, #00ff88);
+  background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Cuadro de contenido con gif */
+/* Cuadro de contenido */
 .content-box {
-  background: url('proyectos/img/fondo.gif') center/cover no-repeat;
-  border: 2px solid #00ff88;
+  background-color: #111;
+  width: 600px;
   border-radius: 10px;
-  padding: 3rem 2rem;
-  max-width: 600px;
-  width: 100%;
   text-align: center;
+  box-shadow: 0 0 20px #00ff8877;
   position: relative;
-  background-clip: padding-box;
+  z-index: 2;
+}
+
+.gif-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gif-text-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .content {
-  z-index: 1;
   position: relative;
+  z-index: 1;
+  padding: 2.5rem 1rem;
 }
 
 /* Texto fijo */
-.intro-text {
-  font-size: 1rem;
-  color: white;
-  margin-bottom: 0.8rem;
+.intro-static {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Texto cambiante con animación tipo máquina de escribir */
+/* Texto dinámico */
 .changing-text {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #00ff88;
-  animation: typing 4s steps(30, end), blink 0.8s step-end infinite;
-  max-width: 100%;
+  border-right: 3px solid #00ff88;
+  width: 0;
+  animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
   margin-bottom: 1rem;
 }
 
-.typing {
-  animation: typing 4s steps(30, end), blink 0.8s step-end infinite;
-}
-
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
 }
 
 @keyframes blink {
   50% { border-color: transparent; }
 }
 
-/* Subtexto */
 .subtext {
-  font-size: 1rem;
-  margin-top: 1rem;
   font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.gradient-bold {
-  font-family: 'Press Start 2P', monospace;
 }
 
 /* Botón */
@@ -169,17 +198,44 @@ body {
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.7rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
   border-radius: 8px;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .btn-readmore:hover {
-  background: linear-gradient(to right, #00ff88, #1aff99);
+  background: linear-gradient(to right, #00ff88, #00cc66);
   color: #000;
-  border-color: #00ff88;
+  border-color: #00cc66;
+}
+
+/* Fondo grid animado */
+.background-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  transform: perspective(800px) rotateX(60deg);
+  z-index: 0;
+  animation: moveGrid 20s linear infinite;
+  opacity: 0.25;
+}
+
+@keyframes moveGrid {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1000px;
+  }
 }
 
