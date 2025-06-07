@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap');
 
 /* Reset */
 * {
@@ -7,24 +7,33 @@
   box-sizing: border-box;
 }
 
-/* Body y fuente general */
+/* Body */
 body {
   background: #000;
   color: #00ff88;
-  font-family: 'Fira Code', monospace;
-  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Layout principal */
 .hero {
   display: flex;
-  height: 100vh;
+  width: 90vw;
+  max-width: 1200px;
+  height: 70vh;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 40px #00ff88aa;
+  overflow: hidden;
 }
 
 /* Izquierda */
 .hero-left {
-  width: 20%;
+  width: 25%;
   position: relative;
 }
 
@@ -32,174 +41,147 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
-}
-
-.photo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4), transparent);
-  z-index: 1;
+  filter: brightness(0.6);
+  display: block;
 }
 
 .name-tag {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.3rem;
   color: #00ff88;
-  z-index: 2;
-}
-
-/* Fuente pixelada para nombre y texto dinámico */
-.pixel-font {
-  font-family: 'Press Start 2P', cursive !important;
-  font-size: 1.5rem !important;
+  background: rgba(0,0,0,0.5);
+  padding: 0.5rem 0;
+  user-select: none;
+  letter-spacing: 2px;
 }
 
 /* Derecha */
 .hero-right {
-  width: 80%;
+  width: 75%;
+  padding: 2rem 3rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 2rem;
 }
 
 /* Navbar */
 .navbar {
   position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+  top: 20px;
+  right: 30px;
   display: flex;
-  gap: 1.5rem;
-  z-index: 10;
+  gap: 2rem;
 }
 
 .navbar a {
-  font-family: 'Poppins', sans-serif;
   color: #00ff88;
   text-decoration: none;
-  font-size: 1.05rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: color 0.3s;
+  font-weight: 600;
+  font-size: 1.1rem;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #fff;
+  color: #55ff88;
 }
 
 /* Welcome */
 .welcome {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  background: linear-gradient(to right, #00ff88, #888);
+  background: linear-gradient(90deg, #00ff88, #008844);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: default;
+  margin-bottom: 2rem;
+  user-select: none;
   text-align: center;
+  width: 100%;
+}
+
+/* Cuadro contenido con gif como fondo */
+.content-box {
+  position: relative;
+  width: 350px;
+  height: 120px;
+  border: 2px solid rgba(0, 255, 136, 0.7);
+  border-radius: 15px;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GIF fondo dentro del cuadro */
+.background-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
   user-select: none;
 }
 
-/* GIF Container */
-.gif-container {
-  width: 320px;
-  height: 80px;
-  margin-bottom: 1rem;
-}
-
-.gif-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Content box */
-.content-box {
-  background: rgba(0, 255, 136, 0.15);
-  padding: 2rem 2rem 1rem 2rem;
-  width: 320px;
-  max-width: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #00ff8877;
-  position: relative;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Contenido */
+/* Contenido texto */
 .content {
   position: relative;
   z-index: 1;
   width: 100%;
+  text-align: center;
+  padding: 0 1rem;
 }
 
-/* Texto estático (Hi there, I'm) */
+/* Texto estático (Hi there, I'm) en blanco */
 .static-text {
-  font-family: 'Poppins', sans-serif;
+  color: white;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #00ff88;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.3rem;
   user-select: none;
 }
 
-/* Texto dinámico con fuente pixelada y centrado */
+/* Texto dinámico pixelado, centrado y sin que se mueva */
 .changing-text {
-  font-size: 1.2rem;
-  font-weight: 600;
   font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
   color: #00ff88;
-  margin-bottom: 0.8rem;
-  user-select: none;
   white-space: nowrap;
-  text-align: center;
-}
-
-/* Subtexto */
-.subtext {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #00ff88;
-  margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 auto;
   user-select: none;
+  max-width: 100%;
 }
 
-/* Botón */
+/* Botón fuera del cuadro */
 .btn-readmore {
-  margin-top: 1.2rem;
   padding: 0.8rem 2rem;
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
+  font-weight: 700;
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
   cursor: pointer;
   border-radius: 8px;
   text-transform: uppercase;
-  transition: all 0.4s ease;
-  align-self: center;
+  transition: all 0.3s ease;
+  user-select: none;
 }
 
 .btn-readmore:hover {
-  background: linear-gradient(to right, #00ff88, #00cc66);
+  background: linear-gradient(to right, #00ff88, #009933);
   color: #000;
-  border-color: #00cc66;
-  box-shadow: 0 0 15px #00ff88, 0 0 25px #00ff88;
-  cursor: pointer;
+  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
 }
-
