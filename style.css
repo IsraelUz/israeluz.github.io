@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Press+Start+2P&display=swap');
 
 /* Reset */
 * {
@@ -9,18 +9,18 @@
 
 /* Body */
 body {
-  background: #000;
+  background-color: #000;
   color: #00ff88;
   font-family: 'Poppins', sans-serif;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-/* Layout principal */
-.hero {
+/* Container principal */
+.container {
   display: flex;
   width: 90vw;
   max-width: 1200px;
@@ -31,64 +31,73 @@ body {
   overflow: hidden;
 }
 
-/* Izquierda */
-.hero-left {
-  width: 25%;
-  position: relative;
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
-  display: block;
-}
-
-.name-tag {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.3rem;
-  color: #00ff88;
-  background: rgba(0,0,0,0.5);
-  padding: 0.5rem 0;
-  user-select: none;
-  letter-spacing: 2px;
-}
-
-/* Derecha */
-.hero-right {
-  width: 75%;
-  padding: 2rem 3rem;
+/* Left panel 20% */
+.left-panel {
+  width: 20%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  background-color: #111;
+}
+
+.profile-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #00ff88;
+  margin: 1rem 0;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* Right panel 80% */
+.right-panel {
+  width: 80%;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 /* Navbar */
 .navbar {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+  width: 100%;
   display: flex;
+  justify-content: flex-end;
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .navbar a {
   color: #00ff88;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
   font-size: 1.1rem;
-  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: color 0.3s ease;
+  user-select: none;
 }
 
 .navbar a:hover {
   color: #55ff88;
+}
+
+/* Iconos navbar (emoji simple) */
+.icon {
+  font-size: 1.3rem;
+  user-select: none;
 }
 
 /* Welcome */
@@ -98,61 +107,61 @@ body {
   background: linear-gradient(90deg, #00ff88, #008844);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 2rem;
   user-select: none;
-  text-align: center;
   width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Cuadro contenido con gif como fondo */
+/* Content box */
 .content-box {
   position: relative;
-  width: 350px;
-  height: 120px;
+  width: 100%;
+  max-width: 600px;
+  height: 140px;
   border: 2px solid rgba(0, 255, 136, 0.7);
   border-radius: 15px;
   overflow: hidden;
   background: transparent;
-  user-select: none;
-  margin-bottom: 1.5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  user-select: none;
 }
 
 /* GIF fondo dentro del cuadro */
 .background-gif {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.25;
+  top: 0;
+  left: 0;
   z-index: 0;
   pointer-events: none;
-  user-select: none;
 }
 
-/* Contenido texto */
-.content {
+/* Texto dentro del cuadro */
+.text-content {
   position: relative;
   z-index: 1;
-  width: 100%;
   text-align: center;
-  padding: 0 1rem;
+  width: 90%;
+  max-width: 580px;
 }
 
-/* Texto estático (Hi there, I'm) en blanco */
+/* Texto estático en blanco */
 .static-text {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
   user-select: none;
 }
 
-/* Texto dinámico pixelado, centrado y sin que se mueva */
+/* Texto dinámico pixelado */
 .changing-text {
   font-family: 'Press Start 2P', cursive;
   font-size: 1rem;
@@ -160,9 +169,9 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
   margin: 0 auto;
   user-select: none;
-  max-width: 100%;
 }
 
 /* Botón fuera del cuadro */
@@ -184,4 +193,26 @@ body {
   background: linear-gradient(to right, #00ff88, #009933);
   color: #000;
   box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+}
+
+/* Responsive simple */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    max-width: 90vw;
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+  }
+  .profile-photo {
+    height: 250px;
+    object-fit: cover;
+  }
+  .welcome {
+    font-size: 2.5rem;
+  }
+  .content-box {
+    height: 120px;
+  }
 }
