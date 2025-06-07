@@ -6,196 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #000;
-      color: #00ff88;
-      font-family: 'Fira Code', monospace;
-      overflow: hidden;
-    }
-
-    .hero {
-      display: flex;
-      height: 100vh;
-    }
-
-    .hero-left {
-      width: 20%;
-      position: relative;
-    }
-
-    .profile-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.5);
-    }
-
-    .photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
-      z-index: 1;
-    }
-
-    .name-tag {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      font-weight: bold;
-      font-size: 1rem;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 0.5rem;
-      color: #00ff88;
-    }
-
-    .hero-right {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 2rem;
-    }
-
-    .navbar {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .navbar a {
-      font-family: 'Poppins', sans-serif;
-      color: #00ff88;
-      text-decoration: none;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: color 0.3s;
-    }
-
-    .navbar a:hover {
-      color: #fff;
-    }
-
-    .welcome {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(to right, #00ff88, #888);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .welcome:hover {
-      background: linear-gradient(to right, #00ff88, #00ff88);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .content-box {
-      background: url('proyectos/img/fondo.gif') center/cover no-repeat;
-      padding: 3rem 2rem;
-      width: 600px;
-      max-width: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #00ff8877;
-      position: relative;
-      text-align: center;
-    }
-
-    .content-box::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      z-index: 0;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .changing-text {
-      font-size: 1.5rem;
-      font-family: 'Fira Code', monospace;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #00ff88;
-      width: 0;
-      animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
-      background: linear-gradient(to right, #00ff88, #888);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    @keyframes typing {
-      0% { width: 0; }
-      50% { width: 100%; }
-      100% { width: 0; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    .subtext {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      background: linear-gradient(to right, #00ff88, #888);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-top: 0.8rem;
-    }
-
-    .btn-readmore {
-      margin-top: 1.2rem;
-      padding: 0.7rem 2rem;
-      border: 2px solid #00ff88;
-      background: transparent;
-      color: #00ff88;
-      font-family: 'Poppins', sans-serif;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 8px;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      background-clip: padding-box;
-      letter-spacing: 1px;
-    }
-
-    .btn-readmore:hover {
-      background-color: #00ff88;
-      color: #000;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="hero">
     <!-- Izquierda -->
     <div class="hero-left">
-      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
-      <div class="photo-overlay"></div>
-      <div class="name-tag">Israel Uzcategui</div>
+      <div class="photo-wrapper">
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
+        <div class="photo-overlay"></div>
+        <div class="name-tag">Israel Uzcategui</div>
+      </div>
     </div>
 
     <!-- Derecha -->
@@ -222,6 +43,9 @@
     </div>
   </div>
 
+  <!-- Grid de fondo animado -->
+  <div class="background-grid"></div>
+
   <script>
     const roles = [
       "I'm a Front-End Developer",
@@ -238,4 +62,5 @@
   </script>
 </body>
 </html>
+
 
