@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body, html {
+html, body {
   height: 100%;
   font-family: 'Fira Code', monospace;
   background-color: #000;
@@ -18,46 +18,38 @@ body, html {
   position: absolute;
   top: 1rem;
   right: 2rem;
-  width: 100%;
-  z-index: 10;
   display: flex;
-  justify-content: flex-end;
+  gap: 1.5rem;
+  z-index: 10;
 }
 
-.nav-content {
-  text-align: right;
-}
-
-nav a {
-  margin-left: 1.5rem;
+.navbar a {
   text-decoration: none;
   color: #00ff88;
-  font-size: 1.05rem; /* Aumentado en un 5% */
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   transition: color 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
 
-nav a i {
-  margin-right: 0.3rem;
-}
-
-nav a:hover {
+.navbar a:hover {
   color: #fff;
 }
 
-/* Hero Layout */
+/* Hero layout */
 .hero {
   display: flex;
   height: 100vh;
   width: 100%;
 }
 
+/* Lado izquierdo */
 .hero-left {
   width: 20%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #111;
+  position: relative;
 }
 
 .photo-wrapper {
@@ -67,27 +59,20 @@ nav a:hover {
   overflow: hidden;
 }
 
-.photo-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, ), rgba(0, 0, 0, 0.25));
-  z-index: 1;
-}
-
 .profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.5);
   z-index: 0;
   position: relative;
-  animation: fadeIn 3s ease forwards;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+  z-index: 1;
 }
 
 .name-tag {
@@ -101,77 +86,124 @@ nav a:hover {
   color: #00ff88;
   font-size: 1rem;
   z-index: 2;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Hero Right Side */
+/* Lado derecho */
 .hero-right {
   width: 80%;
-  height: 100%;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 5%;
-  text-align: right;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.content {
-  z-index: 2;
-  width: 100%;
-}
-
-.centered-line {
-  font-size: 2.4rem;
-  margin-bottom: 0.7rem;
-  font-weight: 400;
-  font-family: 'Fira Code', monospace;
-  text-align: center;
-  margin-left: 8%;
-  margin-right: 8%;
-}
-
-h2 {
-  font-size: 1.6rem;
-  font-weight: 400;
+/* Bienvenida */
+.welcome {
   font-family: 'Poppins', sans-serif;
-  text-align: center;
-}
-
-.animated-gradient {
-  background: linear-gradient(to right, #00ff88, #555);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.5s ease-in-out;
-}
-
-.pixel {
-  color: #00ff88;
-}
-
-/* Button */
-button {
-  margin-top: 2rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #1f1f1f;
-  border: 1px solid #888;
-  border-radius: 4px;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.9rem;
-  color: #eee;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   transition: all 0.3s;
 }
 
-button:hover {
-  background-color: #00ff88;
-  color: #000;
-  border-color: #00ff88;
+.welcome:hover {
+  background: linear-gradient(to right, #00ff88, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Grid Background */
+/* Cuadro central */
+.content-box {
+  background: url('proyectos/img/fondo.gif') center/cover no-repeat;
+  padding: 3rem 2rem;
+  width: 600px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ff8877;
+  position: relative;
+  text-align: center;
+}
+
+.content-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Texto dinámico */
+.changing-text {
+  font-size: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00ff88;
+  width: 0;
+  animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
+  background: linear-gradient(to right, #00ff88, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Subtexto */
+.subtext {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #00ff88, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.8rem;
+}
+
+/* Botón */
+.btn-readmore {
+  margin-top: 1.2rem;
+  padding: 0.7rem 2rem;
+  border: 2px solid #00ff88;
+  background: transparent;
+  color: #00ff88;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  background-clip: padding-box;
+  letter-spacing: 1px;
+}
+
+.btn-readmore:hover {
+  background-color: #00ff88;
+  color: #000;
+}
+
+/* Fondo tipo grid animado */
 .background-grid {
   position: absolute;
   top: 0;
@@ -184,7 +216,7 @@ button:hover {
   background-size: 40px 40px;
   background-position: center;
   transform: perspective(800px) rotateX(60deg);
-  z-index: 1;
+  z-index: 0;
   animation: moveGrid 20s linear infinite;
   opacity: 0.25;
 }
@@ -197,3 +229,4 @@ button:hover {
     background-position: 0 1000px;
   }
 }
+
