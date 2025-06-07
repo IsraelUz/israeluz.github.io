@@ -6,13 +6,19 @@
 
 body, html {
   height: 100%;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
 }
 
-/* Navbar */
+.gradient-text {
+  background: linear-gradient(to right, #00ff88, #888888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -21,27 +27,31 @@ body, html {
   position: absolute;
   width: 100%;
   z-index: 10;
+  align-items: center;
 }
 
 .navbar .logo {
   font-weight: 700;
-  color: #00ff88;
   font-size: 1.2rem;
 }
 
 .navbar nav a {
   margin-left: 1.5rem;
   text-decoration: none;
-  color: #00ff88;
   font-size: 0.95rem;
-  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(to right, #00ff88, #888888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s;
 }
 
 .navbar nav a:hover {
   color: #fff;
 }
 
-/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
@@ -49,7 +59,6 @@ body, html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
 }
 
 .content {
@@ -58,38 +67,42 @@ body, html {
 
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.7rem;
-  line-height: 1.4;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
 }
 
-h2 {
-  font-size: 1.7rem;
+h2.modern-text {
+  font-size: 1.6rem;
   font-weight: 400;
-}
-
-.animated-gradient {
-  background: linear-gradient(to right, #00ff88, #cccccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.5s ease-in-out;
-  display: inline-block;
+  color: #ccc;
+  font-family: 'Fira Code', monospace;
 }
 
 .pixel {
   color: #00ff88;
 }
 
-/* Button */
+.cursor {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 4px;
+}
+
 button {
   margin-top: 2rem;
   padding: 0.8rem 1.5rem;
   background-color: #2e2e2e;
-  color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-family: 'Fira Code', monospace;
-  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, #00ff88, #888888);
+  color: #000;
+  transition: background-color 0.3s;
 }
 
 button:hover {
@@ -97,7 +110,6 @@ button:hover {
   color: #000;
 }
 
-/* Grid Background */
 .background-grid {
   position: absolute;
   top: 0;
