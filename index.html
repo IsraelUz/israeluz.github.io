@@ -22,7 +22,7 @@
 
   <section class="hero">
     <div class="content"> 
-      <h1>Hey, I am <span class="animated-gradient" id="changing-text">Front-End Developer</span></h1>
+      <h1>Hey, I am <span class="animated-gradient" id="changing-text"></span><span class="cursor">|</span></h1>
       <h2>We Make Your Idea <br><span class="pixel">A REALITY !</span></h2>
       <button>Read More</button>
     </div>
@@ -31,14 +31,46 @@
 
   <script>
     const roles = ["Computer Engineer", "Front-End Developer", "Detail-oriented."];
-    let index = 0;
     const textElement = document.getElementById("changing-text");
+    const cursor = document.querySelector(".cursor");
 
+    let roleIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      if (typing) {
+        if (charIndex < currentRole.length) {
+          textElement.textContent += currentRole.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500); // wait before deleting
+        }
+      } else {
+        if (charIndex > 0) {
+          textElement.textContent = currentRole.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = true;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(typeEffect, 300);
+        }
+      }
+    }
+
+    // blinking cursor
     setInterval(() => {
-      index = (index + 1) % roles.length;
-      textElement.textContent = roles[index];
-    }, 2000);
+      cursor.style.opacity = (cursor.style.opacity === '0' ? '1' : '0');
+    }, 500);
+
+    // start typing
+    document.addEventListener("DOMContentLoaded", typeEffect);
   </script>
 </body>
 </html>
+
 
