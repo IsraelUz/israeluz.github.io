@@ -59,7 +59,7 @@ body {
 /* Fuente pixelada para nombre y texto dinámico */
 .pixel-font {
   font-family: 'Press Start 2P', cursive !important;
-  font-size: 1.2rem !important;
+  font-size: 1.5rem !important;
 }
 
 /* Derecha */
@@ -101,7 +101,7 @@ body {
 /* Welcome */
 .welcome {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
   background: linear-gradient(to right, #00ff88, #888);
@@ -112,10 +112,23 @@ body {
   user-select: none;
 }
 
+/* GIF Container */
+.gif-container {
+  width: 320px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.gif-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Content box */
 .content-box {
-  background: url('proyectos/img/fondo.gif') center/contain no-repeat;
-  padding: 3rem 2rem 1rem 2rem;
+  background: rgba(0, 255, 136, 0.15);
+  padding: 2rem 2rem 1rem 2rem;
   width: 320px;
   max-width: 90%;
   border-radius: 10px;
@@ -127,17 +140,7 @@ body {
   align-items: center;
 }
 
-/* Overlay oscuro para mejor contraste */
-.content-box::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  z-index: 0;
-}
-
-/* Contenido encima del overlay */
+/* Contenido */
 .content {
   position: relative;
   z-index: 1;
@@ -154,31 +157,16 @@ body {
   user-select: none;
 }
 
-/* Texto dinámico con efecto máquina de escribir */
+/* Texto dinámico con fuente pixelada y centrado */
 .changing-text {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   font-family: 'Press Start 2P', cursive;
-  background: linear-gradient(to right, #00ff88, #888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #00ff88;
+  margin-bottom: 0.8rem;
+  user-select: none;
   white-space: nowrap;
-  overflow: hidden;
-  width: 20ch;
-  margin: 0 auto 0.8rem;
-  border-right: 2px solid #00ff88;
-  animation: typing 3s steps(20, end) infinite, blink 0.7s step-end infinite;
   text-align: center;
-}
-
-@keyframes typing {
-  0% { width: 0; }
-  50% { width: 20ch; }
-  100% { width: 0; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
 }
 
 /* Subtexto */
@@ -186,9 +174,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
-  background: linear-gradient(to right, #00ff88, #888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #00ff88;
   margin-top: 0;
   user-select: none;
 }
