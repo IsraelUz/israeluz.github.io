@@ -30,12 +30,17 @@
       <!-- Welcome -->
       <div class="welcome">Welcome to my portfolio</div>
 
-      <!-- Cuadro con GIF -->
+      <!-- GIF fuera del cuadro -->
+      <div class="gif-container">
+        <img src="proyectos/img/fondo.gif" alt="Animated background" />
+      </div>
+
+      <!-- Cuadro con texto -->
       <div class="content-box">
         <div class="content">
           <div class="static-text">Hi there, I'm</div>
-          <div class="changing-text" id="typingText">Detail-Oriented</div>
-          <div class="subtext">We Make Your Idea <span style="font-family: 'Poppins', sans-serif;">A REALITY!</span></div>
+          <div class="changing-text" id="typingText">Detail-Oriented Front End Developer and Computer Engineer</div>
+          <div class="subtext">We Make Your Idea a Reality!</div>
         </div>
         <button class="btn-readmore" onclick="alert('Page coming soon!')">Read More</button>
       </div>
@@ -44,19 +49,25 @@
 
   <script>
     const roles = [
-      "Detail-Oriented",
-      "Front-End Developer",
+      "Detail-Oriented Front End Developer and Computer Engineer",
+      "Front End Developer",
       "Computer Engineer"
     ];
     let index = 0;
     const text = document.getElementById("typingText");
 
-    setInterval(() => {
-      index = (index + 1) % roles.length;
-      text.innerText = roles[index];
-    }, 4000);
+    function typeWriter(textElement, textToType, i = 0) {
+      if (i < textToType.length) {
+        textElement.innerHTML = textToType.substring(0, i + 1);
+        setTimeout(() => typeWriter(textElement, textToType, i + 1), 100);
+      } else {
+        setTimeout(() => {
+          typeWriter(textElement, roles[(index = (index + 1) % roles.length)]);
+        }, 2000);
+      }
+    }
+
+    typeWriter(text, roles[index]);
   </script>
 </body>
 </html>
-
-
