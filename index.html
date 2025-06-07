@@ -23,6 +23,38 @@
       font-size: 115%;
     }
 
+    /* Navbar */
+    .navbar {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-content {
+      text-align: right;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #00ff88;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+
+    nav a i {
+      margin-right: 0.3rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Hero Layout */
     .hero {
       display: flex;
       height: 100vh;
@@ -45,12 +77,15 @@
       overflow: hidden;
     }
 
+    /* Aquí aumenté la opacidad y el rango del degradado para un efecto más marcado */
     .photo-overlay {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.7), transparent);
+      /* Más oscuro al inicio y más claro al final */
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.25));
       z-index: 1;
+      pointer-events: none;
     }
 
     .profile-img {
@@ -60,6 +95,12 @@
       z-index: 0;
       position: relative;
       animation: fadeIn 3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     .name-tag {
@@ -75,33 +116,102 @@
       z-index: 2;
     }
 
+    /* Hero Right Side */
     .hero-right {
       width: 80%;
       height: 100%;
-      padding: 2rem 2rem 2rem 4rem;
       position: relative;
-    }
-
-    .navbar {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
       display: flex;
-      gap: 1.5rem;
-      z-index: 10;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 5%;
+      text-align: right;
     }
 
-    .navbar a {
-      text-decoration: none;
+    .content {
+      z-index: 2;
+      width: 100%;
+    }
+
+    .centered-line {
+      font-size: 2.4rem;
+      margin-bottom: 0.7rem;
+      font-weight: 400;
+      font-family: 'Fira Code', monospace;
+      text-align: center;
+      margin-left: 8%;
+      margin-right: 8%;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+
+    .animated-gradient {
+      background: linear-gradient(to right, #00ff88, #555);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .pixel {
       color: #00ff88;
-      font-size: 1.05rem;
-      transition: 0.3s;
     }
 
-    .navbar a:hover {
-      color: #fff;
+    /* Button */
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #1f1f1f;
+      border: 1px solid #888;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: #eee;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
     }
 
+    button:hover {
+      background-color: #00ff88;
+      color: #000;
+      border-color: #00ff88;
+    }
+
+    /* Grid Background */
+    .background-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center;
+      transform: perspective(800px) rotateX(60deg);
+      z-index: 1;
+      animation: moveGrid 20s linear infinite;
+      opacity: 0.25;
+    }
+
+    @keyframes moveGrid {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 0 1000px;
+      }
+    }
+
+    /* Welcome text */
     .welcome {
       font-size: 1.2rem;
       color: #ccc;
@@ -110,6 +220,7 @@
       margin-right: 2rem;
     }
 
+    /* Content box with gif background */
     .content-box {
       background: url('proyectos/img/fondo.gif') center/cover no-repeat;
       position: relative;
@@ -135,55 +246,6 @@
       text-align: center;
     }
 
-    .centered-line {
-      font-size: 2.4rem;
-      margin-bottom: 0.7rem;
-      font-weight: 400;
-      margin: 0 8%;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .pixel {
-      color: #00ff88;
-    }
-
-    .animated-gradient {
-      background: linear-gradient(to right, #00ff88, #555);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    button {
-      margin-top: 2rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #1f1f1f;
-      border: 1px solid #888;
-      border-radius: 4px;
-      font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
-      color: #eee;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s;
-    }
-
-    button:hover {
-      background-color: #00ff88;
-      color: #000;
-      border-color: #00ff88;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
@@ -238,4 +300,5 @@
   </script>
 </body>
 </html>
+
 
