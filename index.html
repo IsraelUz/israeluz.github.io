@@ -2,65 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Israel Uzcategui Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Israel Uzcategui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <!-- FOTO 20% -->
-    <div class="left-panel">
-      <img src="proyectos/img/portafolio.jpg.jpg" alt="Israel Uzcategui" class="profile-photo" />
-      <div class="name">Israel Uzcategui</div>
+  <div class="hero">
+    <!-- Imagen izquierda -->
+    <div class="hero-left">
+      <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto de Israel">
+      <div class="name-tag">Israel Uzcategui</div>
     </div>
 
-    <!-- TEXTO 80% -->
-    <div class="right-panel">
-      <nav class="navbar">
-        <a href="#"><span class="icon">🏠</span> Home</a>
-        <a href="#"><span class="icon">ℹ️</span> About</a>
-        <a href="#"><span class="icon">📁</span> Projects</a>
-        <a href="#"><span class="icon">✉️</span> Contact</a>
-      </nav>
+    <!-- Contenido derecho -->
+    <div class="hero-right">
+      <div class="navbar">
+        <a href="#"><i class='bx bx-home'></i>Home</a>
+        <a href="#"><i class='bx bx-user'></i>About</a>
+        <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
+        <a href="#"><i class='bx bx-envelope'></i>Contact</a>
+      </div>
 
-      <h1 class="welcome">Welcome to my portfolio</h1>
+      <div class="welcome">WELCOME TO MY PORTFOLIO</div>
 
       <div class="content-box">
-        <img src="proyectos/img/fondo.gif" alt="Background GIF" class="background-gif" />
-        <div class="text-content">
-          <div class="static-text">Hi there, I'm</div>
-          <div class="changing-text" id="typingText">Detail-Oriented Front End Developer and Computer Engineer</div>
+        <div class="content">
+          <div class="intro-text">Hi there, I'm</div>
+          <div class="changing-text" id="typingText">a Front-End Developer</div>
+          <div class="subtext">We make your idea <span class="gradient-bold">A REALITY!</span></div>
         </div>
       </div>
 
-      <button class="btn-readmore" onclick="alert('Page coming soon!')">Read More</button>
+      <button class="btn-readmore">Read More</button>
     </div>
   </div>
 
   <script>
     const roles = [
-      "Detail-Oriented Front End Developer and Computer Engineer",
-      "Front End Developer",
-      "Computer Engineer"
+      "a Front-End Developer",
+      "a Computer Engineer",
+      "Detail-Oriented"
     ];
     let index = 0;
-    const textElement = document.getElementById("typingText");
+    const text = document.getElementById("typingText");
 
-    function typeWriter(textEl, text, i = 0) {
-      if (i <= text.length) {
-        textEl.textContent = text.substring(0, i);
-        setTimeout(() => typeWriter(textEl, text, i + 1), 80);
-      } else {
-        setTimeout(() => {
-          index = (index + 1) % roles.length;
-          typeWriter(textEl, roles[index]);
-        }, 2000);
-      }
-    }
-
-    typeWriter(textElement, roles[index]);
+    setInterval(() => {
+      text.classList.remove("typing");
+      void text.offsetWidth; // reinicia animación
+      text.innerText = roles[index];
+      text.classList.add("typing");
+      index = (index + 1) % roles.length;
+    }, 4000);
   </script>
 </body>
 </html>
