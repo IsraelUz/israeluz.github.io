@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Israel Uzcategui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -32,25 +32,29 @@
       <!-- Welcome -->
       <div class="welcome">Welcome to my portfolio</div>
 
-      <!-- Cuadro con GIF -->
+      <!-- Cuadro con mensaje -->
       <div class="content-box">
-        <div class="content">
-          <div class="changing-text" id="typingText">I'm a Front-End Developer</div>
-          <div class="subtext">We Make Your Idea <span style="font-family: 'Poppins', sans-serif;">A REALITY!</span></div>
+        <div class="gif-container">
+          <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
+          <div class="content">
+            <div class="intro-static">Hi there, I'm</div>
+            <div class="changing-text" id="typingText">a Front-End Developer</div>
+            <div class="subtext">We Make Your Idea <span style="font-family: 'Poppins', sans-serif;">A REALITY!</span></div>
+          </div>
         </div>
         <button class="btn-readmore">Read More</button>
       </div>
     </div>
   </div>
 
-  <!-- Grid de fondo animado -->
+  <!-- Grid fondo animado -->
   <div class="background-grid"></div>
 
   <script>
     const roles = [
-      "I'm a Front-End Developer",
-      "I'm a Computer Engineer",
-      "I'm Detail-Oriented"
+      "a Front-End Developer",
+      "a Computer Engineer",
+      "Detail-Oriented"
     ];
     let index = 0;
     const text = document.getElementById("typingText");
