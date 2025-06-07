@@ -1,17 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Israel Uzcátegui - Web Developer</title>
-  <meta name="description" content="Portfolio of Israel Uzcátegui, a front-end developer building clean and responsive websites." />
 
-  <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
-  
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,18 +17,28 @@
       <a href="#">About</a>
       <a href="#">Projects</a>
       <a href="#">Contact</a>
-      <a href="#">Language ▾</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="content">
-      <h1>Hey, I am <span class="highlight">Front-End Developer</span></h1>
-      <h2>Building your vision<br><span class="pixel">pixel by pixel!</span></h2>
+      <h1>Hey, I am <span class="animated-gradient" id="changing-text">Software Developer</span></h1>
+      <h2>Building your vision <br><span class="pixel">pixel by pixel!</span></h2>
       <button>Read More</button>
     </div>
     <div class="background-grid"></div>
   </section>
+
+  <script>
+    const roles = ["Software Developer", "Engineer Informatic", "Front-End Developer"];
+    let index = 0;
+    const textElement = document.getElementById("changing-text");
+
+    setInterval(() => {
+      index = (index + 1) % roles.length;
+      textElement.textContent = roles[index];
+    }, 2000);
+  </script>
 </body>
 </html>
 
