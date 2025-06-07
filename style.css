@@ -19,24 +19,32 @@ body, html {
   display: inline-block;
 }
 
+/* Encabezado */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  padding: 1.2rem 2rem;
-  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
   position: absolute;
   width: 100%;
   z-index: 10;
-  align-items: center;
+  text-align: center;
 }
 
-.navbar .logo {
-  font-weight: 700;
-  font-size: 1.2rem;
+.top-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .navbar nav a {
-  margin-left: 1.5rem;
   text-decoration: none;
   font-size: 0.95rem;
   display: inline-flex;
@@ -52,6 +60,7 @@ body, html {
   color: #fff;
 }
 
+/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
@@ -63,12 +72,13 @@ body, html {
 
 .content {
   z-index: 2;
+  padding-top: 4rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
+h1.code-font {
+  font-size: 2.2rem;
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -76,7 +86,7 @@ h2.modern-text {
   font-size: 1.6rem;
   font-weight: 400;
   color: #ccc;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Poppins', sans-serif;
 }
 
 .pixel {
@@ -89,6 +99,7 @@ h2.modern-text {
   margin-left: 4px;
 }
 
+/* Botón */
 button {
   margin-top: 2rem;
   padding: 0.8rem 1.5rem;
@@ -110,6 +121,7 @@ button:hover {
   color: #000;
 }
 
+/* Fondo tipo grid */
 .background-grid {
   position: absolute;
   top: 0;
