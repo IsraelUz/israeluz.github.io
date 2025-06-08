@@ -44,11 +44,16 @@
         </div>
       </div>
 
-      <button class="btn-readmore">Read More</button>
+      <button class="btn-readmore" onclick="document.getElementById('more-info').scrollIntoView({ behavior: 'smooth' });">Read More</button>
     </div>
   </div>
 
   <div class="background-grid"></div>
+
+  <!-- Nueva sección -->
+  <div id="more-info" style="height: 100vh; background-color: #111; display: flex; align-items: center; justify-content: center; color: white;">
+    <h2>Thanks for your interest! More content coming soon...</h2>
+  </div>
 
   <script>
     const roles = [
@@ -66,4 +71,5 @@
   </script>
 </body>
 </html>
+
 
