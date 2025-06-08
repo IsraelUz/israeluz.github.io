@@ -7,10 +7,229 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ESTILO CSS INCLUIDO AQUÍ ABAJO 👇👇 */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      font-size: 115%;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #00ff88;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .hero-left {
+      width: 20%;
+      background-color: #111;
+      position: relative;
+    }
+
+    .photo-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+      z-index: 0;
+      position: relative;
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+      z-index: 1;
+    }
+
+    .name-tag {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(10, 10, 10, 0.85);
+      text-align: center;
+      padding: 0.8rem 0;
+      font-weight: 700;
+      color: #00ff88;
+      font-size: 1.3rem;
+      z-index: 2;
+    }
+
+    .hero-right {
+      width: 80%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .welcome {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(to right, #00ff88, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content-box {
+      background-color: #111;
+      width: 600px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px #00ff8877;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gif-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .gif-text-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      opacity: 0.2;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem 1rem;
+    }
+
+    .intro-static {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .changing-text {
+      font-size: 1.4rem;
+      font-family: 'Fira Code', monospace;
+      color: #00ff88;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ff88;
+      animation: blink 0.7s step-end infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .subtext {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .btn-readmore {
+      margin-top: 2rem;
+      padding: 0.9rem 2rem;
+      border: 2px solid #00ff88;
+      background-color: transparent;
+      color: #00ff88;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+      z-index: 10;
+      position: relative;
+    }
+
+    .btn-readmore:hover {
+      background-color: #00ff88;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .background-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center;
+      transform: perspective(800px) rotateX(60deg);
+      z-index: 0;
+      animation: moveGrid 20s linear infinite;
+      opacity: 0.25;
+    }
+
+    @keyframes moveGrid {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 0 1000px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="hero">
-    <!-- Izquierda -->
     <div class="hero-left">
       <div class="photo-wrapper">
         <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
@@ -19,9 +238,7 @@
       </div>
     </div>
 
-    <!-- Derecha -->
     <div class="hero-right">
-      <!-- Navbar -->
       <div class="navbar">
         <a href="#"><i class='bx bx-home'></i>Home</a>
         <a href="#"><i class='bx bx-user'></i>About</a>
@@ -29,10 +246,8 @@
         <a href="#"><i class='bx bx-envelope'></i>Contact</a>
       </div>
 
-      <!-- Welcome -->
       <div class="welcome">Welcome to my portfolio</div>
 
-      <!-- Cuadro con mensaje -->
       <div class="content-box">
         <div class="gif-container">
           <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
@@ -50,7 +265,6 @@
 
   <div class="background-grid"></div>
 
-  <!-- Nueva sección -->
   <div id="more-info" style="height: 100vh; background-color: #111; display: flex; align-items: center; justify-content: center; color: white;">
     <h2>Thanks for your interest! More content coming soon...</h2>
   </div>
@@ -71,5 +285,4 @@
   </script>
 </body>
 </html>
-
 
