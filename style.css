@@ -178,6 +178,10 @@ html, body {
 
 /* Botón */
 
+/* El resto de tu CSS queda igual */
+
+/* Solo la parte del botón */
+
 .btn-readmore {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
@@ -191,7 +195,8 @@ html, body {
   transition: all 0.4s ease;
   text-align: center;
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none; /* para que no se subraye el link */
+  font-size: 1rem; /* mantén el tamaño original, no lo modifiqué */
 }
 
 .btn-readmore:hover {
@@ -199,6 +204,7 @@ html, body {
   color: #000;
   transform: scale(1.05);
 }
+
 
 /* Fondo grid animado */
 .background-grid {
