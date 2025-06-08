@@ -2,29 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Israel Uzcategui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <nav class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-  </nav>
-
-  <section class="hero">
+  <div class="hero">
+    <!-- Izquierda -->
     <div class="hero-left">
       <div class="photo-wrapper">
-        <img src="proyectos/img/profile.jpg" alt="Profile" class="profile-img" />
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
         <div class="photo-overlay"></div>
-        <div class="name-tag">Israel Uzcátegui</div>
+        <div class="name-tag">Israel Uzcategui</div>
       </div>
     </div>
 
+    <!-- Derecha -->
     <div class="hero-right">
-      <h1 class="welcome">Welcome</h1>
+      <!-- Navbar -->
+      <div class="navbar">
+        <a href="#"><i class='bx bx-home'></i>Home</a>
+        <a href="#"><i class='bx bx-user'></i>About</a>
+        <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
+        <a href="#"><i class='bx bx-envelope'></i>Contact</a>
+      </div>
 
+      <!-- Welcome -->
+      <div class="welcome">Welcome to my portfolio</div>
+
+      <!-- Cuadro con mensaje -->
       <div class="content-box">
         <div class="gif-container">
           <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
@@ -34,15 +42,33 @@
             <div class="subtext">We make your idea a reality!</div>
           </div>
         </div>
-
-        <!-- Botón activable -->
-        <a href="pagina-en-construccion.html" class="btn-readmore">Read More</a>
       </div>
+
+      <button class="btn-readmore" onclick="document.getElementById('more-info').scrollIntoView({ behavior: 'smooth' });">Read More</button>
     </div>
-  </section>
+  </div>
 
   <div class="background-grid"></div>
 
+  <!-- Sección adicional al hacer scroll -->
+  <div id="more-info" style="height: 100vh; background-color: #111; display: flex; align-items: center; justify-content: center; color: white;">
+    <h2>Thanks for your interest! More content coming soon...</h2>
+  </div>
+
+  <script>
+    const roles = [
+      "a Front-End Developer",
+      "a Computer Engineer",
+      "Detail-Oriented"
+    ];
+    let index = 0;
+    const text = document.getElementById("typingText");
+
+    setInterval(() => {
+      index = (index + 1) % roles.length;
+      text.innerText = roles[index];
+    }, 4000);
+  </script>
 </body>
 </html>
 
