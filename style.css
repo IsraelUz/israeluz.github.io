@@ -1,4 +1,3 @@
-/* === RESET === */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap');
 
 * {
@@ -12,11 +11,11 @@ html, body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
-  font-size: 115%;
   overflow: auto;
+  font-size: 115%;
 }
 
-/* === NAVBAR === */
+/* Navbar */
 .navbar {
   position: absolute;
   top: 1rem;
@@ -40,14 +39,14 @@ html, body {
   color: #fff;
 }
 
-/* === HERO === */
+/* Hero */
 .hero {
   display: flex;
   height: 100vh;
   width: 100%;
 }
 
-/* === LEFT SIDE === */
+/* Izquierda */
 .hero-left {
   width: 20%;
   background-color: #111;
@@ -66,8 +65,8 @@ html, body {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.5);
-  position: relative;
   z-index: 0;
+  position: relative;
 }
 
 .photo-overlay {
@@ -90,7 +89,7 @@ html, body {
   z-index: 2;
 }
 
-/* === RIGHT SIDE === */
+/* Derecha */
 .hero-right {
   width: 80%;
   position: relative;
@@ -101,6 +100,7 @@ html, body {
   padding: 2rem;
 }
 
+/* Welcome */
 .welcome {
   font-size: 2.7rem;
   font-weight: 700;
@@ -110,6 +110,7 @@ html, body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Cuadro de contenido */
 .content-box {
   background-color: #111;
   width: 600px;
@@ -145,12 +146,14 @@ html, body {
   padding: 2.5rem 1rem;
 }
 
+/* Texto fijo */
 .intro-static {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: white;
 }
 
+/* Texto dinámico */
 .changing-text {
   font-size: 1.4rem;
   font-family: 'Fira Code', monospace;
@@ -166,13 +169,14 @@ html, body {
   50% { border-color: transparent; }
 }
 
+/* Subtexto */
 .subtext {
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
 }
 
-/* Botón Read More activable con hover */
+/* Botón */
 .btn-readmore {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
@@ -184,18 +188,15 @@ html, body {
   border-radius: 8px;
   text-transform: uppercase;
   transition: all 0.4s ease;
-  display: inline-block;
-  text-decoration: none; /* sin subrayado */
-  font-size: 1rem;
 }
 
 .btn-readmore:hover {
-  background-color: #00ff88;
+  background: linear-gradient(to right, #00ff88, #00cc66);
   color: #000;
-  transform: scale(1.05);
+  border-color: #00cc66;
 }
 
-/* Background grid animado */
+/* Fondo grid animado */
 .background-grid {
   position: absolute;
   top: 0;
@@ -222,7 +223,3 @@ html, body {
   }
 }
 
-  to {
-    background-position: 0 1000px;
-  }
-}
