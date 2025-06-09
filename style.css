@@ -11,7 +11,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
-  overflow: auto;
+  overflow: hidden; /* QUITAMOS SCROLL */
   font-size: 115%;
 }
 
@@ -108,8 +108,6 @@ html, body {
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 2;
-  position: relative;
 }
 
 /* Cuadro de contenido */
@@ -121,13 +119,8 @@ html, body {
   box-shadow: 0 0 20px #00ff8877;
   position: relative;
   z-index: 2;
-  overflow: hidden;
-  /* Bordes que se desvanecen */
-  box-shadow: 0 0 30px 5px rgba(0, 255, 136, 0.6);
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* Contenedor gif solo en contenido */
 .gif-container {
   position: relative;
   display: inline-block;
@@ -183,7 +176,7 @@ html, body {
   color: #fff;
 }
 
-/* Botón */
+/* BOTÓN activable */
 .btn-readmore {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
@@ -195,6 +188,8 @@ html, body {
   border-radius: 8px;
   text-transform: uppercase;
   transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-readmore:hover {
