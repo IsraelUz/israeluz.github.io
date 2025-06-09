@@ -52,6 +52,7 @@ html, body {
   width: 100%;
 }
 
+/* LADO IZQUIERDO */
 .hero-left {
   width: 20%;
   background-color: #111;
@@ -90,6 +91,7 @@ html, body {
   font-size: 1.3rem;
 }
 
+/* LADO DERECHO */
 .hero-right {
   width: 80%;
   position: relative;
@@ -105,7 +107,6 @@ html, body {
   justify-content: center;
   height: 100%;
   text-align: center;
-  position: relative;
 }
 
 .welcome {
@@ -201,6 +202,7 @@ html, body {
   border-color: #00cc66;
 }
 
+/* Fondo animado con rejilla */
 .background-grid {
   position: absolute;
   top: 0;
@@ -223,5 +225,4 @@ html, body {
   from { background-position: 0 0; }
   to { background-position: 0 1000px; }
 }
-
 
