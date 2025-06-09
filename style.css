@@ -212,20 +212,20 @@ html, body {
   background-image:
     repeating-linear-gradient(
       45deg,
-      rgba(0, 255, 136, 0.05),
-      rgba(0, 255, 136, 0.05) 1px,
+      rgba(0, 255, 136, 0.06), /* 0.06 en vez de 0.05 */
+      rgba(0, 255, 136, 0.06) 1px,
       transparent 1px,
       transparent 40px
     ),
     repeating-linear-gradient(
       -45deg,
-      rgba(0, 255, 136, 0.05),
-      rgba(0, 255, 136, 0.05) 1px,
+      rgba(0, 255, 136, 0.06),
+      rgba(0, 255, 136, 0.06) 1px,
       transparent 1px,
       transparent 40px
     );
   background-size: 80px 80px;
-  opacity: 0.3;
+  opacity: 0.33; /* un poco más visible también */
   animation: moveDiagonal 30s linear infinite;
   pointer-events: none;
   z-index: 5;
