@@ -202,7 +202,7 @@ html, body {
   border-color: #00cc66;
 }
 
-/* Fondo tipo rejilla diagonal más visible y verde neón */
+/* Fondo tipo líneas diagonales animadas */
 .background-grid {
   position: absolute;
   top: 0;
@@ -212,29 +212,32 @@ html, body {
   background-image:
     repeating-linear-gradient(
       45deg,
-      rgba(0, 255, 136, 0.15), /* verde neón más brillante */
-      rgba(0, 255, 136, 0.15) 1.5px,
-      transparent 1.5px,
+      rgba(0, 255, 136, 0.05),
+      rgba(0, 255, 136, 0.05) 1px,
+      transparent 1px,
       transparent 40px
     ),
     repeating-linear-gradient(
       -45deg,
-      rgba(0, 255, 136, 0.15),
-      rgba(0, 255, 136, 0.15) 1.5px,
-      transparent 1.5px,
+      rgba(0, 255, 136, 0.05),
+      rgba(0, 255, 136, 0.05) 1px,
+      transparent 1px,
       transparent 40px
     );
   background-size: 80px 80px;
-  opacity: 0.45; /* un poco más visible */
+  opacity: 0.3;
   animation: moveDiagonal 30s linear infinite;
   pointer-events: none;
   z-index: 5;
   transform: perspective(800px) rotateX(60deg);
 }
 
-/* Animación de movimiento de las líneas diagonales */
 @keyframes moveDiagonal {
-  from { background-position: 0 0; }
-  to { background-position: 0 1000px; }
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 80px 80px, -80px -80px;
+  }
 }
 
