@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Israel Uzcategui</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Israel Uzcátegui - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <div class="hero">
-    <!-- Izquierda -->
+    <!-- Parte izquierda con imagen -->
     <div class="hero-left">
       <div class="photo-wrapper">
-        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto" />
+        <img src="proyectos/img/foto.jpg" alt="Profile" class="profile-img" />
         <div class="photo-overlay"></div>
-        <div class="name-tag">Israel Uzcategui</div>
+        <div class="name-tag">Israel Uzcátegui</div>
       </div>
     </div>
 
-    <!-- Derecha -->
+    <!-- Parte derecha -->
     <div class="hero-right">
       <!-- Navbar -->
       <div class="navbar">
@@ -29,43 +28,28 @@
         <a href="#"><i class='bx bx-envelope'></i>Contact</a>
       </div>
 
-      <!-- Welcome -->
-      <div class="welcome">Welcome to my portfolio</div>
+      <!-- Contenido centrado verticalmente -->
+      <div class="hero-content">
+        <div class="welcome">Welcome to my portfolio</div>
 
-      <!-- Cuadro con GIF y texto -->
-      <div class="content-box">
-        <div class="gif-container">
-          <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
-          <div class="content">
-            <div class="intro-static">Hi there, I'm</div>
-            <div class="changing-text" id="typingText">a Front-End Developer</div>
-            <div class="subtext">We make your idea a reality!</div>
+        <div class="content-box">
+          <div class="gif-container">
+            <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg" />
+            <div class="content">
+              <div class="intro-static">Hi there, I'm</div>
+              <div class="changing-text" id="typingText">a Front-End Developer</div>
+              <div class="subtext">We make your idea a reality!</div>
+            </div>
           </div>
         </div>
+
+        <a class="btn-readmore" href="under-construction.html">Read More</a>
       </div>
-
-      <!-- Botón activable -->
-      <a class="btn-readmore" href="under-construction.html">Read More</a>
     </div>
+
+    <!-- Fondo estilo grilla animada -->
+    <div class="background-grid"></div>
   </div>
-
-  <div class="background-grid"></div>
-
-  <!-- Script para texto dinámico -->
-  <script>
-    const roles = [
-      "a Front-End Developer",
-      "a Computer Engineer",
-      "Detail-Oriented"
-    ];
-    let index = 0;
-    const text = document.getElementById("typingText");
-
-    setInterval(() => {
-      index = (index + 1) % roles.length;
-      text.innerText = roles[index];
-    }, 4000);
-  </script>
 </body>
 </html>
 
