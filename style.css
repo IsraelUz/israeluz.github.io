@@ -104,7 +104,7 @@ html, body {
 .welcome {
   font-size: 2.7rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -155,8 +155,8 @@ html, body {
 
 /* Texto dinámico */
 .changing-text {
-  font-size: 1.4rem;
-  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  font-family: 'Press Start 2P', monospace;
   color: #00ff88;
   white-space: nowrap;
   overflow: hidden;
