@@ -176,7 +176,6 @@ html, body {
   color: #fff;
 }
 
-/* BOTÓN activable */
 .btn-readmore {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
@@ -190,7 +189,10 @@ html, body {
   transition: all 0.4s ease;
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  z-index: 10; /* <- AUMENTAMOS Z-INDEX */
 }
+
 
 .btn-readmore:hover {
   background: linear-gradient(to right, #00ff88, #00cc66);
@@ -214,7 +216,9 @@ html, body {
   z-index: 0;
   animation: moveGrid 20s linear infinite;
   opacity: 0.25;
+  pointer-events: none; 
 }
+
 
 @keyframes moveGrid {
   from {
