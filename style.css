@@ -178,7 +178,8 @@ html, body {
 
 .btn-readmore {
   margin-top: 1.5rem;
-  padding: 0.8rem 2rem;
+  padding: 0.5rem 1.2rem; /* reducido */
+  font-size: 0.8rem;      /* tamaño de texto más pequeño */
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
@@ -190,8 +191,9 @@ html, body {
   text-decoration: none;
   display: inline-block;
   position: relative;
-  z-index: 10; /* <- AUMENTAMOS Z-INDEX */
+  z-index: 10;
 }
+
 
 
 .btn-readmore:hover {
