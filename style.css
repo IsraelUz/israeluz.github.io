@@ -52,16 +52,11 @@ html, body {
   width: 100%;
 }
 
-/* LADO IZQUIERDO */
+/* Lado izquierdo */
 .hero-left {
   width: 20%;
   background-color: #111;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
 }
 
 .photo-wrapper {
@@ -75,7 +70,6 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   filter: brightness(0.5);
 }
 
@@ -97,7 +91,7 @@ html, body {
   font-size: 1.3rem;
 }
 
-/* LADO DERECHO */
+/* Lado derecho */
 .hero-right {
   width: 80%;
   position: relative;
@@ -106,25 +100,25 @@ html, body {
   justify-content: center;
 }
 
-.hero-content {
+/* Contenido centrado */
+.centered-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  text-align: center;
 }
 
+/* Welcome */
 .welcome {
   font-size: 2.7rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-weight: 700;
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: -2rem;
 }
 
+/* Cuadro de contenido */
 .content-box {
   background-color: #111;
   width: 600px;
@@ -133,7 +127,7 @@ html, body {
   box-shadow: 0 0 20px #00ff8877;
   z-index: 10;
   overflow: hidden;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .gif-container {
@@ -208,7 +202,7 @@ html, body {
   border-color: #00cc66;
 }
 
-/* Fondo animado con rejilla */
+/* Fondo tipo rejilla animada */
 .background-grid {
   position: absolute;
   top: 0;
