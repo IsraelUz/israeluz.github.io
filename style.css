@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap');
 
 * {
   margin: 0;
@@ -17,6 +17,11 @@ html, body {
   font-size: 115%;
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 /* Navbar */
 .navbar {
@@ -25,7 +30,7 @@ html, body {
   right: 2rem;
   display: flex;
   gap: 1.5rem;
-  z-index: 10;
+  z-index: 20;
 }
 
 .navbar a {
@@ -49,7 +54,7 @@ html, body {
   width: 100%;
 }
 
-/* Izquierda */
+/* Left */
 .hero-left {
   width: 20%;
   background-color: #111;
@@ -68,67 +73,63 @@ html, body {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.5);
-  z-index: 0;
-  position: relative;
 }
 
 .photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
-  z-index: 1;
+  background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4), transparent);
 }
 
 .name-tag {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.85);
+  background-color: rgba(10,10,10,0.85);
   text-align: center;
   padding: 0.8rem 0;
   font-weight: 700;
   color: #00ff88;
   font-size: 1.3rem;
-  z-index: 2;
 }
 
-/* Derecha */
+/* Right */
 .hero-right {
   width: 80%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  justify-content: top;
+  padding-top: 1rem;
 }
 
 /* Welcome */
 .welcome {
   font-size: 2.7rem;
+  margin-bottom: 1rem;
   font-weight: 700;
-  margin-bottom: 4rem;
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Cuadro de contenido */
+/* Content box */
 .content-box {
   background-color: #111;
   width: 600px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 20px #00ff8877;
-  position: relative;
-  z-index: 2;
+  z-index: 10;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
+/* GIF container */
 .gif-container {
   position: relative;
-  display: inline-block;
   width: 100%;
-  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -140,23 +141,20 @@ html, body {
   opacity: 0.2;
   top: 0;
   left: 0;
-  z-index: 0;
 }
 
 .content {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   padding: 2.5rem 1rem;
 }
 
-/* Texto fijo */
 .intro-static {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: white;
+  color: #fff;
 }
 
-/* Texto dinámico */
 .changing-text {
   font-size: 1rem;
   font-family: 'Press Start 2P', monospace;
@@ -172,17 +170,17 @@ html, body {
   50% { border-color: transparent; }
 }
 
-/* Subtexto */
 .subtext {
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
 }
 
+/* Read More button */
 .btn-readmore {
-  margin-top: 1.5rem;
-  padding: 0.5rem 1.2rem; /* reducido */
-  font-size: 0.8rem;      /* tamaño de texto más pequeño */
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
@@ -192,12 +190,9 @@ html, body {
   text-transform: uppercase;
   transition: all 0.4s ease;
   text-decoration: none;
-  display: inline-block;
+  z-index: 15;
   position: relative;
-  z-index: 10;
 }
-
-
 
 .btn-readmore:hover {
   background: linear-gradient(to right, #00ff88, #00cc66);
@@ -205,37 +200,27 @@ html, body {
   border-color: #00cc66;
 }
 
-/* Fondo grid animado */
+/* Animated grid overlay */
 .background-grid {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(0,255,136,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: center;
   transform: perspective(800px) rotateX(60deg);
-  z-index: 0;
-  animation: moveGrid 20s linear infinite;
-  opacity: 0.25;
-  pointer-events: none; 
+  opacity: 0.3;
+  animation: moveGrid 25s linear infinite;
+  pointer-events: none;
+  z-index: 5;
 }
-
 
 @keyframes moveGrid {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 1000px;
-  }
-  
-  @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
 }
-}
+
