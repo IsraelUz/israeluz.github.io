@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Form | Project 2</title>
+  <title>Contact Form | Israel Uzcategui</title>
   <link rel="stylesheet" href="./style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet">
   <script>
@@ -34,35 +34,38 @@
   </script>
 </head>
 <body>
+  <a href="../../index.html" class="home-button">← Home</a>
+
   <div class="form-container">
-    <a href="../../index.html" class="home-button">← Home</a>
+    <div class="content-box">
+      <div class="form-content">
+        <h1>Contact Me</h1>
+        <p>Do you have a project in mind? Let’s talk!</p>
 
-    <header>
-      <h1>Contact Me</h1>
-      <p>Do you have a project in mind? Let’s talk!</p>
-    </header>
+        <form action="https://formspree.io/f/xqabkklv" method="POST" onsubmit="handleSubmit(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
 
-    <form action="https://formspree.io/f/xqabkklv" method="POST" onsubmit="handleSubmit(event)">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required />
 
-      <label for="subject">Subject:</label>
-      <input type="text" id="subject" name="subject" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit" class="btn-send">Send</button>
+        </form>
 
-      <button type="submit" class="btn-send">Send</button>
-    </form>
-
-    <footer>
-      <p>© 2025 Israel Uzcátegui</p>
-    </footer>
+        <footer>
+          <p>© 2025 Israel Uzcátegui</p>
+        </footer>
+      </div>
+    </div>
   </div>
 </body>
 </html>
+
 
 
