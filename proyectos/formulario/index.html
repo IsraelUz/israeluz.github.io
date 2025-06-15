@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Form | Project 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
   <script>
     function handleSubmit(event) {
@@ -21,7 +22,7 @@
       .then(response => {
         if (response.ok) {
           alert("Your request is being processed. You will receive a response shortly.");
-          window.location.href = "../../index.html"; // Redirige a tu landing page
+          window.location.href = "../../index.html";
         } else {
           alert("Something went wrong. Please try again.");
         }
@@ -33,36 +34,41 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1>Contact Me</h1>
-    <p>Do you have a project in mind? Let’s talk!</p>
-  </header>
+  <div class="background-overlay">
+    <header>
+      <h1>Contact Me</h1>
+      <p>Do you have a project in mind? Let’s talk!</p>
+    </header>
 
-  <section>
+    <nav class="navbar">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="#" class="nav-link active">Contact</a>
+    </nav>
 
-    <form action="https://formspree.io/f/xqabkklv" method="POST" onsubmit="handleSubmit(event)">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required />
+    <section class="form-section">
+      <form action="https://formspree.io/f/xqabkklv" method="POST" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-  <label for="subject">Subject:</label>
-  <input type="text" id="subject" name="subject" required />
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required />
 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-  <button type="submit">Send</button>
-</form>
+        <button type="submit">Send</button>
+      </form>
 
+      <a href="../../index.html" class="btn-back">← Back to Home</a>
+    </section>
 
-    <br />
-    <a href="../../index.html" class="btn-back">← Back to Home</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Israel Uzcátegui</p>
-  </footer>
+    <footer>
+      <p>© 2025 Israel Uzcátegui</p>
+    </footer>
+  </div>
 </body>
 </html>
+
