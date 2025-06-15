@@ -52,7 +52,6 @@ html, body {
   width: 100%;
 }
 
-/* Lado izquierdo */
 .hero-left {
   width: 20%;
   background-color: #111;
@@ -91,7 +90,6 @@ html, body {
   font-size: 1.3rem;
 }
 
-/* Lado derecho */
 .hero-right {
   width: 80%;
   position: relative;
@@ -100,7 +98,6 @@ html, body {
   justify-content: center;
 }
 
-/* Contenido centrado */
 .centered-content {
   display: flex;
   flex-direction: column;
@@ -108,7 +105,6 @@ html, body {
   justify-content: center;
 }
 
-/* Welcome */
 .welcome {
   font-size: 2.7rem;
   margin-bottom: 1rem;
@@ -118,7 +114,6 @@ html, body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Cuadro de contenido */
 .content-box {
   background-color: #111;
   width: 600px;
@@ -165,18 +160,19 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #00ff88;
-  width: 0;
-  animation: typing 2s steps(30, end), blink-caret 0.7s step-end infinite;
+  width: 300px; /* Fijo */
+  display: inline-block;
+  animation: blink-caret 0.7s step-end infinite;
   margin-bottom: 1rem;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
 }
 
 @keyframes blink-caret {
   50% { border-color: transparent; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 .subtext {
@@ -208,7 +204,6 @@ html, body {
   border-color: #00cc66;
 }
 
-/* Fondo tipo líneas diagonales animadas */
 .background-grid {
   position: absolute;
   top: 0;
