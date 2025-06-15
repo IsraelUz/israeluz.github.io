@@ -55,6 +55,7 @@
 
   <div class="background-grid"></div>
 
+  <!-- Script -->
   <script>
     const roles = [
       "a Front-End Developer",
@@ -63,11 +64,21 @@
     ];
     let index = 0;
     const text = document.getElementById("typingText");
-    setInterval(() => {
-      text.innerText = roles[index = (index + 1) % roles.length];
-    }, 4000);
+
+    function updateText() {
+      text.style.animation = "none";
+      void text.offsetWidth; // Forzar reinicio de animación
+      text.innerText = roles[index];
+      text.style.width = "0";
+      text.style.animation = "typing 2s steps(30, end), blink-caret 0.7s step-end infinite";
+      index = (index + 1) % roles.length;
+    }
+
+    updateText(); // Mostrar el primero
+    setInterval(updateText, 4000);
   </script>
 </body>
 </html>
+
 
 
