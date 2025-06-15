@@ -160,7 +160,7 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #00ff88;
-  width: 300px; /* Fijo */
+  width: 380px; /* Fijo */
   display: inline-block;
   animation: blink-caret 0.7s step-end infinite;
   margin-bottom: 1rem;
