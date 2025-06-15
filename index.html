@@ -56,27 +56,39 @@
   <div class="background-grid"></div>
 
   <!-- Script -->
-  <script>
-    const roles = [
-      "a Front-End Developer",
-      "a Computer Engineer",
-      "Detail-Oriented"
-    ];
-    let index = 0;
-    const text = document.getElementById("typingText");
+<script>
+  const roles = [
+    "a Front-End Developer",
+    "a Computer Engineer",
+    "Detail-Oriented"
+  ];
 
-    function updateText() {
-      text.style.animation = "none";
-      void text.offsetWidth; // Forzar reinicio de animación
-      text.innerText = roles[index];
-      text.style.width = "0";
-      text.style.animation = "typing 2s steps(30, end), blink-caret 0.7s step-end infinite";
-      index = (index + 1) % roles.length;
-    }
+  let index = 0;
+  const text = document.getElementById("typingText");
 
-    updateText(); // Mostrar el primero
-    setInterval(updateText, 4000);
-  </script>
+  function typeEffect(content, callback) {
+    let i = 0;
+    text.innerText = "";
+    const interval = setInterval(() => {
+      text.innerText += content[i];
+      i++;
+      if (i === content.length) {
+        clearInterval(interval);
+        if (callback) callback();
+      }
+    }, 50); // velocidad de escritura
+  }
+
+  function changeText() {
+    const current = roles[index];
+    typeEffect(current);
+    index = (index + 1) % roles.length;
+  }
+
+  changeText();
+  setInterval(changeText, 4000);
+</script>
+
 </body>
 </html>
 
