@@ -188,7 +188,7 @@ html, body {
   margin-top: 2rem; /* antes era 1rem */
   padding: 0.8rem 2rem; /* más alto y ancho */
   font-size: 1.20rem; /* más grande */
-  font-family: 'Rubik Mono One', monospace; /* nueva fuente */
+  font-family: 'Poppins', sans-serif;
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
