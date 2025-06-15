@@ -8,63 +8,86 @@ body {
   color: white;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  box-sizing: border-box;
-}
-
 .home-button {
-  align-self: flex-start;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
   color: #00ff99;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
+  z-index: 10;
 }
 
-header h1 {
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.content-box {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(135deg, #00ff99, #003300);
+  border-radius: 20px;
+  animation: borderRotate 4s linear infinite;
+}
+
+.form-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 90vw;
+  max-width: 500px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@keyframes borderRotate {
+  0% {
+    background: linear-gradient(135deg, #00ff99, #003300);
+  }
+  50% {
+    background: linear-gradient(135deg, #003300, #00ff99);
+  }
+  100% {
+    background: linear-gradient(135deg, #00ff99, #003300);
+  }
+}
+
+h1 {
   font-family: 'Fira Code', monospace;
   color: #00ff99;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 2em;
 }
 
-header p {
+p {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 form {
-  width: 100%;
-  max-width: 500px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-  display: block;
-  margin: 15px 0 5px;
+  text-align: left;
+  margin: 10px 0 5px;
   font-weight: 600;
 }
 
 input, textarea {
-  width: 100%;
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
   background-color: #111;
   color: white;
+  margin-bottom: 10px;
 }
 
 .btn-send {
@@ -77,7 +100,7 @@ input, textarea {
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: transform 0.2s ease;
-  width: 100%;
+  margin-top: 10px;
 }
 
 .btn-send:hover {
@@ -89,3 +112,4 @@ footer {
   font-size: 0.9em;
   color: #ccc;
 }
+
