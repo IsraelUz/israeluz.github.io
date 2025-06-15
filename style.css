@@ -165,11 +165,17 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #00ff88;
-  animation: blink 0.7s step-end infinite;
+  width: 0;
+  animation: typing 2s steps(30, end), blink-caret 0.7s step-end infinite;
   margin-bottom: 1rem;
 }
 
-@keyframes blink {
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
   50% { border-color: transparent; }
 }
 
