@@ -91,22 +91,23 @@ input, textarea {
 .btn-send {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 16px; /* ajusta este valor si quieres botones más grandes o más pequeños */
-  background-color: #2e86de;
+  font-size: 16px;
+  background: linear-gradient(90deg, #00c853, #b2ff59); /* verde degradado */
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-decoration: none; /* para el enlace <a> */
-  display: inline-block; /* para que el <a> se comporte como botón */
+  text-decoration: none;
+  display: inline-block;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn-send:hover {
-  background-color: #1b66c9;
+  background: linear-gradient(90deg, #00b341, #a0d530); /* verde oscuro en hover */
 }
+
 
 
 footer {
