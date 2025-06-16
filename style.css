@@ -85,12 +85,11 @@ html, body {
   background-color: rgba(10,10,10,0.85);
   text-align: center;
   padding: 0.8rem 0;
-  font-family: 'Poppins', sans-serif; /* NUEVA FUENTE */
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #00ff88;
   font-size: 1.3rem;
 }
-
 
 .hero-right {
   width: 80%;
@@ -109,7 +108,7 @@ html, body {
 
 .welcome {
   font-size: 2.7rem;
-  margin-bottom: 2.5rem; /* antes tenía 1rem */
+  margin-bottom: 2.5rem;
   font-family: 'Rubik Mono One', monospace;
   background: linear-gradient(to right, #00ff88, #888);
   -webkit-background-clip: text;
@@ -117,7 +116,6 @@ html, body {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
 
 .content-box {
   background-color: #111;
@@ -165,7 +163,7 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #00ff88;
-  width: 380px; /* Fijo */
+  width: 380px;
   display: inline-block;
   animation: blink-caret 0.7s step-end infinite;
   margin-bottom: 1rem;
@@ -187,9 +185,9 @@ html, body {
 }
 
 .btn-readmore {
-  margin-top: 2rem; /* antes era 1rem */
-  padding: 0.8rem 2rem; /* más alto y ancho */
-  font-size: 1.20rem; /* más grande */
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.20rem;
   font-family: 'Poppins', sans-serif;
   border: 2px solid #00ff88;
   background: transparent;
@@ -209,7 +207,6 @@ html, body {
   color: #000;
   border-color: #00cc66;
 }
-
 
 .background-grid {
   position: absolute;
@@ -248,4 +245,62 @@ html, body {
     background-position: 80px 80px, -80px -80px;
   }
 }
+
+/* RESPONSIVE ADAPTATION */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 100%;
+    overflow: auto;
+  }
+
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .navbar {
+    position: static;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  .content-box {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .changing-text {
+    width: 100%;
+    font-size: 0.85rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .welcome {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .btn-readmore {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .photo-wrapper {
+    height: 300px;
+  }
+
+  .profile-img {
+    height: 100%;
+    object-position: center;
+  }
+}
+
 
