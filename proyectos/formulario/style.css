@@ -92,7 +92,7 @@ input, textarea {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 16px;
-  background: linear-gradient(90deg, #00c853, #b2ff59); /* verde degradado */
+  background: linear-gradient(90deg, #2ecc71, #27ae60); /* verde exacto landing */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -105,8 +105,9 @@ input, textarea {
 }
 
 .btn-send:hover {
-  background: linear-gradient(90deg, #00b341, #a0d530); /* verde oscuro en hover */
+  background: linear-gradient(90deg, #27ae60, #1e8449); /* verde hover landing */
 }
+
 
 
 
