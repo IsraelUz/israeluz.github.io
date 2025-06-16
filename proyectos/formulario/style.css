@@ -89,27 +89,28 @@ input, textarea {
 }
 
 .btn-send {
+  margin-top: 2rem; /* antes era 1rem */
+  padding: 0.8rem 2rem; /* más alto y ancho */
+  font-size: 1.20rem; /* más grande */
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  background: linear-gradient(90deg, #2ecc71, #27ae60); /* verde exacto landing */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid #00ff88;
+  background: transparent;
+  color: #00ff88;
+  font-weight: bold;
   cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
   text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  transition: background 0.3s ease;
+  z-index: 15;
+  position: relative;
 }
 
 .btn-send:hover {
-  background: linear-gradient(90deg, #27ae60, #1e8449); /* verde hover landing */
+   background: linear-gradient(to right, #00ff88, #00cc66);
+  color: #000;
+  border-color: #00cc66;
 }
-
-
-
 
 footer {
   text-align: center;
