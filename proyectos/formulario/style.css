@@ -89,22 +89,25 @@ input, textarea {
 }
 
 .btn-send {
-  background-color: #00ff99;
-  color: black;
-  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px; /* ajusta este valor si quieres botones más grandes o más pequeños */
+  background-color: #2e86de;
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-family: 'Fira Code', monospace;
+  border-radius: 4px;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.2s ease;
+  text-decoration: none; /* para el enlace <a> */
+  display: inline-block; /* para que el <a> se comporte como botón */
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .btn-send:hover {
-  transform: scale(1.05);
+  background-color: #1b66c9;
 }
+
 
 footer {
   text-align: center;
