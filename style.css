@@ -9,9 +9,9 @@
 html, body {
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #000000, #0f0f0f, #001a1a, #000000);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+  background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+              url('proyectos/img/fondo.gif') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   overflow: hidden;
   font-size: 115%;
