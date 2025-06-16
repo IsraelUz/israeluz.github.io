@@ -1,74 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Israel Uzcategui</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="navbar">
-    <a href="../../index.html">Home</a>
-    <a href="./index.html">About</a>
-    <a href="../Contact/index.html">Contact</a>
-  </div>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap');
 
-  <div class="container">
-    <h1>Israel Uzcategui</h1>
-    <p class="contact">Houston, TX 77493 | 347 510 7678 | israeluzcateguim6@gmail.com | 
-      <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
-    </p>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <h2>Software Developer | Web & Database Specialist</h2>
-    <p>Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development, database management, and process automation. Known for a structured and proactive approach to problem-solving. Currently completing Harvard’s CS50 course to strengthen programming foundations, data structures, and algorithms. Skilled in HTML, JavaScript, MySQL, Git, and Python. Actively seeking to join a technology-driven team where I can apply my knowledge, continue learning, and contribute to impactful real-world projects. Fully authorized to work in the U.S. with no sponsorship required.</p>
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #111;  /* Fondo negro o cambia por el que uses */
+  color: #fff;
+  font-size: 115%;
+  overflow-y: auto;
+}
 
-    <h3>Skills</h3>
-    <ul>
-      <li>Web Development: HTML, CSS, JavaScript</li>
-      <li>Programming Languages: Python, C++, PHP</li>
-      <li>Relational Databases: MySQL</li>
-      <li>Data Structures, Algorithms, Programming Logic</li>
-      <li>Version Control: Git & GitHub</li>
-      <li>UI Design, Responsive Layouts, Prototyping</li>
-    </ul>
+/* Navbar igual que en landing */
+.navbar {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 20;
+}
 
-    <h3>Professional Experience</h3>
+.navbar a {
+  text-decoration: none;
+  color: #00ff88;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s;
+}
 
-    <strong>Freelance Web Developer | Houston, TX | 2023 – Present</strong>
-    <ul>
-      <li>Developed custom web solutions for small businesses, from UI design to functional implementation.</li>
-      <li>Built basic backend logic including contact forms and simple validations.</li>
-      <li>Conducted performance optimization, testing, and maintenance.</li>
-    </ul>
+.navbar a:hover {
+  color: #fff;
+}
 
-    <strong>AAA Contractor | Ridgewood, NY | 2018 – 2023</strong>
-    <ul>
-      <li>Delivered exceptional service while managing school communications and administrative operations.</li>
-      <li>Supported enrollment, scheduling, and classroom logistics to ensure educational continuity.</li>
-    </ul>
+/* Estilos para el contenedor principal de About */
+.container {
+  max-width: 800px;
+  margin: 6rem auto 2rem auto; /* top margin para que no tape el navbar */
+  padding: 1rem 2rem;
+  background-color: #222;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff8877;
+}
 
-    <strong>Movistar | Merida, Venezuela | 2014 – 2018</strong>
-    <ul>
-      <li>Provided technical assistance and customer service.</li>
-      <li>Maintained transactional accuracy and environment organization.</li>
-    </ul>
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #00ff88;
+}
 
-    <h3>Education & Certifications</h3>
-    <ul>
-      <li>Bachelor’s in Computer Engineering | UPTMKR, Mérida, Venezuela | 2017</li>
-      <li>CS50 – Harvard (In Progress - 2025)</li>
-      <li>C++ (2024), HTML/JS (2022), Python (2021), PHP (2018)</li>
-    </ul>
+p.contact {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
 
-    <h3>IT Skills & Languages</h3>
-    <ul>
-      <li>Visual Studio Code, Command Line, IT Troubleshooting, Office/Google Workspace, Docker (Basic)</li>
-      <li>English (Fluent), Spanish (Native)</li>
-    </ul>
+ul {
+  margin-bottom: 1.5rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #ddd;
+}
 
-    <footer>© 2025 Israel Uzcátegui</footer>
-  </div>
-</body>
-</html>
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    position: static;
+    justify-content: center;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  .container {
+    margin: 2rem 1rem;
+    padding: 1rem;
+  }
+}
 
