@@ -1,8 +1,15 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-              url('../img/fondo.gif') no-repeat center center fixed;
+    url('proyectos/img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: white;
   min-height: 100vh;
@@ -10,6 +17,7 @@ body {
   padding: 0 1rem;
 }
 
+/* Navbar */
 .navbar {
   position: absolute;
   top: 1rem;
@@ -33,6 +41,7 @@ body {
   color: #ffffff;
 }
 
+/* Container */
 .about-container {
   max-width: 1200px;
   margin: 7rem auto 2rem;
@@ -46,11 +55,12 @@ body {
 }
 
 .intro-text h1 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   color: #00ff88;
   margin-bottom: 1rem;
 }
 
+/* Section Titles */
 .mindmap-section {
   margin-bottom: 80px;
   text-align: center;
@@ -59,46 +69,139 @@ body {
 .mindmap-section h2 {
   font-size: 1.8rem;
   color: #00ff88;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* Mindmap container */
 .mindmap {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 80px;
 }
 
+/* Center bubble */
 .center-bubble {
   background-color: #00ff88;
   color: #000;
-  padding: 15px 25px;
+  padding: 15px 35px;
   border-radius: 50px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 0 10px #00ff88;
-}
-
-.branch {
-  background-color: #111;
-  padding: 15px 20px;
-  border: 2px solid #00ff88;
-  border-radius: 12px;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: 0 0 15px #00ff88;
   position: relative;
-  color: #fff;
-  width: 220px;
-  box-shadow: 0 0 8px #00ff8844;
+  z-index: 2;
+  flex-shrink: 0;
 }
 
-.branch .sub-bubble {
-  background-color: #222;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #00ff88;
-  box-shadow: 0 0 4px #00ff88aa;
-  font-size: 0.95rem;
+/* Branch container */
+.branch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 140px;
+}
+
+/* Vertical connecting line from center bubble down */
+.branch::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background-color: #00ff88;
+  z-index: 1;
+}
+
+/* Branch title bubble */
+.branch-title {
+  background-color: #111;
+  border: 2px solid #00ff88;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #00ff88;
+  font-weight: 700;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px #00ff8855;
+  position: relative;
+  text-align: center;
+  min-width: 140px;
+}
+
+/* Vertical line from branch title down to sub bubbles */
+.branch-title::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: #00ff88;
+  z-index: 1;
+}
+
+/* Sub bubbles */
+.sub-bubble {
+  background-color: #111;
+  border: 2px solid #00ff88;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  margin-top: 25px;
+  box-shadow: 0 0 8px #00ff88aa;
+  position: relative;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* Line connecting each sub bubble to branch title */
+.sub-bubble::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 25px;
+  background-color: #00ff88;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    margin: 6rem 1rem 2rem;
+    padding: 10px;
+  }
+
+  .mindmap {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .branch {
+    min-width: 100%;
+  }
+
+  .branch-title,
+  .sub-bubble {
+    min-width: auto;
+    width: 250px;
+    margin: 15px auto 0 auto;
+  }
+
+  .branch::before,
+  .branch-title::after,
+  .sub-bubble::before {
+    display: none;
+  }
 }
 
