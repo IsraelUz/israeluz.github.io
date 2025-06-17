@@ -17,7 +17,6 @@ body {
   padding: 0 20px;
 }
 
-
 .content-box {
   position: relative;
   padding: 3px;
@@ -34,6 +33,7 @@ body {
   max-width: 500px;
   box-sizing: border-box;
   text-align: center;
+  position: relative; /* necesario para posicionar el ícono */
 }
 
 @keyframes borderRotate {
@@ -89,9 +89,9 @@ input, textarea {
 }
 
 .btn-send {
-  margin-top: 2rem; /* antes era 1rem */
-  padding: 0.8rem 2rem; /* más alto y ancho */
-  font-size: 1.20rem; /* más grande */
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.20rem;
   font-family: 'Poppins', sans-serif;
   border: 2px solid #00ff88;
   background: transparent;
@@ -107,7 +107,7 @@ input, textarea {
 }
 
 .btn-send:hover {
-   background: linear-gradient(to right, #00ff88, #00cc66);
+  background: linear-gradient(to right, #00ff88, #00cc66);
   color: #000;
   border-color: #00cc66;
 }
@@ -120,3 +120,19 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
+/* LinkedIn Icon */
+.linkedin-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+.linkedin-icon a {
+  color: #00ff88;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.linkedin-icon a:hover {
+  color: #ffffff;
+}
