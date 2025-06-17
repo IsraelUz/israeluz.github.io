@@ -1,3 +1,12 @@
+/* =================== FONTS Y RESET =================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,86 +18,143 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  overflow: hidden;
+  overflow: auto;
 }
 
+/* =================== WRAPPER PRINCIPAL =================== */
 .about-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  padding: 2rem;
 }
 
+/* =================== CUADRO DE CONTENIDO =================== */
 .content-box {
   position: relative;
   padding: 3px;
   background: linear-gradient(135deg, #00ff99, #003300);
   border-radius: 20px;
   animation: borderRotate 4s linear infinite;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .about-content {
   background-color: #000;
   border-radius: 20px;
-  padding: 30px 40px;
-  width: 90vw;
-  max-width: 900px;
+  padding: 40px 60px;
   box-sizing: border-box;
-  color: white;
-  text-align: left;
-}
-
-@keyframes borderRotate {
-  0% { background: linear-gradient(135deg, #00ff99, #003300); }
-  50% { background: linear-gradient(135deg, #003300, #00ff99); }
-  100% { background: linear-gradient(135deg, #00ff99, #003300); }
+  text-align: center;
 }
 
 h1 {
   font-family: 'Fira Code', monospace;
   color: #00ff99;
-  font-size: 2.5rem;
+  font-size: 2.3em;
   margin-bottom: 10px;
 }
 
 .subtitle {
-  color: #00cc66;
-  margin-bottom: 15px;
   font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+  color: #ccc;
 }
 
 .intro {
-  margin-bottom: 25px;
-  line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #eee;
+  max-width: 800px;
+  margin: 0 auto 2rem;
 }
 
-.columns {
+/* =================== ANIMACIÓN DE BORDE =================== */
+@keyframes borderRotate {
+  0% {
+    background: linear-gradient(135deg, #00ff99, #003300);
+  }
+  50% {
+    background: linear-gradient(135deg, #003300, #00ff99);
+  }
+  100% {
+    background: linear-gradient(135deg, #00ff99, #003300);
+  }
+}
+
+/* =================== MAPAS MENTALES =================== */
+.bubble-map {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 30px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0;
+  gap: 1rem;
+  position: relative;
 }
 
-.column {
-  flex: 1;
-  min-width: 250px;
+.center-bubble {
+  background-color: #00ff99;
+  color: #000;
+  font-weight: bold;
+  padding: 0.8rem 1.4rem;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #00ff99aa;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
 }
 
-h2 {
-  color: #00ff88;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
+.bubble {
+  background-color: rgba(0, 255, 136, 0.15);
+  border: 2px solid #00ff99;
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: transform 0.3s;
+  text-align: center;
+  min-width: 100px;
+  max-width: 180px;
   line-height: 1.4;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+  background-color: #00ff99;
+  color: #000;
+  cursor: default;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #00ff99aa; }
+  70% { box-shadow: 0 0 0 12px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 30px 20px;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+  }
+
+  .bubble {
+    font-size: 0.85rem;
+    min-width: 90px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
 }
 
