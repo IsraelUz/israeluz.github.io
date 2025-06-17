@@ -1,215 +1,47 @@
 /* Reset básico */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
-              url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background:
+    linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80')
+    no-repeat center center fixed;
   background-size: cover;
   color: #00ff88;
   min-height: 100vh;
   padding: 40px 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-/* Contenedor principal */
-.container {
-  max-width: 1000px;
-  width: 100%;
-}
-
-/* Encabezado */
-header {
   text-align: center;
-  margin-bottom: 50px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-header h1 {
+.container {
+  max-width: 700px;
+}
+
+h1 {
   font-family: 'Fira Code', monospace;
   font-size: 2.8rem;
   margin-bottom: 8px;
 }
 
-header h2 {
+h2 {
   font-weight: 600;
   font-size: 1.3rem;
   margin-bottom: 20px;
   color: #00cc66;
 }
 
-header p {
+p {
   font-size: 1.1rem;
   line-height: 1.5;
   color: #aaffcc;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Mapas mentales */
-.mindmap {
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-/* Cada mapa mental vertical */
-.mindmap-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-/* Línea vertical que conecta burbujas */
-.mindmap-column::before {
-  content: "";
-  position: absolute;
-  top: 60px;
-  bottom: 0;
-  left: 50%;
-  width: 3px;
-  background: #00ff88;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-/* La burbuja principal sin línea arriba */
-.mindmap-column:first-child::before {
-  top: 50px;
-}
-
-/* Burbuja principal */
-.bubble-root {
-  background: linear-gradient(135deg, #00ff88, #006633);
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-align: center;
-  padding: 20px;
-  color: #000;
-  box-shadow: 0 0 12px #00ff88aa;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: 1;
-  transition: box-shadow 0.3s ease;
-  cursor: default;
-}
-.bubble-root:hover {
-  box-shadow: 0 0 30px #00ffccff;
-}
-
-/* Burbuja secundaria */
-.bubble {
-  background: #003300cc;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-  padding: 15px;
-  color: #00ff88;
-  box-shadow: 0 0 8px #00ff88cc;
-  margin-bottom: 35px;
-  position: relative;
-  z-index: 1;
-  cursor: default;
-  transition: box-shadow 0.3s ease;
-}
-.bubble:hover {
-  box-shadow: 0 0 20px #00ffccaa;
-}
-
-/* Burbuja terciaria */
-.bubble-small {
-  background: #001a00cc;
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 10px;
-  color: #00ff88bb;
-  box-shadow: 0 0 6px #00ff88bb;
-  margin-bottom: 28px;
-  position: relative;
-  z-index: 1;
-  cursor: default;
-  transition: box-shadow 0.3s ease;
-}
-.bubble-small:hover {
-  box-shadow: 0 0 15px #00ffccaa;
-}
-
-/* Línea horizontal que conecta burbujas secundarias a terciarias */
-.bubble-group {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Para líneas horizontales (entre burbujas secundarias y terciarias) */
-.bubble-line {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.bubble-line::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #00ff88bb;
-  z-index: 0;
-}
-
-/* Línea vertical entre root y first-level bubbles */
-.bubble-root + .bubble-line {
-  margin-top: -20px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .mindmap {
-    flex-direction: column;
-    gap: 50px;
-  }
-  .mindmap-column::before {
-    display: none;
-  }
-  .bubble-line::before {
-    display: none;
-  }
-  .mindmap-column {
-    align-items: center;
-  }
-}
 
