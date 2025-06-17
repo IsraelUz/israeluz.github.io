@@ -1,113 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rubik+Mono+One&display=swap');
-
+/* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100vh;
-  width: 100%;
+body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-              url('../../img/fondo.gif') no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+              url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
-  overflow: hidden;
-}
-
-.navbar {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  display: flex;
-  gap: 1.5rem;
-  z-index: 10;
-}
-
-.navbar a {
-  text-decoration: none;
   color: #00ff88;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  font-family: 'Fira Code', monospace;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+header h2 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #00cc66;
+}
+
+header p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #aaffcc;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mapas mentales */
+.mindmap {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Cada mapa mental vertical */
+.mindmap-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Línea vertical que conecta burbujas */
+.mindmap-column::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #00ff88;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* La burbuja principal sin línea arriba */
+.mindmap-column:first-child::before {
+  top: 50px;
+}
+
+/* Burbuja principal */
+.bubble-root {
+  background: linear-gradient(135deg, #00ff88, #006633);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 20px;
+  color: #000;
+  box-shadow: 0 0 12px #00ff88aa;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+.bubble-root:hover {
+  box-shadow: 0 0 30px #00ffccff;
+}
+
+/* Burbuja secundaria */
+.bubble {
+  background: #003300cc;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
   font-size: 1rem;
+  text-align: center;
+  padding: 15px;
+  color: #00ff88;
+  box-shadow: 0 0 8px #00ff88cc;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+  transition: box-shadow 0.3s ease;
+}
+.bubble:hover {
+  box-shadow: 0 0 20px #00ffccaa;
+}
+
+/* Burbuja terciaria */
+.bubble-small {
+  background: #001a00cc;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px;
+  color: #00ff88bb;
+  box-shadow: 0 0 6px #00ff88bb;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+  transition: box-shadow 0.3s ease;
+}
+.bubble-small:hover {
+  box-shadow: 0 0 15px #00ffccaa;
+}
+
+/* Línea horizontal que conecta burbujas secundarias a terciarias */
+.bubble-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Para líneas horizontales (entre burbujas secundarias y terciarias) */
+.bubble-line {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  transition: color 0.3s;
+  margin-bottom: 30px;
 }
 
-.navbar a:hover {
-  color: #fff;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 0 20px #00ff8877;
+.bubble-line::before {
+  content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-}
-
-h1, h2, h3 {
-  color: #00ff88;
-  margin-bottom: 0.5rem;
-}
-
-p, ul, li {
-  margin-bottom: 0.7rem;
-  font-size: 0.95rem;
-}
-
-ul {
-  padding-left: 1.2rem;
-}
-
-a {
-  color: #00ff88;
-}
-
-footer {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #aaa;
-}
-
-.background-grid {
-  position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 255, 136, 0.05),
-      rgba(0, 255, 136, 0.05) 1px,
-      transparent 1px,
-      transparent 40px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(0, 255, 136, 0.05),
-      rgba(0, 255, 136, 0.05) 1px,
-      transparent 1px,
-      transparent 40px
-    );
-  background-size: 80px 80px;
-  opacity: 0.2;
-  animation: moveDiagonal 30s linear infinite;
-  pointer-events: none;
-  z-index: 1;
+  right: 0;
+  height: 2px;
+  background: #00ff88bb;
+  z-index: 0;
 }
 
-@keyframes moveDiagonal {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 80px 80px, -80px -80px; }
+/* Línea vertical entre root y first-level bubbles */
+.bubble-root + .bubble-line {
+  margin-top: -20px;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mindmap {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .mindmap-column::before {
+    display: none;
+  }
+  .bubble-line::before {
+    display: none;
+  }
+  .mindmap-column {
+    align-items: center;
+  }
+}
+
