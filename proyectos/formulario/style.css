@@ -8,17 +8,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   color: white;
   overflow: hidden;
 }
 
-.form-container {
+.form-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: auto;
-  padding: 0 20px;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
 .content-box {
@@ -114,14 +113,6 @@ input, textarea {
   background: linear-gradient(to right, #00ff88, #00cc66);
   color: #000;
   border-color: #00cc66;
-}
-
-footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9em;
-  color: #ccc;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* LinkedIn Icon */
