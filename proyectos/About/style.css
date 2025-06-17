@@ -1,160 +1,90 @@
-/* =================== FONTS Y RESET =================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  overflow: auto;
-}
-
-/* =================== WRAPPER PRINCIPAL =================== */
-.about-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  padding: 2rem;
+  align-items: start;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 2rem 1rem;
 }
 
-/* =================== CUADRO DE CONTENIDO =================== */
-.content-box {
-  position: relative;
-  padding: 3px;
-  background: linear-gradient(135deg, #00ff99, #003300);
-  border-radius: 20px;
-  animation: borderRotate 4s linear infinite;
+.container {
+  text-align: center;
   max-width: 1200px;
   width: 100%;
 }
 
-.about-content {
-  background-color: #000;
-  border-radius: 20px;
-  padding: 40px 60px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
 h1 {
-  font-family: 'Fira Code', monospace;
+  font-size: 2.5rem;
   color: #00ff99;
-  font-size: 2.3em;
-  margin-bottom: 10px;
 }
 
-.subtitle {
-  font-weight: bold;
+h2 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  font-size: 1.2em;
-  color: #ccc;
+  font-weight: 600;
+  color: #eee;
 }
 
 .intro {
-  font-size: 1.05rem;
+  font-size: 1rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
   line-height: 1.6;
-  color: #eee;
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  color: #ccc;
 }
 
-/* =================== ANIMACIÓN DE BORDE =================== */
-@keyframes borderRotate {
-  0% {
-    background: linear-gradient(135deg, #00ff99, #003300);
-  }
-  50% {
-    background: linear-gradient(135deg, #003300, #00ff99);
-  }
-  100% {
-    background: linear-gradient(135deg, #00ff99, #003300);
-  }
-}
-
-/* =================== MAPAS MENTALES =================== */
-.bubble-map {
+/* Mind Map Styling */
+.mindmap {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 40px 0;
+  margin: 2rem auto 4rem;
   gap: 1rem;
-  position: relative;
+  max-width: 1000px;
 }
 
-.center-bubble {
-  background-color: #00ff99;
-  color: #000;
+.main-bubble {
+  background: #00ff99;
+  color: black;
   font-weight: bold;
-  padding: 0.8rem 1.4rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
-  box-shadow: 0 0 10px #00ff99aa;
-  font-family: 'Fira Code', monospace;
-  margin-bottom: 1rem;
-  animation: pulse 2s infinite;
+  box-shadow: 0 0 20px #00ff8870;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
 .bubble {
-  background-color: rgba(0, 255, 136, 0.15);
-  border: 2px solid #00ff99;
-  padding: 0.6rem 1rem;
-  border-radius: 50px;
-  color: #fff;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  border-radius: 25px;
+  padding: 0.7rem 1.5rem;
   font-size: 0.95rem;
-  transition: transform 0.3s;
-  text-align: center;
-  min-width: 100px;
-  max-width: 180px;
-  line-height: 1.4;
+  transition: all 0.3s ease;
 }
 
 .bubble:hover {
-  transform: scale(1.1);
-  background-color: #00ff99;
+  background: #00ff88;
   color: #000;
-  cursor: default;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 #00ff99aa; }
-  70% { box-shadow: 0 0 0 12px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
-
-/* =================== RESPONSIVE =================== */
 @media (max-width: 768px) {
-  .about-content {
-    padding: 30px 20px;
-  }
-
-  .intro {
-    font-size: 0.95rem;
-  }
-
-  .bubble {
+  .bubble, .main-bubble {
     font-size: 0.85rem;
-    min-width: 90px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 }
 
