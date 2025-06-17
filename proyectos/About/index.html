@@ -1,77 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>About | Israel Uzcategui</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ICONOS Y FUENTES -->
-  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-
-  <!-- ESTILOS -->
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Israel Uzcategui</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Fondo animado -->
-  <div class="background-grid"></div>
 
-  <!-- Navbar igual que la landing -->
-  <div class="navbar">
-    <a href="../../index.html"><i class='bx bx-home'></i>Home</a>
-    <a href="../About/index.html"><i class='bx bx-user'></i>About</a>
-    <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
-    <a href="../formulario/index.html"><i class='bx bx-envelope'></i>Contact</a>
-  </div>
+<div class="container">
 
-  <!-- Contenido principal -->
-  <div class="container">
+  <header>
     <h1>Israel Uzcategui</h1>
-    <p>Houston, TX 77493 | 347 510 7678 | israeluzcateguim6@gmail.com</p>
-    <p><a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
-
     <h2>Software Developer | Web & Database Specialist</h2>
-    <p>Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development, database management, and process automation. Known for a structured and proactive approach to problem-solving. Currently completing Harvard’s CS50 course. Skilled in HTML, JavaScript, MySQL, Git, and Python.</p>
+    <p>
+      Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development, database management, and process automation. Known for a structured and proactive approach to problem-solving. Currently focused on strengthening programming foundations, data structures, and algorithms. Actively seeking to join a technology-driven team to contribute, learn, and grow. Fully authorized to work in the U.S. with no sponsorship required.
+    </p>
+  </header>
 
-    <h3>Skills</h3>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Python, C++, PHP</li>
-      <li>MySQL, Git & GitHub</li>
-      <li>UI Design, Responsive Layouts, Prototyping</li>
-    </ul>
+  <!-- MAPAS MENTALES -->
+  <section class="mindmap">
 
-    <h3>Professional Experience</h3>
-    <p><strong>Freelance Web Developer</strong> | Houston, TX | 2023 – Present</p>
-    <ul>
-      <li>Developed custom web solutions from UI to backend logic.</li>
-      <li>Built contact forms and performed maintenance and testing.</li>
-    </ul>
+    <!-- 1. Skills -->
+    <div class="mindmap-column" aria-label="Skills mind map">
+      <div class="bubble-root" tabindex="0" aria-describedby="skills-desc">Skills</div>
+      
+      <div class="bubble-line" aria-hidden="true">
+        <div class="bubble">Web Development</div>
+        <div class="bubble">Programming</div>
+        <div class="bubble">Databases</div>
+        <div class="bubble">Tools</div>
+      </div>
+      
+      <div class="bubble-group" aria-hidden="true" style="margin-top: -10px;">
+        <div class="bubble-small">HTML</div>
+        <div class="bubble-small">CSS</div>
+        <div class="bubble-small">JavaScript</div>
+        <div class="bubble-small">Python</div>
+        <div class="bubble-small">C++</div>
+        <div class="bubble-small">PHP</div>
+        <div class="bubble-small">MySQL</div>
+        <div class="bubble-small">Git &amp; GitHub</div>
+        <div class="bubble-small">VS Code</div>
+        <div class="bubble-small">Command Line</div>
+        <div class="bubble-small">IT Troubleshooting</div>
+        <div class="bubble-small">Docker Basic</div>
+      </div>
+    </div>
 
-    <p><strong>AAA Contractor</strong> | Ridgewood, NY | 2018 – 2023</p>
-    <ul>
-      <li>Managed communications, scheduling, and admin support at preschool.</li>
-    </ul>
+    <!-- 2. Education & Certifications -->
+    <div class="mindmap-column" aria-label="Education and Certifications mind map">
+      <div class="bubble-root" tabindex="0">Education</div>
 
-    <p><strong>Movistar</strong> | Mérida, Venezuela | 2014 – 2018</p>
-    <ul>
-      <li>Provided technical support and client assistance.</li>
-    </ul>
+      <div class="bubble-line" aria-hidden="true">
+        <div class="bubble">Bachelor's Degree</div>
+        <div class="bubble">Certifications</div>
+      </div>
 
-    <h3>Education & Certifications</h3>
-    <ul>
-      <li>Bachelor’s in Computer Engineering | UPTMKR, Venezuela | 2017</li>
-      <li>CS50 (Harvard - in progress), C++ (2024), HTML/JS (2022), Python (2021), PHP (2018)</li>
-    </ul>
+      <div class="bubble-group" aria-hidden="true" style="margin-top: -10px;">
+        <div class="bubble-small">Computer Engineering</div>
+        <div class="bubble-small">CS50 (2025)</div>
+        <div class="bubble-small">C++ (2024)</div>
+        <div class="bubble-small">HTML/JS (2022)</div>
+        <div class="bubble-small">Python (2021)</div>
+        <div class="bubble-small">PHP (2018)</div>
+        <div class="bubble-small">Merida, Venezuela (2017)</div>
+      </div>
+    </div>
 
-    <h3>IT Skills & Languages</h3>
-    <ul>
-      <li>VS Code, Command Line, Troubleshooting, Office/Google Suite</li>
-      <li>Languages: English (Fluent), Spanish (Native)</li>
-    </ul>
+    <!-- 3. Professional Experience -->
+    <div class="mindmap-column" aria-label="Professional Experience mind map">
+      <div class="bubble-root" tabindex="0">Experience</div>
 
-    <footer>© 2025 Israel Uzcátegui</footer>
-  </div>
+      <div class="bubble-line" aria-hidden="true">
+        <div class="bubble">Freelance Web Developer</div>
+        <div class="bubble">AAA Contractor</div>
+        <div class="bubble">Movistar</div>
+      </div>
+
+      <div class="bubble-group" aria-hidden="true" style="margin-top: -10px;">
+        <div class="bubble-small">Houston, TX (2023–Present)</div>
+        <div class="bubble-small">Ridgewood, NY (2018–2023)</div>
+        <div class="bubble-small">Merida, VZLA (2014–2018)</div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
 </body>
 </html>
 
