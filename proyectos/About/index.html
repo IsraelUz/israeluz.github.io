@@ -9,88 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- Tu CSS principal -->
+  <!-- CSS propio -->
   <link rel="stylesheet" href="./style.css" />
-
-  <style>
-    /* Navbar básico */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      z-index: 1000;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      border-bottom: 2px solid #00ff88;
-    }
-    nav a {
-      color: #00ff88;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #00cc66;
-    }
-
-    main {
-      margin-top: 80px; /* para no tapar contenido con navbar */
-      max-width: 900px;
-      padding: 20px;
-      background-color: rgba(0,0,0,0.75);
-      border-radius: 15px;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    h1 {
-      font-family: 'Fira Code', monospace;
-      color: #00ff99;
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 25px;
-      text-align: justify;
-    }
-
-    .map-mental {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #00ff88aa;
-    }
-
-    /* Footer con icono LinkedIn */
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 1.5rem;
-    }
-    footer a {
-      color: #00ff88;
-      transition: color 0.3s ease;
-    }
-    footer a:hover {
-      color: #ffffff;
-    }
-  </style>
 </head>
 <body>
 
   <nav>
     <a href="../../index.html">Home</a>
-    <a href="./about.html">About</a>
+    <a href="./about.html" class="active">About</a>
     <a href="./formulario.html">Contact</a>
   </nav>
 
