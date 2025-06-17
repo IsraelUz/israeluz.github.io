@@ -1,24 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-* {
+/* Fondo general con gif y overlay oscuro ya está en body */
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+              url('proyectos/img/fondo.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 115%;
+  overflow: hidden;
+  height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.9)
-    ),
-    url('proyectos/img/fondo.gif') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  min-height: 100vh;
-  overflow-x: hidden;
-  padding: 0 1rem;
-}
+/* Quitamos el .gif-container y .gif-text-bg porque el gif ya está de fondo en body */
 
 /* Navbar */
 .navbar {
@@ -33,7 +27,7 @@ body {
 .navbar a {
   text-decoration: none;
   color: #00ff88;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -41,198 +35,222 @@ body {
 }
 
 .navbar a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Container */
-.about-container {
-  max-width: 1200px;
-  margin: 7rem auto 2rem;
-  padding: 20px;
+/* Hero section */
+.hero {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
 
-.intro-text {
-  text-align: center;
-  font-size: 1.25rem;
-  margin-bottom: 50px;
-}
-
-.intro-text h1 {
-  font-size: 2.5rem;
-  color: #00ff88;
-  margin-bottom: 1rem;
-}
-
-/* Mindmap container */
-.mindmap-section {
-  margin-bottom: 80px;
-  text-align: center;
-}
-
-.mindmap {
+.hero-left {
+  width: 20%;
+  background-color: #111;
   position: relative;
+}
+
+.photo-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4), transparent);
+}
+
+.name-tag {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(10,10,10,0.85);
+  text-align: center;
+  padding: 0.8rem 0;
+  font-weight: 700;
+  color: #00ff88;
+  font-size: 1.3rem;
+}
+
+.hero-right {
+  width: 80%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.centered-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* Root bubble */
-.center-bubble {
-  background-color: #00ff88;
-  color: #000;
-  padding: 15px 40px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  box-shadow: 0 0 15px #00ff88;
-  position: relative;
-  z-index: 2;
-  margin-bottom: 80px;
-}
-
-/* Container for all branches in a row */
-.branches-container {
-  display: flex;
   justify-content: center;
-  gap: 120px;
+  max-width: 650px;
+}
+
+.welcome {
+  font-size: 2.7rem;
+  margin-bottom: 2.5rem;
+  font-family: 'Rubik Mono One', monospace;
+  background: linear-gradient(to right, #00ff88, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content-box {
+  background-color: #111;
   width: 100%;
-  max-width: 900px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 20px #00ff8877;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.content-box p {
+  margin: 0;
+  color: #ddd;
+}
+
+.btn-readmore {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border: 2px solid #00ff88;
+  background: transparent;
+  color: #00ff88;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  z-index: 15;
   position: relative;
 }
 
-/* Lines connecting root to branches */
-.branches-container::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  width: 2px;
-  height: 40px;
-  background-color: #00ff88;
-  transform: translateX(-50%);
-  z-index: 1;
+.btn-readmore:hover {
+  background: linear-gradient(to right, #00ff88, #00cc66);
+  color: #000;
+  border-color: #00cc66;
 }
 
-/* Line horizontal connecting the branches */
-.branches-container::after {
-  content: '';
+/* Fondo grid con perspectiva */
+.background-grid {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: #00ff88;
-  z-index: 1;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 255, 136, 0.05),
+      rgba(0, 255, 136, 0.05) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 255, 136, 0.05),
+      rgba(0, 255, 136, 0.05) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  background-size: 80px 80px;
+  opacity: 0.3;
+  animation: moveDiagonal 30s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+  transform: perspective(800px) rotateX(60deg);
 }
 
-/* Branch container */
-.branch {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 140px;
-  z-index: 2;
+@keyframes moveDiagonal {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 80px 80px, -80px -80px;
+  }
 }
 
-/* Vertical connecting line from horizontal line down to branch title */
-.branch::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 40px;
-  background-color: #00ff88;
-  z-index: 1;
-}
-
-/* Branch title bubble */
-.branch-title {
-  background-color: #111;
-  border: 2px solid #00ff88;
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: #00ff88;
-  font-weight: 700;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px #00ff8855;
-  position: relative;
-  text-align: center;
-  min-width: 140px;
-}
-
-/* Vertical line from branch title down to sub bubbles */
-.branch-title::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 30px;
-  background-color: #00ff88;
-  z-index: 1;
-}
-
-/* Sub bubbles */
-.sub-bubble {
-  background-color: #111;
-  border: 2px solid #00ff88;
-  padding: 8px 16px;
-  border-radius: 20px;
-  color: white;
-  margin-top: 25px;
-  box-shadow: 0 0 8px #00ff88aa;
-  position: relative;
-  text-align: center;
-  min-width: 120px;
-}
-
-/* Line connecting each sub bubble to branch title */
-.sub-bubble::before {
-  content: '';
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 25px;
-  background-color: #00ff88;
-  z-index: 1;
-}
-
-/* Responsive */
+/* Responsive ajustes para móviles */
 @media (max-width: 768px) {
-  .about-container {
-    margin: 6rem 1rem 2rem;
-    padding: 10px;
+  html, body {
+    font-size: 100%;
+    overflow: auto;
   }
 
-  .branches-container {
+  .hero {
     flex-direction: column;
-    gap: 50px;
+    height: auto;
+  }
+
+  .hero-left {
+    width: 100%;
+    height: 300px;
+    background-color: #111;
+  }
+
+  .photo-wrapper {
+    height: 100%;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .name-tag {
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+  }
+
+  .hero-right {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navbar {
+    position: static;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  .content-box {
+    width: 90%;
     max-width: 100%;
   }
 
-  .branch {
-    min-width: 100%;
+  .welcome {
+    font-size: 2rem;
+    text-align: center;
   }
 
-  .branch-title,
-  .sub-bubble {
-    min-width: auto;
-    width: 250px;
-    margin: 15px auto 0 auto;
-  }
-
-  .branches-container::before,
-  .branches-container::after,
-  .branch::before,
-  .branch-title::after,
-  .sub-bubble::before {
-    display: none;
+  .btn-readmore {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
   }
 }
 
