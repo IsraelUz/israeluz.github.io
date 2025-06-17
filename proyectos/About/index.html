@@ -2,61 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Israel Uzcategui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <title>About | Israel Uzcategui</title>
+  
+  <!-- Fuentes y Boxicons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Tu CSS principal -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <style>
+    /* Navbar básico */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      z-index: 1000;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      border-bottom: 2px solid #00ff88;
+    }
+    nav a {
+      color: #00ff88;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #00cc66;
+    }
+
+    main {
+      margin-top: 80px; /* para no tapar contenido con navbar */
+      max-width: 900px;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.75);
+      border-radius: 15px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Fira Code', monospace;
+      color: #00ff99;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .map-mental {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ff88aa;
+    }
+
+    /* Footer con icono LinkedIn */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    footer a {
+      color: #00ff88;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
-  <div class="hero">
-    <!-- Izquierda -->
-    <div class="hero-left">
-      <div class="photo-wrapper">
-        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto de Israel Uzcategui" />
-        <div class="photo-overlay"></div>
-        <div class="name-tag">Israel Uzcategui</div>
-      </div>
-    </div>
 
-    <!-- Derecha -->
-    <div class="hero-right">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <a href="#"><i class="bx bx-home"></i>Home</a>
-        <a href="proyectos/About/index.html"><i class="bx bx-user"></i>About</a>
-        <a href="proyectos/Projects/index.html"><i class="bx bx-briefcase"></i>Projects</a>
-        <a href="proyectos/formulario/index.html"><i class="bx bx-envelope"></i>Contact</a>
-      </nav>
+  <nav>
+    <a href="../../index.html">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./formulario.html">Contact</a>
+  </nav>
 
-      <!-- Centro -->
-      <div class="centered-content">
-        <div class="welcome">Welcome to my portfolio</div>
+  <main>
+    <h1>About Me</h1>
+    <p>
+      Hello! I'm Israel Uzcategui, an enthusiastic and motivated software engineer
+      specialized in front-end development. I am passionate about learning new technologies
+      and creating elegant, functional web experiences. This website is part of my portfolio
+      to showcase my skills and projects.
+    </p>
 
-        <div class="content-box">
-          <!-- Quitamos fondo GIF aquí para evitar conflicto con body -->
-          <div class="content">
-            <p>
-              Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development, database management, and process automation. Known for a structured and proactive approach to problem-solving. Currently completing Harvard’s CS50 course to strengthen programming foundations, data structures, and algorithms. Skilled in HTML, JavaScript, MySQL, Git, and Python. Actively seeking to join a technology-driven team where I can apply my knowledge, continue learning, and contribute to impactful real-world projects. Fully authorized to work in the U.S. with no sponsorship required.
-            </p>
-          </div>
-        </div>
+    <p>
+      Below you can see a mental map of my skills and interests related to software
+      development and continuous learning. I hope it gives you a better idea of my
+      approach and goals.
+    </p>
 
-        <a href="proyectos/About/index.html" class="btn-readmore">Read More</a>
-      </div>
-    </div>
-  </div>
+    <img src="../img/mental-map.png" alt="Mental Map" class="map-mental" />
+  </main>
 
-  <div class="background-grid"></div>
-</body>
-</html>
+  <footer>
+    <a href="https://www.linkedin.com/in/israel-uzcategui" target="_blank" rel="noopener">
+      <i class='bx bxl-linkedin-square'></i> Connect with me on LinkedIn
+    </a>
+  </footer>
 
 </body>
 </html>
+
 
 
