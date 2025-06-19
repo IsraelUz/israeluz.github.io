@@ -1,106 +1,146 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Fondo animado y tipografía */
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: white;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  overflow-x: hidden;
+  padding: 0 1rem;
 }
 
-/* Navbar */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+.navbar {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 20;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #00ff88;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 7rem auto 2rem;
+  padding: 20px;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 50px;
+}
+
+.intro-text h1 {
+  font-size: 2.3rem;
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.mindmap-section {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.mindmap-section h2 {
+  font-size: 1.8rem;
+  color: #00ff88;
+  margin-bottom: 2rem;
+}
+
+.mindmap {
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 15px 0;
-  z-index: 1000;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  border-bottom: 2px solid #00ff88;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
 }
 
-nav a {
-  color: #00ff88;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  padding: 5px 10px;
-  border-radius: 6px;
-}
-
-nav a:hover,
-nav a.active {
-  background: #00ff88;
+.center-bubble {
+  background-color: #00ff88;
   color: #000;
-}
-
-/* Contenido principal */
-main {
-  margin-top: 80px; /* para que no quede debajo del navbar */
-  max-width: 900px;
-  padding: 30px 20px;
-  background-color: rgba(0,0,0,0.75);
-  border-radius: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  flex-grow: 1;
-  box-shadow: 0 0 20px #00ff88aa;
-}
-
-h1 {
-  font-family: 'Fira Code', monospace;
-  color: #00ff99;
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  text-align: justify;
-}
-
-/* Imagen mapa mental */
-.map-mental {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 0 15px #00ff88aa;
-}
-
-/* Footer */
-footer {
-  text-align: center;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
   font-size: 1.2rem;
-  padding: 20px 10px;
-  border-top: 2px solid #00ff88;
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 10px #00ff88;
+  position: relative;
+  z-index: 2;
 }
 
-footer a {
+.branch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.branch::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  width: 2px;
+  height: 30px;
+  background-color: #00ff88;
+}
+
+.branch > .sub-bubble {
+  background-color: #111;
+  border: 2px solid #00ff88;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+  margin-top: 15px;
+  box-shadow: 0 0 6px #00ff88aa;
+  position: relative;
+}
+
+.branch > .sub-bubble::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 15px;
+  background-color: #00ff88;
+}
+
+.branch-title {
+  background-color: #222;
+  border: 2px solid #00ff88;
+  padding: 10px 20px;
+  border-radius: 20px;
   color: #00ff88;
-  transition: color 0.3s ease;
-  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: 0 0 8px #00ff8855;
+  position: relative;
 }
 
-footer a:hover {
-  color: #ffffff;
+.branch-title::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background-color: #00ff88;
 }
 
