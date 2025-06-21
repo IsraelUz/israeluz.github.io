@@ -1,28 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
+/* Fondo general con gif y overlay oscuro ya está en body */
+body {
   background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
               url('proyectos/img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
-  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
   font-size: 115%;
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+/* Quitamos el .gif-container y .gif-text-bg porque el gif ya está de fondo en body */
 
+/* Navbar */
 .navbar {
   position: absolute;
   top: 1rem;
@@ -46,6 +38,7 @@ html, body {
   color: #fff;
 }
 
+/* Hero section */
 .hero {
   display: flex;
   height: 100vh;
@@ -85,7 +78,6 @@ html, body {
   background-color: rgba(10,10,10,0.85);
   text-align: center;
   padding: 0.8rem 0;
-  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #00ff88;
   font-size: 1.3rem;
@@ -97,6 +89,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .centered-content {
@@ -104,6 +97,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 650px;
 }
 
 .welcome {
@@ -115,80 +109,30 @@ html, body {
   -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .content-box {
   background-color: #111;
-  width: 600px;
+  width: 100%;
   border-radius: 10px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 0 20px #00ff8877;
-  z-index: 10;
-  overflow: hidden;
+  padding: 2rem;
   margin-bottom: 1rem;
-}
-
-.gif-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.gif-text-bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-}
-
-.content {
-  position: relative;
-  z-index: 10;
-  padding: 2.5rem 1rem;
-}
-
-.intro-static {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.changing-text {
   font-size: 1rem;
-  font-family: 'Press Start 2P', monospace;
-  color: #00ff88;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #00ff88;
-  width: 380px;
-  display: inline-block;
-  animation: blink-caret 0.7s step-end infinite;
-  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
-@keyframes blink-caret {
-  50% { border-color: transparent; }
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-.subtext {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #fff;
+.content-box p {
+  margin: 0;
+  color: #ddd;
 }
 
 .btn-readmore {
   margin-top: 2rem;
   padding: 0.8rem 2rem;
-  font-size: 1.20rem;
-  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
   border: 2px solid #00ff88;
   background: transparent;
   color: #00ff88;
@@ -208,6 +152,7 @@ html, body {
   border-color: #00cc66;
 }
 
+/* Fondo grid con perspectiva */
 .background-grid {
   position: absolute;
   top: 0;
@@ -246,7 +191,7 @@ html, body {
   }
 }
 
-/* RESPONSIVE: Ajustes para teléfonos */
+/* Responsive ajustes para móviles */
 @media (max-width: 768px) {
   html, body {
     font-size: 100%;
@@ -298,13 +243,6 @@ html, body {
     max-width: 100%;
   }
 
-  .changing-text {
-    width: 100%;
-    font-size: 0.9rem;
-    white-space: normal;
-    text-align: center;
-  }
-
   .welcome {
     font-size: 2rem;
     text-align: center;
@@ -315,3 +253,4 @@ html, body {
     padding: 0.6rem 1.5rem;
   }
 }
+
