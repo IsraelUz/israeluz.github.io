@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Israel Uzcategui</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="hero">
     <!-- Izquierda -->
     <div class="hero-left">
       <div class="photo-wrapper">
-        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto">
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto de Israel Uzcategui" />
         <div class="photo-overlay"></div>
         <div class="name-tag">Israel Uzcategui</div>
       </div>
@@ -27,68 +27,35 @@
     <!-- Derecha -->
     <div class="hero-right">
       <!-- Navbar -->
-      <div class="navbar">
-        <a href="#"><i class='bx bx-home'></i>Home</a>
-        <a href="proyectos/About/index.html"><i class='bx bx-user'></i>About</a>
-        <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
-        <a href="proyectos/formulario/index.html"><i class='bx bx-envelope'></i>Contact</a>
-      </div>
+      <nav class="navbar">
+        <a href="#"><i class="bx bx-home"></i>Home</a>
+        <a href="proyectos/About/index.html"><i class="bx bx-user"></i>About</a>
+        <a href="proyectos/Projects/index.html"><i class="bx bx-briefcase"></i>Projects</a>
+        <a href="proyectos/formulario/index.html"><i class="bx bx-envelope"></i>Contact</a>
+      </nav>
 
       <!-- Centro -->
       <div class="centered-content">
         <div class="welcome">Welcome to my portfolio</div>
 
         <div class="content-box">
-          <div class="gif-container">
-            <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg">
-            <div class="content">
-              <div class="intro-static">Hi there, I'm</div>
-              <div class="changing-text" id="typingText">Front-End Developer</div>
-              <div class="subtext">I make your idea a reality!</div>
-            </div>
+          <!-- Quitamos fondo GIF aquí para evitar conflicto con body -->
+          <div class="content">
+            <p>
+              Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development, database management, and process automation. Known for a structured and proactive approach to problem-solving. Currently completing Harvard’s CS50 course to strengthen programming foundations, data structures, and algorithms. Skilled in HTML, JavaScript, MySQL, Git, and Python. Actively seeking to join a technology-driven team where I can apply my knowledge, continue learning, and contribute to impactful real-world projects. Fully authorized to work in the U.S. with no sponsorship required.
+            </p>
           </div>
         </div>
 
-        <a href="about.html" class="btn-readmore">Read More</a>
+        <a href="proyectos/About/index.html" class="btn-readmore">Read More</a>
       </div>
     </div>
   </div>
 
   <div class="background-grid"></div>
+</body>
+</html>
 
-  <!-- Script -->
-<script>
-  const roles = [
-    "Front-End Developer",
-    "Computer Engineer",
-    "Detail-Oriented"
-  ];
-
-  let index = 0;
-  const text = document.getElementById("typingText");
-
-  function typeEffect(content, callback) {
-    let i = 0;
-    text.innerText = "";
-    const interval = setInterval(() => {
-      text.innerText += content[i];
-      i++;
-      if (i === content.length) {
-        clearInterval(interval);
-        if (callback) callback();
-      }
-    }, 50); // velocidad de escritura
-  }
-
-  function changeText() {
-    const current = roles[index];
-    typeEffect(current);
-    index = (index + 1) % roles.length;
-  }
-
-  changeText();
-  setInterval(changeText, 4000);
-</script>
 
 </body>
 </html>
