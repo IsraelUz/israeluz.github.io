@@ -1,83 +1,105 @@
-/* Mantén tu fondo GIF y estilos base intactos */
-
-.about-section {
-  padding: 120px 20px 60px;
-  max-width: 900px;
-  margin: 0 auto;
-  background: transparent;
-  text-align: center;
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.intro-text {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  color: #fff;
+/* Fondo animado y tipografía */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+              url('../img/fondo.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Mapa mental */
-.map-container {
-  position: relative;
-  height: 500px;
-  margin-top: 20px;
-}
-
-.mind-map {
-  position: relative;
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 100%;
-}
-
-/* Nodos principales */
-.main-node {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  background: #000;
-  border: 4px solid #00ff88;
-  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: 'Fira Code', monospace;
+  gap: 30px;
+  padding: 15px 0;
+  z-index: 1000;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 2px solid #00ff88;
+}
+
+nav a {
   color: #00ff88;
+  text-decoration: none;
   font-size: 1.1rem;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+  background: #00ff88;
+  color: #000;
+}
+
+/* Contenido principal */
+main {
+  margin-top: 80px; /* para que no quede debajo del navbar */
+  max-width: 900px;
+  padding: 30px 20px;
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+  box-shadow: 0 0 20px #00ff88aa;
+}
+
+h1 {
+  font-family: 'Fira Code', monospace;
+  color: #00ff99;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
   text-align: center;
 }
 
-/* Subnodos burbuja */
-.sub-node {
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  background: #111;
-  border: 2px solid #00ff88;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-size: 0.95rem;
-  padding: 10px;
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+/* Imagen mapa mental */
+.map-mental {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ff88aa;
+}
+
+/* Footer */
+footer {
   text-align: center;
-  color: #fff;
+  font-size: 1.2rem;
+  padding: 20px 10px;
+  border-top: 2px solid #00ff88;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Posicionamiento de cada nodo */
-.main-node:nth-of-type(1) { top: 0; left: calc(50% - 90px); }
-.sub1 { top: 130px; left: 15%; }
-.sub2 { top: 130px; right: 15%; }
-
-.main-node.edu { top: 160px; left: calc(50% - 90px); }
-.edu1 { top: 300px; left: calc(50% - 300px); }
-.edu2 { top: 300px; right: calc(50% - 300px); }
-
-.main-node.exp { top: 320px; left: calc(50% - 90px); }
-.exp1 { top: 440px; left: calc(25% - 70px); }
-.exp2 { top: 440px; left: calc(50% - 70px); }
-.exp3 { top: 440px; right: calc(25% - 70px); }
-
-/* Sin líneas verdes superpuestas ni SVG ni backgrounds adicionales */
-.map-container, .mind-map {
-  background: transparent;
+footer a {
+  color: #00ff88;
+  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
+footer a:hover {
+  color: #ffffff;
+}
