@@ -1,51 +1,96 @@
-<!DOCTYPE html>
+HTML <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Israel Uzcategui</title>
-  
-  <!-- Fuentes y Boxicons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Israel Uzcategui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS propio -->
-  <link rel="stylesheet" href="./style.css" />
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="hero">
+    <!-- Izquierda -->
+    <div class="hero-left">
+      <div class="photo-wrapper">
+        <img class="profile-img" src="proyectos/img/portafolio.jpg.jpg" alt="Foto">
+        <div class="photo-overlay"></div>
+        <div class="name-tag">Israel Uzcategui</div>
+      </div>
+    </div>
 
-  <nav>
-    <a href="../../index.html">Home</a>
-    <a href="./about.html" class="active">About</a>
-    <a href="./formulario.html">Contact</a>
-  </nav>
+    <!-- Derecha -->
+    <div class="hero-right">
+      <!-- Navbar -->
+      <div class="navbar">
+        <a href="#"><i class='bx bx-home'></i>Home</a>
+        <a href="proyectos/About/index.html"><i class='bx bx-user'></i>About</a>
+        <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
+        <a href="proyectos/formulario/index.html"><i class='bx bx-envelope'></i>Contact</a>
+      </div>
 
-  <main>
-    <h1>About Me</h1>
-    <p>
-      Hello! I'm Israel Uzcategui, an enthusiastic and motivated software engineer
-      specialized in front-end development. I am passionate about learning new technologies
-      and creating elegant, functional web experiences. This website is part of my portfolio
-      to showcase my skills and projects.
-    </p>
+      <!-- Centro -->
+      <div class="centered-content">
+        <div class="welcome">Welcome to my portfolio</div>
 
-    <p>
-      Below you can see a mental map of my skills and interests related to software
-      development and continuous learning. I hope it gives you a better idea of my
-      approach and goals.
-    </p>
+        <div class="content-box">
+          <div class="gif-container">
+            <img src="proyectos/img/fondo.gif" alt="GIF" class="gif-text-bg">
+            <div class="content">
+              <div class="intro-static">Hi there, I'm</div>
+              <div class="changing-text" id="typingText">Front-End Developer</div>
+              <div class="subtext">I make your idea a reality!</div>
+            </div>
+          </div>
+        </div>
 
-    <img src="../img/mental-map.png" alt="Mental Map" class="map-mental" />
-  </main>
+        <a href="about.html" class="btn-readmore">Read More</a>
+      </div>
+    </div>
+  </div>
 
-  <footer>
-    <a href="https://www.linkedin.com/in/israel-uzcategui" target="_blank" rel="noopener">
-      <i class='bx bxl-linkedin-square'></i> Connect with me on LinkedIn
-    </a>
-  </footer>
+  <div class="background-grid"></div>
+
+  <!-- Script -->
+<script>
+  const roles = [
+    "Front-End Developer",
+    "Computer Engineer",
+    "Detail-Oriented"
+  ];
+
+  let index = 0;
+  const text = document.getElementById("typingText");
+
+  function typeEffect(content, callback) {
+    let i = 0;
+    text.innerText = "";
+    const interval = setInterval(() => {
+      text.innerText += content[i];
+      i++;
+      if (i === content.length) {
+        clearInterval(interval);
+        if (callback) callback();
+      }
+    }, 50); // velocidad de escritura
+  }
+
+  function changeText() {
+    const current = roles[index];
+    typeEffect(current);
+    index = (index + 1) % roles.length;
+  }
+
+  changeText();
+  setInterval(changeText, 4000);
+</script>
 
 </body>
 </html>
-
 
 
