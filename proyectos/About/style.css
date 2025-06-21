@@ -1,105 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: white;
   min-height: 100vh;
-  overflow-x: hidden;
-  padding: 0 1rem;
-}
-
-.navbar {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
+  overflow-y: auto;
   display: flex;
-  gap: 1.5rem;
-  z-index: 20;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #00ff88;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #ffffff;
-}
-
-.about-container {
+.container {
   max-width: 1200px;
-  margin: 7rem auto 2rem;
-  padding: 20px;
-}
-
-.intro-text {
-  text-align: center;
-  font-size: 1.25rem;
-  margin-bottom: 50px;
-}
-
-.intro-text h1 {
-  font-size: 2.3rem;
-  color: #00ff88;
-  margin-bottom: 1rem;
-}
-
-.mindmap-section {
-  margin-bottom: 80px;
+  width: 100%;
   text-align: center;
 }
 
-.mindmap-section h2 {
-  font-size: 1.8rem;
-  color: #00ff88;
-  margin-bottom: 1.5rem;
-}
+h1 { font-size: 2.5rem; color: #00ff99; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+.intro { max-width: 900px; margin: 0 auto 3rem; color: #ccc; line-height: 1.6; }
 
-.mindmap {
-  position: relative;
+/* Layout de varios mapas */
+.mindmaps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 60px;
 }
 
-.center-bubble {
-  background-color: #00ff88;
+/* Cada mapa mental */
+.mindmap {
+  position: relative;
+  width: 300px;
+}
+
+.main-bubble {
+  margin: 0 auto;
+  background: #00ff99;
   color: #000;
-  padding: 15px 25px;
+  padding: 1rem 1.8rem;
   border-radius: 50px;
   font-weight: bold;
+  box-shadow: 0 0 20px #00ff8870;
   font-size: 1.2rem;
-  box-shadow: 0 0 10px #00ff88;
-}
-
-.branch {
-  background-color: #111;
-  padding: 15px 20px;
-  border: 2px solid #00ff88;
-  border-radius: 12px;
-  font-size: 1rem;
   position: relative;
-  color: #fff;
-  width: 220px;
-  box-shadow: 0 0 8px #00ff8844;
+  z-index: 2;
 }
 
-.branch .sub-bubble {
-  background-color: #222;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 8px;
+/* Línea vertical que une al centro */
+.branches::before {
+  content: '';
+  position: absolute;
+  top: calc(50% + 1rem);
+  left: 50%;
+  width: 2px;
+  height: calc(100% - (50% + 1rem));
+  background: #00ff88;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Burbujas secundarias */
+.branches {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bubble {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
   border: 1px solid #00ff88;
-  box-shadow: 0 0 4px #00ff88aa;
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
   font-size: 0.95rem;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  position: relative;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1rem;
+  background: #00ff88;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bubble:hover {
+  background: #00ff88;
+  color: #000;
+  transform: scale(1.05);
+  cursor: default;
+}
+
+/* Ajustes responsive */
+@media (max-width: 900px) {
+  .mindmaps { flex-direction: column; gap: 40px; }
 }
 
 
