@@ -135,4 +135,26 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
     justify-content: center;
     margin-bottom: 1.5rem;
   }
+  /* NAVBAR AJUSTADA */
+.navbar {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 999;
+}
+
+/* SOLO EL SKILLS MINDMAP CAMBIADO */
+.mindmap:first-child .branches {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem; /* fila, columna */
+}
+
+.mindmap:first-child .bubble {
+  flex: 1 0 auto;
+  min-width: 100px;
+}
 }
