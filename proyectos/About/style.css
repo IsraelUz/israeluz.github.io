@@ -7,33 +7,20 @@ body {
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
   padding: 2rem 1rem;
   position: relative;
 }
 
-.container {
-  max-width: 1200px;
-  width: 100%;
-  text-align: center;
-}
-
-h1 { font-size: 2.5rem; color: #00ff99; }
-h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
-.intro { max-width: 900px; margin: 0 auto 2rem; color: #ccc; line-height: 1.6; }
-
-/* Navbar */
+/* Navbar fija */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 2rem;
   display: flex;
   gap: 1.5rem;
-  z-index: 20;
+  z-index: 999;
 }
 
 .navbar a {
@@ -48,6 +35,32 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
 
 .navbar a:hover {
   color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00ff99;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  color: #ccc;
+  line-height: 1.6;
 }
 
 /* Layout de mapas */
@@ -78,6 +91,7 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   z-index: 2;
 }
 
+/* Branches generales */
 .branches {
   margin-top: 2rem;
   display: flex;
@@ -86,6 +100,7 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   gap: 2rem;
 }
 
+/* Bubble general */
 .bubble {
   background: rgba(0, 255, 136, 0.1);
   color: #00ff88;
@@ -115,13 +130,24 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   cursor: default;
 }
 
+/* SOLO Skills dividido en varias filas */
+.mindmap:nth-child(1) .branches {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.2rem;
+}
+
+.mindmap:nth-child(1) .bubble {
+  min-width: 110px;
+  flex: 1 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   body {
     overflow: auto;
-    padding: 3rem 1rem;
-    height: auto;
-    align-items: flex-start;
+    padding: 4rem 1rem;
   }
 
   .mindmaps {
@@ -135,26 +161,5 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
     justify-content: center;
     margin-bottom: 1.5rem;
   }
-  /* NAVBAR AJUSTADA */
-.navbar {
-  position: fixed;
-  top: 1rem;
-  right: 2rem;
-  display: flex;
-  gap: 1.5rem;
-  z-index: 999;
 }
 
-/* SOLO EL SKILLS MINDMAP CAMBIADO */
-.mindmap:first-child .branches {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem 1.5rem; /* fila, columna */
-}
-
-.mindmap:first-child .bubble {
-  flex: 1 0 auto;
-  min-width: 100px;
-}
-}
