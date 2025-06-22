@@ -134,11 +134,27 @@ h2 {
   transform: translateX(-50%);
 }
 
-/* Quitar nodo superior solo a la primera fila de burbujas Skills */
-.mindmap:nth-child(1) .bubble:nth-child(1)::before,
-.mindmap:nth-child(1) .bubble:nth-child(2)::before,
-.mindmap:nth-child(1) .bubble:nth-child(3)::before {
+/* Mostrar nodo en las 3 primeras burbujas (HTML, CSS, JavaScript) */
+.mindmap:nth-child(1) .bubble:nth-child(-n+3)::before {
   display: block;
+}
+
+/* Eliminar nodo extra en la burbuja CSS para que haya solo uno */
+/* Esto evita líneas dobles entre Skills y CSS */
+.mindmap:nth-child(1) .bubble:nth-child(2)::before {
+  height: 18px; /* igual que las demás */
+}
+
+/* Conexión entre Python y MySQL: hacer que MySQL tenga nodo superior */
+.mindmap:nth-child(1) .bubble:nth-child(7)::before {
+  display: block;
+  height: 18px;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ff88;
+  position: absolute;
+  content: '';
 }
 
 /* EDUCATION & EXPERIENCE mantienen nodos normales */
@@ -174,11 +190,6 @@ h2 {
   transform: translateX(-50%);
 }
 
-/* Ajuste específico: nodo entre MySQL y Python */
-.mindmap:nth-child(1) .bubble:nth-child(7)::before {
-  display: block;
-}
-
 /* Hover general */
 .bubble:hover {
   background: #00ff88;
@@ -208,3 +219,4 @@ h2 {
     margin-bottom: 1.5rem;
   }
 }
+
