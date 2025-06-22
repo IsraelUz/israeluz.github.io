@@ -15,7 +15,6 @@ body {
   align-items: center;
 }
 
-/* Navbar fija */
 .navbar {
   position: fixed;
   top: 1rem;
@@ -67,7 +66,6 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* Layout de mapas */
 .mindmaps {
   display: flex;
   flex-wrap: wrap;
@@ -76,7 +74,6 @@ h2 {
   margin-top: 1rem;
 }
 
-/* Cada mapa mental */
 .mindmap {
   width: 300px;
   position: relative;
@@ -95,7 +92,7 @@ h2 {
   z-index: 2;
 }
 
-/* Línea desde el nodo principal (SKILLS) hacia las primeras ramas */
+/* Línea vertical desde Skills principal hacia sus ramas */
 .mindmap:nth-child(1) .main-bubble::after {
   content: '';
   position: absolute;
@@ -108,7 +105,7 @@ h2 {
   z-index: 3;
 }
 
-/* Skills: distribución en filas con grid */
+/* SKILLS: ramas en grid 3 columnas */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
@@ -117,14 +114,14 @@ h2 {
   margin-top: 2rem;
 }
 
-/* Burbuja general en Skills */
+/* Burbujas de Skills */
 .mindmap:nth-child(1) .bubble {
   font-size: 0.8rem;
   padding: 0.4rem 0.7rem;
   position: relative;
 }
 
-/* Líneas verticales en las burbujas Skills */
+/* Líneas verticales en las burbujas de Skills */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -135,34 +132,36 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  display: none; /* ocultamos por defecto */
 }
 
-/* Mostrar línea solo en las 3 primeras burbujas (HTML, CSS, JavaScript) */
+/* Mostrar líneas solo en HTML, CSS y JavaScript */
 .mindmap:nth-child(1) .bubble:nth-child(1)::before,
 .mindmap:nth-child(1) .bubble:nth-child(2)::before,
 .mindmap:nth-child(1) .bubble:nth-child(3)::before {
   display: block;
 }
 
-/* Corregir línea entre Skills y CSS para que sea una sola del mismo tamaño */
+/* Evitar líneas dobles en CSS (burbuja 2), asegurar solo UNA línea vertical */
 .mindmap:nth-child(1) .bubble:nth-child(2)::before {
   height: 18px !important;
   display: block !important;
 }
 
-/* Ubicar MySQL justo debajo de Python para que la línea vertical quede continua */
+/* COLOCAR MySQL debajo de Python para conexión vertical continua */
+/* Python es la burbuja 4, MySQL es la burbuja 7 */
 .mindmap:nth-child(1) .bubble:nth-child(7) {
-  grid-column: 1 / 2; /* Columna 1 */
-  grid-row: 3 / 4;    /* Fila 3 */
+  grid-column: 1 / 2; /* columna 1, para alinearse verticalmente con Python */
+  grid-row: 3 / 4;    /* fila 3 para quedar debajo */
 }
 
-/* Asegurar que el nodo superior de MySQL esté visible */
+/* Mostrar línea superior de MySQL (burbuja 7) para conectar con Python */
 .mindmap:nth-child(1) .bubble:nth-child(7)::before {
   display: block !important;
   height: 18px !important;
 }
 
-/* EDUCATION & EXPERIENCE mantienen nodos normales */
+/* EDUCATION & EXPERIENCE siguen igual */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -183,7 +182,7 @@ h2 {
   text-align: center;
 }
 
-/* Nodos para Education & Experience */
+/* Líneas en Education & Experience */
 .bubble::before {
   content: '';
   position: absolute;
@@ -193,9 +192,10 @@ h2 {
   top: -18px;
   left: 50%;
   transform: translateX(-50%);
+  display: block;
 }
 
-/* Hover general */
+/* Hover */
 .bubble:hover {
   background: #00ff88;
   color: #000;
