@@ -240,20 +240,6 @@ h2 {
   }
 }
 
-/* Frase motivadora */
-.quote {
-  margin-top: 2rem;
-  font-size: 1rem;
-  font-style: italic;
-  color: #00ff88;
-  border-top: 1px solid #00ff88;
-  padding-top: 1rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 @media (max-width: 900px) {
   body {
     overflow: auto;
@@ -277,6 +263,11 @@ h2 {
 
   .navbar {
     position: static;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
     justify-content: center;
     margin-bottom: 1.5rem;
   }
