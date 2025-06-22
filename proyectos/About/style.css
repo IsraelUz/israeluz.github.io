@@ -95,25 +95,25 @@ h2 {
   z-index: 2;
 }
 
-/* Skills: conexión desde la burbuja central a las 3 primeras */
+/* Línea desde el nodo principal (SKILLS) hacia las primeras ramas */
 .mindmap:nth-child(1) .main-bubble::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 50%;
   width: 2px;
-  height: 20px;
+  height: 18px;
   background: #00ff88;
   transform: translateX(-50%);
 }
 
-/* Skills en grid para distribuir las burbujas */
+/* Skills: distribución en filas */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   gap: 1.2rem 1.5rem;
   justify-items: center;
-  margin-top: 2.2rem; /* más espacio por la línea ::after */
+  margin-top: 2rem;
 }
 
 .mindmap:nth-child(1) .bubble {
@@ -122,39 +122,24 @@ h2 {
   position: relative;
 }
 
-/* Línea entre burbujas */
+/* Conexión entre burbujas (skills) */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
   width: 2px;
-  height: 20px;
+  height: 18px;
   background: #00ff88;
-  top: -20px;
+  top: -18px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Ocultar la línea superior en la primera fila */
+/* Conexión con nodo principal (solo en las 3 primeras) */
 .mindmap:nth-child(1) .bubble:nth-child(-n+3)::before {
-  display: none;
-}
-
-/* Añadir línea desde Skills a HTML, CSS y JS */
-.mindmap:nth-child(1) .bubble:nth-child(1)::before,
-.mindmap:nth-child(1) .bubble:nth-child(2)::before,
-.mindmap:nth-child(1) .bubble:nth-child(3)::before {
   display: block;
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 20px;
-  background: #00ff88;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
-/* General para otras ramas */
+/* EDUCATION & EXPERIENCE mantienen nodos normales */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -173,6 +158,17 @@ h2 {
   transition: transform 0.3s, background 0.3s, color 0.3s;
   position: relative;
   text-align: center;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: #00ff88;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .bubble:hover {
@@ -203,4 +199,3 @@ h2 {
     margin-bottom: 1.5rem;
   }
 }
-
