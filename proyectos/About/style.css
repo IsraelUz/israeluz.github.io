@@ -257,7 +257,7 @@ h2 {
   font-weight: 600;
   text-align: center;
   max-width: 900px;
-  margin: 0.5rem auto 1rem; /* Margen superior reducido para subir la frase */
+  margin: 3.5rem auto 1rem; /* Margen superior reducido para subir la frase */
   background: linear-gradient(90deg, #00ff88, #777);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
