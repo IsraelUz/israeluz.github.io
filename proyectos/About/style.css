@@ -140,8 +140,8 @@ h2 {
   margin-top: 2rem;
 
   position: relative;
-  top: -14px;  /* Ajustado para bajar burbujas Skills */
-  left: -21px;  /* Mover un poco a la izquierda */
+  top: -8px;  /* Ajustado para bajar burbujas Skills */
+  left: -12px;  /* Mover un poco a la izquierda */
 }
 
 /* Burbuja skills pequeñas */
@@ -198,6 +198,16 @@ h2 {
   gap: 1rem;
 }
 
+.branches.education-branches {
+  display: none;
+}
+.branches.experience-branches {
+  display: none;
+}
+.branches.softskills-branches {
+  display: none;
+}
+
 .bubble {
   background: rgba(0, 255, 136, 0.1);
   color: #00ff88;
@@ -229,6 +239,7 @@ h2 {
   cursor: pointer;
 }
 
+/* Animación general de flotación */
 @keyframes floatIn {
   from {
     opacity: 0;
@@ -240,6 +251,7 @@ h2 {
   }
 }
 
+/* Responsive */
 @media (max-width: 900px) {
   body {
     overflow: auto;
