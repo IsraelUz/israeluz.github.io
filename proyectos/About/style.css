@@ -107,5 +107,19 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   .mindmaps { flex-direction: column; gap: 40px; }
 }
 
+.sub-node {
+  position: relative;
+}
+
+/* Elimina líneas descendentes innecesarias */
+.sub-node::before {
+  content: none !important;
+}
+
+/* Alternativamente, si usabas ::after para dibujar líneas, asegúrate de hacer lo mismo */
+.sub-node::after {
+  content: none !important;
+}
+
 
 
