@@ -7,12 +7,14 @@ body {
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden; /* Evitar scroll horizontal */
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 
 /* Navbar fija */
@@ -67,21 +69,24 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* Layout de mapas */
+/* Mindmaps ahora sin scroll, en fila, con espacio */
 .mindmaps {
   display: flex;
-  flex-wrap: nowrap;      /* No dejan bajar a otra línea */
+  flex-wrap: nowrap; /* No dejan bajar a otra línea */
   justify-content: center;
   gap: 40px;
-  margin-top: 1rem;
-  overflow-x: auto;       /* Scroll horizontal si pantalla es muy pequeña */
-  padding-bottom: 1rem;   /* Espacio para scroll si aparece */
+  margin-top: 0;
+  padding: 0 1rem;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible; /* Sin scroll horizontal */
 }
 
 /* Cada mapa mental */
 .mindmap {
-  min-width: 250px;       /* No se reduzcan demasiado */
-  width: 23%;             /* Cuatro mapas en una fila */
+  min-width: 250px; /* No se reduzcan demasiado */
+  width: 23%; /* Cuatro mapas en una fila */
   position: relative;
   animation: floatIn 0.8s ease-out both;
 }
@@ -210,6 +215,7 @@ h2 {
     height: auto;
     padding: 4rem 1rem;
     align-items: flex-start;
+    flex-direction: column;
   }
 
   .mindmaps {
