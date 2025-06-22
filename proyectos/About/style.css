@@ -93,9 +93,16 @@ h2 {
   z-index: 2;
 }
 
-/* Eliminar línea que baja desde Skills */
+/* Línea hacia ramas de Skills */
 .mindmap:nth-child(1) .main-bubble::after {
-  content: none;
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  background: #00ff88;
+  transform: translateX(-50%);
 }
 
 /* Skills: distribución en grid */
@@ -107,14 +114,13 @@ h2 {
   margin-top: 2rem;
 }
 
-/* Burbujas skills */
 .mindmap:nth-child(1) .bubble {
   font-size: 0.8rem;
   padding: 0.4rem 0.7rem;
   position: relative;
 }
 
-/* Todas las burbujas skills con línea superior */
+/* Nodo vertical superior */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -124,29 +130,14 @@ h2 {
   top: -18px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
-  display: block;
 }
 
-/* Ajuste fino solo para MySQL (burbuja 7) */
+/* MySQL ajustado para subirlo un poco más */
 .mindmap:nth-child(1) .bubble:nth-child(7) {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  margin-top: -26px; /* sube un poco más */
+  margin-top: -30px;
 }
 
-/* Subir las demás burbujas (excepto primera fila: 1 a 3) */
-.mindmap:nth-child(1) .bubble:nth-child(n+4):not(:nth-child(7)) {
-  margin-top: -36px;
-}
-
-/* Asegurar nodo visible en MySQL */
-.mindmap:nth-child(1) .bubble:nth-child(7)::before {
-  display: block !important;
-  height: 18px !important;
-}
-
-/* Education & Experience ramas normales */
+/* Education y Experience normales */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -167,7 +158,6 @@ h2 {
   text-align: center;
 }
 
-/* Nodos Education & Experience */
 .bubble::before {
   content: '';
   position: absolute;
@@ -177,10 +167,8 @@ h2 {
   top: -18px;
   left: 50%;
   transform: translateX(-50%);
-  display: block;
 }
 
-/* Hover */
 .bubble:hover {
   background: #00ff88;
   color: #000;
@@ -188,7 +176,6 @@ h2 {
   cursor: default;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   body {
     overflow: auto;
