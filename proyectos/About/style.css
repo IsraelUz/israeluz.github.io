@@ -137,10 +137,10 @@ h2 {
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   gap: 1.2rem 1.5rem;
   justify-items: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   position: relative;
-  top: -12px;  /* Ajustado para bajar burbujas Skills */
+  top: -14px;  /* Ajustado para bajar burbujas Skills */
   left: -21px;  /* Mover un poco a la izquierda */
 }
 
