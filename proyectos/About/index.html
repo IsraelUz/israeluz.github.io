@@ -86,30 +86,52 @@
     </div>
 
     <!-- FRASE INSPIRADORA -->
-    <div id="inspirational-quote" class="quote">
-      "It's not about knowing everything, but about being ready to learn from every opportunity."
+    <div class="quote" id="inspirationalQuote">
+      It's not about knowing everything, but about being ready to learn from every opportunity.
     </div>
 
-  </div> <!-- Fin de container -->
+  </div>
 
+  <!-- Script para toggle -->
   <script>
-    const collapsibles = document.querySelectorAll('.main-bubble.collapsible');
-    const quote = document.getElementById('inspirational-quote');
-
-    collapsibles.forEach(bubble => {
+    document.querySelectorAll('.main-bubble.collapsible').forEach(bubble => {
       bubble.style.cursor = 'pointer';
       bubble.addEventListener('click', () => {
         const branches = bubble.nextElementSibling;
         if (!branches) return;
 
-        const isOpen = branches.style.display === 'grid' || branches.style.display === 'flex';
-        branches.style.display = isOpen ? 'none' : (branches.classList.contains('skill-branches') ? 'grid' : 'flex');
-        bubble.classList.toggle('active', !isOpen);
+        if (branches.style.display === 'grid' || branches.style.display === 'flex') {
+          branches.style.display = 'none';
+          bubble.classList.remove('active');
+        } else {
+          if (branches.classList.contains('skill-branches')) {
+            branches.style.display = 'grid';
+          } else {
+            branches.style.display = 'flex';
+          }
+          bubble.classList.add('active');
+        }
 
-        // Verificar si alguna burbuja está abierta
-        const anyOpen = [...document.querySelectorAll('.branches')].some(b => b.style.display !== 'none');
-        quote.style.display = anyOpen ? 'none' : 'block';
+        // Verificar si todas están cerradas para mostrar la frase
+        setTimeout(() => {
+          const allBranches = document.querySelectorAll('.branches');
+          const quote = document.getElementById('inspirationalQuote');
+          const allClosed = Array.from(allBranches).every(branch =>
+            branch.style.display === 'none' || branch.style.display === ''
+          );
+          quote.classList.toggle('visible', allClosed);
+        }, 200);
       });
+    });
+
+    // Mostrar frase al cargar si están cerradas
+    window.addEventListener('DOMContentLoaded', () => {
+      const allBranches = document.querySelectorAll('.branches');
+      const quote = document.getElementById('inspirationalQuote');
+      const allClosed = Array.from(allBranches).every(branch =>
+        branch.style.display === 'none' || branch.style.display === ''
+      );
+      quote.classList.toggle('visible', allClosed);
     });
   </script>
 
