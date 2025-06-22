@@ -49,7 +49,8 @@
           </div>
         </div>
 
-        <a href="about.html" class="btn-readmore">Read More</a>
+        <!-- Botón actualizado correctamente -->
+        <a href="proyectos/About/index.html" class="btn-readmore">Read More</a>
       </div>
     </div>
   </div>
@@ -57,41 +58,38 @@
   <div class="background-grid"></div>
 
   <!-- Script -->
-<script>
-  const roles = [
-    "Front-End Developer",
-    "Computer Engineer",
-    "Detail-Oriented"
-  ];
+  <script>
+    const roles = [
+      "Front-End Developer",
+      "Computer Engineer",
+      "Detail-Oriented"
+    ];
 
-  let index = 0;
-  const text = document.getElementById("typingText");
+    let index = 0;
+    const text = document.getElementById("typingText");
 
-  function typeEffect(content, callback) {
-    let i = 0;
-    text.innerText = "";
-    const interval = setInterval(() => {
-      text.innerText += content[i];
-      i++;
-      if (i === content.length) {
-        clearInterval(interval);
-        if (callback) callback();
-      }
-    }, 50); // velocidad de escritura
-  }
+    function typeEffect(content, callback) {
+      let i = 0;
+      text.innerText = "";
+      const interval = setInterval(() => {
+        text.innerText += content[i];
+        i++;
+        if (i === content.length) {
+          clearInterval(interval);
+          if (callback) callback();
+        }
+      }, 50);
+    }
 
-  function changeText() {
-    const current = roles[index];
-    typeEffect(current);
-    index = (index + 1) % roles.length;
-  }
+    function changeText() {
+      const current = roles[index];
+      typeEffect(current);
+      index = (index + 1) % roles.length;
+    }
 
-  changeText();
-  setInterval(changeText, 4000);
-</script>
+    changeText();
+    setInterval(changeText, 4000);
+  </script>
 
 </body>
 </html>
-
-
-
