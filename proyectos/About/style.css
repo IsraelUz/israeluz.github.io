@@ -104,7 +104,7 @@ h2 {
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   gap: 1.2rem 1.5rem;
   justify-items: center;
-  margin-top: 1.5rem; /* antes 2rem - sube las burbujas */
+  margin-top: 1.2rem; /* Subido desde 1.5rem */
 }
 
 .mindmap:nth-child(1) .bubble {
@@ -125,7 +125,7 @@ h2 {
   transform: translateX(-50%);
 }
 
-/* Ajuste fino solo para MySQL (burbuja 7) */
+
 .mindmap:nth-child(1) .bubble:nth-child(7) {
   margin-top: -25px;
 }
