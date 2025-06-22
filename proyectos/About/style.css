@@ -24,11 +24,13 @@ h1 {
   font-size: 2.5rem;
   color: #00ff99;
 }
+
 h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
 .intro {
   max-width: 900px;
   margin: 0 auto 3rem;
@@ -36,7 +38,6 @@ h2 {
   line-height: 1.6;
 }
 
-/* Múltiples mapas */
 .mindmaps {
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +45,6 @@ h2 {
   gap: 60px;
 }
 
-/* Cada mapa individual */
 .mindmap {
   position: relative;
   width: 300px;
@@ -63,29 +63,20 @@ h2 {
   z-index: 2;
 }
 
-/* Línea vertical entre main-bubble y branches */
-.branches::before {
-  content: '';
-  position: absolute;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 1.5rem);
-  background: #00ff88;
-  z-index: 0;
-}
-
-/* Ramas de burbujas */
 .branches {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  position: relative;
-  z-index: 1;
 }
+
+/* QUITAMOS ESTA REGLA QUE GENERABA LAS LÍNEAS EXTRAS */
+/* .branches::before {
+  content: '';
+  position: absolute;
+  ...
+} */
 
 .bubble {
   background: rgba(0, 255, 136, 0.1);
@@ -96,19 +87,18 @@ h2 {
   font-size: 0.95rem;
   transition: transform 0.3s, background 0.3s, color 0.3s;
   position: relative;
-  z-index: 2;
 }
 
-.bubble.connected::before {
+/* Línea que conecta cada burbuja con el nodo principal */
+.bubble::before {
   content: '';
   position: absolute;
-  top: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
   width: 2px;
   height: 1rem;
   background: #00ff88;
-  z-index: 1;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .bubble:hover {
@@ -118,7 +108,6 @@ h2 {
   cursor: default;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .mindmaps {
     flex-direction: column;
