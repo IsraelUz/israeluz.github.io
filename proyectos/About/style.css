@@ -8,7 +8,7 @@ body {
   background-size: cover;
   color: white;
   min-height: 100vh;
-  overflow-x: hidden; /* Evitar scroll horizontal */
+  overflow-x: hidden;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -69,10 +69,10 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* Mindmaps ahora sin scroll, en fila, con espacio */
+/* Mindmaps sin scroll, en fila, con espacio */
 .mindmaps {
   display: flex;
-  flex-wrap: nowrap; /* No dejan bajar a otra línea */
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 40px;
   margin-top: 0;
@@ -80,18 +80,19 @@ h2 {
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
-  overflow: visible; /* Sin scroll horizontal */
+  overflow: visible;
 }
 
 /* Cada mapa mental */
 .mindmap {
-  min-width: 250px; /* No se reduzcan demasiado */
-  width: 23%; /* Cuatro mapas en una fila */
+  min-width: 250px;
+  width: 23%;
   position: relative;
   animation: floatIn 0.8s ease-out both;
 }
 
-.main-bubble {
+/* Centrar todas las burbujas principales */
+.mindmap .main-bubble {
   margin: 0 auto;
   background: #00ff99;
   color: #000;
@@ -102,6 +103,8 @@ h2 {
   font-size: 1.1rem;
   position: relative;
   z-index: 2;
+  width: max-content;
+  text-align: center;
 }
 
 /* Eliminar línea descendente de Skills principal */
@@ -111,7 +114,7 @@ h2 {
   top: 100%;
   left: 50%;
   width: 2px;
-  height: 0; /* línea eliminada */
+  height: 0;
   background: #00ff88;
   transform: translateX(-50%);
 }
@@ -123,6 +126,13 @@ h2 {
   gap: 1.2rem 1.5rem;
   justify-items: center;
   margin-top: 2rem;
+
+  /* Mover burbujas 25px hacia arriba */
+  position: relative;
+  top: -25px;
+
+  /* Mover burbujas un poco a la izquierda para centrar con main-bubble */
+  left: -12px;
 }
 
 .mindmap:nth-child(1) .bubble {
@@ -222,11 +232,11 @@ h2 {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    overflow-x: visible; /* quitar scroll horizontal en móvil */
+    overflow-x: visible;
   }
 
   .mindmap {
-    width: 90% !important; /* Más ancho en móvil para que no se vean muy pequeños */
+    width: 90% !important;
     min-width: auto !important;
   }
 
