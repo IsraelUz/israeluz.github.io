@@ -66,7 +66,7 @@ h2 {
   margin: 0 auto 1rem;
   color: #ccc;
   line-height: 1.4;
-  font-size: 1rem; /* Ajustado para igualar tamaño con la frase */
+  font-size: 1rem;  /* igual que la frase */
 }
 
 /* Mindmaps sin scroll, en fila, con espacio */
@@ -198,6 +198,16 @@ h2 {
   gap: 1rem;
 }
 
+.branches.education-branches {
+  display: none;
+}
+.branches.experience-branches {
+  display: none;
+}
+.branches.softskills-branches {
+  display: none;
+}
+
 .bubble {
   background: rgba(0, 255, 136, 0.1);
   color: #00ff88;
@@ -241,27 +251,19 @@ h2 {
   }
 }
 
-/* Frase inspiradora centrada debajo de burbujas principales */
+/* Frase inspiradora debajo de las burbujas principales */
 .quote {
-  position: fixed;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: 3.5rem;
   font-weight: 600;
+  text-align: center;
   max-width: 900px;
-  width: 90vw;
-  background: linear-gradient(90deg, #00ff88, #999999);
+  margin: 0.5rem auto 1rem; /* Margen superior reducido para subir la frase */
+  background: linear-gradient(90deg, #00ff88, #777);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1rem;
-  text-align: center;
   user-select: none;
-  z-index: 998;
-}
-
-/* Para evitar scroll cuando softskills está visible */
-body.no-scroll {
-  overflow-y: hidden;
+  cursor: default;
+  transition: opacity 0.3s ease;
 }
 
 /* Responsive */
@@ -290,5 +292,11 @@ body.no-scroll {
     position: static;
     justify-content: center;
     margin-bottom: 1.5rem;
+  }
+
+  .quote {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
