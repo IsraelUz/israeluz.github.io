@@ -15,6 +15,7 @@ body {
   align-items: center;
 }
 
+/* Navbar fija */
 .navbar {
   position: fixed;
   top: 1rem;
@@ -92,20 +93,12 @@ h2 {
   z-index: 2;
 }
 
-/* Línea vertical desde Skills principal hacia sus ramas */
+/* IMPORTANTE: Eliminar la línea que baja desde Skills para evitar doble línea */
 .mindmap:nth-child(1) .main-bubble::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 2px;
-  height: 18px;
-  background: #00ff88;
-  transform: translateX(-50%);
-  z-index: 3;
+  content: none;  /* eliminada la línea que bajaba desde Skills */
 }
 
-/* SKILLS: ramas en grid 3 columnas */
+/* Skills: ramas en grid 3 columnas */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
@@ -121,7 +114,7 @@ h2 {
   position: relative;
 }
 
-/* Líneas verticales en las burbujas de Skills */
+/* Líneas verticales en las burbujas de Skills: TODAS visibles igual que antes */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -132,36 +125,29 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  display: none; /* ocultamos por defecto */
-}
-
-/* Mostrar líneas solo en HTML, CSS y JavaScript */
-.mindmap:nth-child(1) .bubble:nth-child(1)::before,
-.mindmap:nth-child(1) .bubble:nth-child(2)::before,
-.mindmap:nth-child(1) .bubble:nth-child(3)::before {
   display: block;
 }
 
-/* Evitar líneas dobles en CSS (burbuja 2), asegurar solo UNA línea vertical */
+/* Eliminar línea doble en CSS (burbuja 2) dejando sólo la línea que sube desde CSS */
 .mindmap:nth-child(1) .bubble:nth-child(2)::before {
   height: 18px !important;
   display: block !important;
 }
 
-/* COLOCAR MySQL debajo de Python para conexión vertical continua */
-/* Python es la burbuja 4, MySQL es la burbuja 7 */
+/* Ubicar MySQL (burbuja 7) debajo de Python (burbuja 4) para línea continua */
 .mindmap:nth-child(1) .bubble:nth-child(7) {
-  grid-column: 1 / 2; /* columna 1, para alinearse verticalmente con Python */
-  grid-row: 3 / 4;    /* fila 3 para quedar debajo */
+  grid-column: 1 / 2; /* columna 1 */
+  grid-row: 3 / 4;    /* fila 3 */
+  margin-top: -10px;  /* ajuste fino para acercar MySQL a Python */
 }
 
-/* Mostrar línea superior de MySQL (burbuja 7) para conectar con Python */
+/* Asegurar que nodo superior de MySQL esté visible */
 .mindmap:nth-child(1) .bubble:nth-child(7)::before {
   display: block !important;
   height: 18px !important;
 }
 
-/* EDUCATION & EXPERIENCE siguen igual */
+/* EDUCATION & EXPERIENCE mantienen nodos normales */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -195,7 +181,7 @@ h2 {
   display: block;
 }
 
-/* Hover */
+/* Hover general */
 .bubble:hover {
   background: #00ff88;
   color: #000;
@@ -224,5 +210,6 @@ h2 {
     margin-bottom: 1.5rem;
   }
 }
+
 
 
