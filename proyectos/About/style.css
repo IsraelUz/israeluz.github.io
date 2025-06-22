@@ -256,22 +256,31 @@ h2 {
 }
 
 /* Frase inspiradora */
+/* --- resto del CSS igual --- */
+
 .quote {
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: 600;
   max-width: 900px;
-  margin: 2rem auto 0;
+  width: 90vw;
   background: linear-gradient(90deg, #00ff88, #999999);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1rem;
   text-align: center;
   user-select: none;
+  z-index: 998;
 }
 
-/* Para evitar scroll cuando softskills está visible */
 body.no-scroll {
   overflow-y: hidden;
 }
+
+/* --- resto del CSS igual --- */
+
 
 /* Responsive */
 @media (max-width: 900px) {
