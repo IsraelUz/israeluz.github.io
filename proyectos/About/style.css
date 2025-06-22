@@ -70,15 +70,18 @@ h2 {
 /* Layout de mapas */
 .mindmaps {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;      /* No dejan bajar a otra línea */
   justify-content: center;
   gap: 40px;
   margin-top: 1rem;
+  overflow-x: auto;       /* Scroll horizontal si pantalla es muy pequeña */
+  padding-bottom: 1rem;   /* Espacio para scroll si aparece */
 }
 
 /* Cada mapa mental */
 .mindmap {
-  width: 300px;
+  min-width: 250px;       /* No se reduzcan demasiado */
+  width: 23%;             /* Cuatro mapas en una fila */
   position: relative;
   animation: floatIn 0.8s ease-out both;
 }
@@ -96,6 +99,7 @@ h2 {
   z-index: 2;
 }
 
+/* Eliminar línea descendente de Skills principal */
 .mindmap:nth-child(1) .main-bubble::after {
   content: '';
   position: absolute;
@@ -107,6 +111,7 @@ h2 {
   transform: translateX(-50%);
 }
 
+/* Skills: distribución en filas con grid 3 columnas */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
@@ -211,6 +216,12 @@ h2 {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    overflow-x: visible; /* quitar scroll horizontal en móvil */
+  }
+
+  .mindmap {
+    width: 90% !important; /* Más ancho en móvil para que no se vean muy pequeños */
+    min-width: auto !important;
   }
 
   .navbar {
