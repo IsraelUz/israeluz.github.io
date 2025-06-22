@@ -122,7 +122,7 @@ h2 {
   position: relative;
 }
 
-/* Conexión entre burbujas (skills) */
+/* Nodo general en Skills */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -134,8 +134,10 @@ h2 {
   transform: translateX(-50%);
 }
 
-/* Conexión con nodo principal (solo en las 3 primeras) */
-.mindmap:nth-child(1) .bubble:nth-child(-n+3)::before {
+/* Quitar nodo superior solo a la primera fila de burbujas Skills */
+.mindmap:nth-child(1) .bubble:nth-child(1)::before,
+.mindmap:nth-child(1) .bubble:nth-child(2)::before,
+.mindmap:nth-child(1) .bubble:nth-child(3)::before {
   display: block;
 }
 
@@ -160,6 +162,7 @@ h2 {
   text-align: center;
 }
 
+/* Nodos para Education & Experience */
 .bubble::before {
   content: '';
   position: absolute;
@@ -171,6 +174,12 @@ h2 {
   transform: translateX(-50%);
 }
 
+/* Ajuste específico: nodo entre MySQL y Python */
+.mindmap:nth-child(1) .bubble:nth-child(7)::before {
+  display: block;
+}
+
+/* Hover general */
 .bubble:hover {
   background: #00ff88;
   color: #000;
