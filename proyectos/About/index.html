@@ -85,39 +85,43 @@
 
     </div>
 
-    <!-- Frase inspiradora debajo de las burbujas principales -->
+    <!-- Frase inspiradora -->
     <div class="quote" id="inspirationalQuote">
       It's not about knowing everything, but about being ready to learn from every opportunity.
     </div>
 
   </div>
 
+  <!-- Script -->
   <script>
-    // JS para toggle mostrar/ocultar ramas y manejar visibilidad de la frase
-    document.querySelectorAll('.main-bubble.collapsible').forEach(bubble => {
+    const collapsibles = document.querySelectorAll('.main-bubble.collapsible');
+    const quote = document.getElementById('inspirationalQuote');
+
+    function updateQuoteVisibility() {
+      const anyOpen = Array.from(document.querySelectorAll('.branches'))
+        .some(b => b.style.display === 'grid' || b.style.display === 'flex');
+      quote.style.display = anyOpen ? 'none' : 'block';
+    }
+
+    collapsibles.forEach(bubble => {
       bubble.style.cursor = 'pointer';
       bubble.addEventListener('click', () => {
         const branches = bubble.nextElementSibling;
-        const quote = document.getElementById('inspirationalQuote');
         if (!branches) return;
+
+        const isSoftSkills = branches.classList.contains('softskills-branches');
 
         if (branches.style.display === 'grid' || branches.style.display === 'flex') {
           branches.style.display = 'none';
           bubble.classList.remove('active');
-          // Mostrar frase solo si todas las ramas están cerradas
-          const anyOpen = Array.from(document.querySelectorAll('.branches'))
-            .some(b => b.style.display === 'grid' || b.style.display === 'flex');
-          if (!anyOpen) quote.style.display = 'block';
+          if (isSoftSkills) document.body.style.overflowY = 'auto';
         } else {
-          if (branches.classList.contains('skill-branches')) {
-            branches.style.display = 'grid';
-          } else {
-            branches.style.display = 'flex';
-          }
+          branches.style.display = branches.classList.contains('skill-branches') ? 'grid' : 'flex';
           bubble.classList.add('active');
-          // Ocultar frase cuando alguna rama está abierta
-          quote.style.display = 'none';
+          if (isSoftSkills) document.body.style.overflowY = 'hidden';
         }
+
+        updateQuoteVisibility();
       });
     });
   </script>
