@@ -85,61 +85,41 @@
 
     </div>
 
-    <!-- Frase inspiradora, visible solo cuando todas las ramas están cerradas -->
-    <div class="quote">It's not about knowing everything, but about being ready to learn from every opportunity.</div>
+    <!-- Frase inspiradora debajo de las burbujas principales -->
+    <div class="quote" id="inspirationalQuote">
+      It's not about knowing everything, but about being ready to learn from every opportunity.
+    </div>
 
   </div>
 
   <script>
-    // JS para toggle mostrar/ocultar ramas y controlar frase
+    // JS para toggle mostrar/ocultar ramas y manejar visibilidad de la frase
     document.querySelectorAll('.main-bubble.collapsible').forEach(bubble => {
       bubble.style.cursor = 'pointer';
       bubble.addEventListener('click', () => {
         const branches = bubble.nextElementSibling;
+        const quote = document.getElementById('inspirationalQuote');
         if (!branches) return;
 
         if (branches.style.display === 'grid' || branches.style.display === 'flex') {
           branches.style.display = 'none';
           bubble.classList.remove('active');
+          // Mostrar frase solo si todas las ramas están cerradas
+          const anyOpen = Array.from(document.querySelectorAll('.branches'))
+            .some(b => b.style.display === 'grid' || b.style.display === 'flex');
+          if (!anyOpen) quote.style.display = 'block';
         } else {
-          // Mostrar ramas
           if (branches.classList.contains('skill-branches')) {
             branches.style.display = 'grid';
           } else {
             branches.style.display = 'flex';
           }
           bubble.classList.add('active');
-        }
-
-        // Controlar frase y scroll
-        const allBranches = document.querySelectorAll('.branches');
-        let anyOpen = false;
-        allBranches.forEach(b => {
-          const styleDisplay = window.getComputedStyle(b).display;
-          if (styleDisplay === 'grid' || styleDisplay === 'flex') {
-            anyOpen = true;
-          }
-        });
-
-        const quote = document.querySelector('.quote');
-        if (anyOpen) {
+          // Ocultar frase cuando alguna rama está abierta
           quote.style.display = 'none';
-        } else {
-          quote.style.display = 'block';
-        }
-
-        // Bloquear scroll si Soft Skills está abierto
-        const softSkillsBranch = document.querySelector('.softskills-branches');
-        if (window.getComputedStyle(softSkillsBranch).display === 'flex') {
-          document.body.classList.add('no-scroll');
-        } else {
-          document.body.classList.remove('no-scroll');
         }
       });
     });
-
-    // Opcional: esconder frase al inicio si quieres que empiece cerrado
-    // document.querySelectorAll('.branches').forEach(b => b.style.display = 'none');
   </script>
 
 </body>
