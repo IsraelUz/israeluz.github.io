@@ -2,48 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Israel Uzcátegui - Portfolio</title>
-  <!-- Agrega aquí los iconos si usas alguna librería (ejemplo FontAwesome) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pV6cZbH8DwR/2GOZNyDxyls59kI3+bz0zEX7z0ZtR3YtI7IKd8iGZcNhGHF7x9ShxV7p97SAxVQX6kM9Q/LOzQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Israel Uzcategui</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-  <nav class="navbar">
-    <a href="#home">
-      <i class="fas fa-home"></i> Home
-    </a>
-    <a href="#about">
-      <i class="fas fa-user"></i> About
-    </a>
-    <a href="#projects">
-      <i class="fas fa-code"></i> Projects
-    </a>
-    <a href="#contact">
-      <i class="fas fa-envelope"></i> Contact
-    </a>
-  </nav>
 
-  <div class="container" id="home">
-    <h1>Hey, I am Israel Uzcátegui</h1>
-    <h2>We can make it real</h2>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="../../index.html"><i class='bx bx-home'></i>Home</a>
+    <a href="index.html"><i class='bx bx-user'></i>About</a>
+    <a href="#"><i class='bx bx-briefcase'></i>Projects</a>
+    <a href="../formulario/index.html"><i class='bx bx-envelope'></i>Contact</a>
+  </div>
+
+  <div class="container">
+    <h1>Israel Uzcategui</h1>
+    <h2>Software Developer | Web & Database Specialist</h2>
     <p class="intro">
       Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development,
       database management, and process automation. Known for a structured and proactive approach to problem-solving.
       Actively seeking to join a tech‑driven team. Fully authorized to work in the U.S.
     </p>
 
+    <!-- MAPAS MENTALES CON RAMAS -->
     <div class="mindmaps">
-      <!-- Skills -->
+
+      <!-- SKILLS -->
       <div class="mindmap">
-        <div class="main-bubble" onclick="toggleBranches(this)">Skills</div>
-        <div class="branches">
+        <div class="main-bubble collapsible">Skills</div>
+        <div class="branches skill-branches">
           <div class="bubble">HTML</div>
           <div class="bubble">CSS</div>
           <div class="bubble">JavaScript</div>
@@ -51,59 +41,78 @@
           <div class="bubble">C++</div>
           <div class="bubble">PHP</div>
           <div class="bubble">MySQL</div>
-          <div class="bubble">Git</div>
-          <div class="bubble">UI Design</div>
+          <div class="bubble">Git & GitHub</div>
+          <div class="bubble">UI & Responsive</div>
         </div>
       </div>
 
-      <!-- Education -->
+      <!-- EDUCATION -->
       <div class="mindmap">
-        <div class="main-bubble" onclick="toggleBranches(this)">Education</div>
+        <div class="main-bubble collapsible">Education & Courses</div>
         <div class="branches education-branches">
-          <div class="bubble">Computer Engineer (2017)</div>
-          <div class="bubble">TSU in Informatics (2014)</div>
-          <div class="bubble">CS50 Harvard (In Progress)</div>
+          <div class="bubble">BSc Computer Engineering<br>Mérida, Venezuela</div>
+          <div class="bubble">CS50 (In Progress – 2025)</div>
+          <div class="bubble">C++ (2024)</div>
+          <div class="bubble">HTML/JS (2022)</div>
+          <div class="bubble">Python (2021)</div>
+          <div class="bubble">PHP (2018)</div>
         </div>
       </div>
 
-      <!-- Experience -->
+      <!-- EXPERIENCE -->
       <div class="mindmap">
-        <div class="main-bubble" onclick="toggleBranches(this)">Experience</div>
+        <div class="main-bubble collapsible">Experience</div>
         <div class="branches experience-branches">
-          <div class="bubble">Web Development</div>
-          <div class="bubble">Technical Support</div>
-          <div class="bubble">Database Management</div>
-          <div class="bubble">Automation</div>
+          <div class="bubble">Freelance Web Dev<br>Houston, TX (2023–Present)</div>
+          <div class="bubble">AAA Contractor<br>Ridgewood, NY (2018–2023)</div>
+          <div class="bubble">Movistar<br>Mérida, VZLA (2014–2018)</div>
         </div>
       </div>
 
-      <!-- Soft Skills -->
+      <!-- SOFT SKILLS -->
       <div class="mindmap">
-        <div class="main-bubble" onclick="toggleBranches(this)">Soft Skills</div>
+        <div class="main-bubble collapsible">Soft Skills</div>
         <div class="branches softskills-branches">
           <div class="bubble">Communication</div>
-          <div class="bubble">Creativity</div>
-          <div class="bubble">Discipline</div>
-          <div class="bubble">Responsibility</div>
-          <div class="bubble">Adaptability</div>
           <div class="bubble">Teamwork</div>
           <div class="bubble">Problem Solving</div>
+          <div class="bubble">Time Management</div>
+          <div class="bubble">Adaptability</div>
+          <div class="bubble">Creativity</div>
         </div>
       </div>
+
     </div>
   </div>
 
   <script>
-    function toggleBranches(element) {
-      const branches = element.nextElementSibling;
-      if (!branches) return;
-      const isDisplayed = branches.style.display === 'grid' || branches.style.display === 'flex';
-      if (branches.classList.contains('softskills-branches') || branches.classList.contains('education-branches') || branches.classList.contains('experience-branches')) {
-        branches.style.display = isDisplayed ? 'none' : 'flex';
-      } else {
-        branches.style.display = isDisplayed ? 'none' : 'grid';
-      }
-    }
+    // JS para toggle mostrar/ocultar ramas
+    document.querySelectorAll('.main-bubble.collapsible').forEach(bubble => {
+      bubble.style.cursor = 'pointer';
+      bubble.addEventListener('click', () => {
+        const branches = bubble.nextElementSibling;
+        if (!branches) return;
+
+        if (branches.style.display === 'grid' || branches.style.display === 'flex') {
+          branches.style.display = 'none';
+          bubble.classList.remove('active');
+        } else {
+          // Mostrar ramas
+          // Para Skills usar grid, para otros flex
+          if (branches.classList.contains('skill-branches')) {
+            branches.style.display = 'grid';
+          } else {
+            branches.style.display = 'flex';
+          }
+          bubble.classList.add('active');
+        }
+      });
+    });
+
+    // Opcional: mostrar todas abiertas al cargar, si quieres
+    // document.querySelectorAll('.branches').forEach(b => b.style.display = 'none');
   </script>
+
 </body>
 </html>
+
