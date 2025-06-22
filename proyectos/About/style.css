@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
+  position: relative;
 }
 
 .container {
@@ -20,24 +21,35 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #00ff99;
+h1 { font-size: 2.5rem; color: #00ff99; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+.intro { max-width: 900px; margin: 0 auto 3rem; color: #ccc; line-height: 1.6; }
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 20;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.navbar a {
+  text-decoration: none;
+  color: #00ff88;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.3s;
 }
 
-.intro {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  color: #ccc;
-  line-height: 1.6;
+.navbar a:hover {
+  color: #fff;
 }
 
+/* Layout de varios mapas */
 .mindmaps {
   display: flex;
   flex-wrap: wrap;
@@ -45,6 +57,7 @@ h2 {
   gap: 60px;
 }
 
+/* Cada mapa mental */
 .mindmap {
   position: relative;
   width: 300px;
@@ -63,20 +76,27 @@ h2 {
   z-index: 2;
 }
 
+/* Burbujas secundarias */
 .branches {
   margin-top: 2rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
 }
 
-/* QUITAMOS ESTA REGLA QUE GENERABA LAS LÍNEAS EXTRAS */
-/* .branches::before {
+.branches::before {
   content: '';
   position: absolute;
-  ...
-} */
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #00ff88;
+  transform: translateX(-50%);
+  z-index: 0;
+}
 
 .bubble {
   background: rgba(0, 255, 136, 0.1);
@@ -87,16 +107,16 @@ h2 {
   font-size: 0.95rem;
   transition: transform 0.3s, background 0.3s, color 0.3s;
   position: relative;
+  z-index: 1;
 }
 
-/* Línea que conecta cada burbuja con el nodo principal */
 .bubble::before {
   content: '';
   position: absolute;
   width: 2px;
-  height: 1rem;
+  height: 20px;
   background: #00ff88;
-  top: -1rem;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -108,12 +128,13 @@ h2 {
   cursor: default;
 }
 
+/* Ajustes responsive */
 @media (max-width: 900px) {
-  .mindmaps {
-    flex-direction: column;
-    gap: 40px;
+  .mindmaps { flex-direction: column; gap: 40px; }
+
+  .navbar {
+    position: static;
+    justify-content: center;
+    margin-bottom: 1.5rem;
   }
 }
-
-
-
