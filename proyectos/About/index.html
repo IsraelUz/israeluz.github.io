@@ -8,9 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="centered">
 
-  <!-- Navbar -->
   <div class="navbar">
     <a href="../../index.html"><i class='bx bx-home'></i>Home</a>
     <a href="index.html"><i class='bx bx-user'></i>About</a>
@@ -27,10 +26,7 @@
       Actively seeking to join a tech‑driven team. Fully authorized to work in the U.S.
     </p>
 
-    <!-- MAPAS MENTALES CON RAMAS -->
     <div class="mindmaps">
-
-      <!-- SKILLS -->
       <div class="mindmap">
         <div class="main-bubble collapsible">Skills</div>
         <div class="branches skill-branches">
@@ -46,7 +42,6 @@
         </div>
       </div>
 
-      <!-- EDUCATION -->
       <div class="mindmap">
         <div class="main-bubble collapsible">Education & Courses</div>
         <div class="branches education-branches">
@@ -59,7 +54,6 @@
         </div>
       </div>
 
-      <!-- EXPERIENCE -->
       <div class="mindmap">
         <div class="main-bubble collapsible">Experience</div>
         <div class="branches experience-branches">
@@ -69,7 +63,6 @@
         </div>
       </div>
 
-      <!-- SOFT SKILLS -->
       <div class="mindmap">
         <div class="main-bubble collapsible">Soft Skills</div>
         <div class="branches softskills-branches">
@@ -82,49 +75,40 @@
           <div class="bubble">Spanish & English</div>
         </div>
       </div>
-
     </div>
 
-    <!-- Frase inspiradora -->
     <div class="quote" id="inspirationalQuote">
       It's not about knowing everything, but about being ready to learn from every opportunity.
     </div>
-
   </div>
 
-  <!-- Script -->
   <script>
     const collapsibles = document.querySelectorAll('.main-bubble.collapsible');
     const quote = document.getElementById('inspirationalQuote');
+    const body = document.body;
 
-    function updateQuoteVisibility() {
-      const anyOpen = Array.from(document.querySelectorAll('.branches'))
-        .some(b => b.style.display === 'grid' || b.style.display === 'flex');
-      quote.style.display = anyOpen ? 'none' : 'block';
+    function checkAllClosed() {
+      return !Array.from(document.querySelectorAll('.branches')).some(b => b.style.display === 'grid' || b.style.display === 'flex');
     }
 
     collapsibles.forEach(bubble => {
-      bubble.style.cursor = 'pointer';
       bubble.addEventListener('click', () => {
         const branches = bubble.nextElementSibling;
         if (!branches) return;
 
-        const isSoftSkills = branches.classList.contains('softskills-branches');
+        const isOpen = branches.style.display === 'grid' || branches.style.display === 'flex';
+        branches.style.display = isOpen ? 'none' : (branches.classList.contains('skill-branches') ? 'grid' : 'flex');
+        bubble.classList.toggle('active');
 
-        if (branches.style.display === 'grid' || branches.style.display === 'flex') {
-          branches.style.display = 'none';
-          bubble.classList.remove('active');
-          if (isSoftSkills) document.body.style.overflowY = 'auto';
+        if (checkAllClosed()) {
+          quote.style.display = 'block';
+          body.classList.add('centered');
         } else {
-          branches.style.display = branches.classList.contains('skill-branches') ? 'grid' : 'flex';
-          bubble.classList.add('active');
-          if (isSoftSkills) document.body.style.overflowY = 'hidden';
+          quote.style.display = 'none';
+          body.classList.remove('centered');
         }
-
-        updateQuoteVisibility();
       });
     });
   </script>
-
 </body>
 </html>
