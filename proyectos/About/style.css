@@ -20,11 +20,23 @@ body {
   text-align: center;
 }
 
-h1 { font-size: 2.5rem; color: #00ff99; }
-h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
-.intro { max-width: 900px; margin: 0 auto 3rem; color: #ccc; line-height: 1.6; }
+h1 {
+  font-size: 2.5rem;
+  color: #00ff99;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.intro {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  color: #ccc;
+  line-height: 1.6;
+}
 
-/* Layout de varios mapas */
+/* Múltiples mapas */
 .mindmaps {
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +44,7 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   gap: 60px;
 }
 
-/* Cada mapa mental */
+/* Cada mapa individual */
 .mindmap {
   position: relative;
   width: 300px;
@@ -51,26 +63,28 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   z-index: 2;
 }
 
-/* Línea vertical que une al centro */
+/* Línea vertical entre main-bubble y branches */
 .branches::before {
   content: '';
   position: absolute;
-  top: calc(50% + 1rem);
+  top: 1.5rem;
   left: 50%;
-  width: 2px;
-  height: calc(100% - (50% + 1rem));
-  background: #00ff88;
   transform: translateX(-50%);
-  z-index: 1;
+  width: 2px;
+  height: calc(100% - 1.5rem);
+  background: #00ff88;
+  z-index: 0;
 }
 
-/* Burbujas secundarias */
+/* Ramas de burbujas */
 .branches {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .bubble {
@@ -82,21 +96,19 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   font-size: 0.95rem;
   transition: transform 0.3s, background 0.3s, color 0.3s;
   position: relative;
+  z-index: 2;
 }
 
-.bubble::before {
+.bubble.connected::before {
   content: '';
   position: absolute;
-  width: 2px;
-  height: 1rem;
-  background: #00ff88;
   top: -1rem;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.bubble.no-line::before {
-  display: none;
+  width: 2px;
+  height: 1rem;
+  background: #00ff88;
+  z-index: 1;
 }
 
 .bubble:hover {
@@ -106,23 +118,12 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   cursor: default;
 }
 
-/* Ajustes responsive */
+/* Responsive */
 @media (max-width: 900px) {
-  .mindmaps { flex-direction: column; gap: 40px; }
-}
-
-.sub-node {
-  position: relative;
-}
-
-/* Elimina líneas descendentes innecesarias */
-.sub-node::before {
-  content: none !important;
-}
-
-/* Alternativamente, si usabas ::after para dibujar líneas, asegúrate de hacer lo mismo */
-.sub-node::after {
-  content: none !important;
+  .mindmaps {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
 
 
