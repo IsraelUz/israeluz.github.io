@@ -93,12 +93,12 @@ h2 {
   z-index: 2;
 }
 
-/* IMPORTANTE: Eliminar la línea que baja desde Skills para evitar doble línea */
+/* Eliminar línea que baja desde Skills */
 .mindmap:nth-child(1) .main-bubble::after {
-  content: none;  /* eliminada la línea que bajaba desde Skills */
+  content: none;
 }
 
-/* Skills: ramas en grid 3 columnas */
+/* Skills: distribución en grid */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
@@ -107,14 +107,14 @@ h2 {
   margin-top: 2rem;
 }
 
-/* Burbujas de Skills */
+/* Burbujas skills */
 .mindmap:nth-child(1) .bubble {
   font-size: 0.8rem;
   padding: 0.4rem 0.7rem;
   position: relative;
 }
 
-/* Líneas verticales en las burbujas de Skills: TODAS visibles igual que antes */
+/* Todas las burbujas skills con línea superior */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -128,26 +128,25 @@ h2 {
   display: block;
 }
 
-/* Eliminar línea doble en CSS (burbuja 2) dejando sólo la línea que sube desde CSS */
-.mindmap:nth-child(1) .bubble:nth-child(2)::before {
-  height: 18px !important;
-  display: block !important;
-}
-
-/* Ubicar MySQL (burbuja 7) debajo de Python (burbuja 4) para línea continua */
+/* Ajuste fino solo para MySQL (burbuja 7) */
 .mindmap:nth-child(1) .bubble:nth-child(7) {
-  grid-column: 1 / 2; /* columna 1 */
-  grid-row: 3 / 4;    /* fila 3 */
-  margin-top: -10px;  /* ajuste fino para acercar MySQL a Python */
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  margin-top: -26px; /* sube un poco más */
 }
 
-/* Asegurar que nodo superior de MySQL esté visible */
+/* Subir las demás burbujas (excepto primera fila: 1 a 3) */
+.mindmap:nth-child(1) .bubble:nth-child(n+4):not(:nth-child(7)) {
+  margin-top: -36px;
+}
+
+/* Asegurar nodo visible en MySQL */
 .mindmap:nth-child(1) .bubble:nth-child(7)::before {
   display: block !important;
   height: 18px !important;
 }
 
-/* EDUCATION & EXPERIENCE mantienen nodos normales */
+/* Education & Experience ramas normales */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -168,7 +167,7 @@ h2 {
   text-align: center;
 }
 
-/* Líneas en Education & Experience */
+/* Nodos Education & Experience */
 .bubble::before {
   content: '';
   position: absolute;
@@ -181,7 +180,7 @@ h2 {
   display: block;
 }
 
-/* Hover general */
+/* Hover */
 .bubble:hover {
   background: #00ff88;
   color: #000;
@@ -210,6 +209,3 @@ h2 {
     margin-bottom: 1.5rem;
   }
 }
-
-
-
