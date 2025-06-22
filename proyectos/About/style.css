@@ -106,7 +106,7 @@ h2 {
   width: auto;
   text-align: center;
   animation: glowing 3s ease-in-out infinite alternate;
-  cursor: default;
+  cursor: pointer;
 }
 
 /* Animación de brillo sutil para las burbujas principales */
@@ -133,15 +133,15 @@ h2 {
 
 /* Skills: distribución en filas con grid 3 columnas */
 .mindmap:nth-child(1) .branches {
-  display: grid;
+  display: none; /* Oculto inicialmente */
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   gap: 1.2rem 1.5rem;
   justify-items: center;
   margin-top: 2rem;
 
   position: relative;
-  top: -1px;  /* Ajustado para bajar burbujas Skills */
-  left: -20px;  /* Mover un poco a la izquierda */
+  top: -8px;  /* Ajustado para bajar burbujas Skills */
+  left: -12px;  /* Mover un poco a la izquierda */
 }
 
 /* Burbuja skills pequeñas */
@@ -188,12 +188,24 @@ h2 {
 }
 
 /* EDUCATION, EXPERIENCE, SOFT SKILLS */
-.branches {
+.branches.education-branches,
+.branches.experience-branches,
+.branches.softskills-branches {
+  display: none; /* Oculto inicialmente */
   margin-top: 1.2rem;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.branches.education-branches {
+  display: none;
+}
+.branches.experience-branches {
+  display: none;
+}
+.branches.softskills-branches {
+  display: none;
 }
 
 .bubble {
