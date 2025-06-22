@@ -67,6 +67,7 @@ h2 {
   font-size: 0.95rem;
 }
 
+/* Layout de mapas */
 .mindmaps {
   display: flex;
   flex-wrap: wrap;
@@ -75,9 +76,11 @@ h2 {
   margin-top: 1rem;
 }
 
+/* Cada mapa mental */
 .mindmap {
   width: 300px;
   position: relative;
+  animation: floatIn 0.8s ease-out both;
 }
 
 .main-bubble {
@@ -93,18 +96,23 @@ h2 {
   z-index: 2;
 }
 
-/* Eliminar la línea hacia abajo desde Skills */
 .mindmap:nth-child(1) .main-bubble::after {
-  content: none;
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: 0; /* línea eliminada */
+  background: #00ff88;
+  transform: translateX(-50%);
 }
 
-/* Skills: distribución en grid */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   gap: 1.2rem 1.5rem;
   justify-items: center;
-  margin-top: 1.2rem; /* Subido desde 1.5rem */
+  margin-top: 2rem;
 }
 
 .mindmap:nth-child(1) .bubble {
@@ -113,7 +121,6 @@ h2 {
   position: relative;
 }
 
-/* Nodo vertical en cada burbuja (mantener para CSS) */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -125,12 +132,22 @@ h2 {
   transform: translateX(-50%);
 }
 
-
-.mindmap:nth-child(1) .bubble:nth-child(7) {
-  margin-top: -25px;
+.mindmap:nth-child(1) .bubble:nth-child(2)::before {
+  height: 18px;
 }
 
-/* Education y Experience normales */
+.mindmap:nth-child(1) .bubble:nth-child(7)::before {
+  display: block;
+  height: 25px;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ff88;
+  position: absolute;
+  content: '';
+}
+
+/* EDUCATION, EXPERIENCE, SOFT SKILLS */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -169,6 +186,19 @@ h2 {
   cursor: default;
 }
 
+/* Animación */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 900px) {
   body {
     overflow: auto;
