@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 /* Navbar fija */
@@ -61,16 +61,12 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.intro,
-.quote {
-  font-size: 1rem;
-}
-
 .intro {
   max-width: 900px;
   margin: 0 auto 1rem;
   color: #ccc;
   line-height: 1.4;
+  font-size: 1rem; /* Ajustado para igualar tamaño con la frase */
 }
 
 /* Mindmaps sin scroll, en fila, con espacio */
@@ -202,16 +198,6 @@ h2 {
   gap: 1rem;
 }
 
-.branches.education-branches {
-  display: none;
-}
-.branches.experience-branches {
-  display: none;
-}
-.branches.softskills-branches {
-  display: none;
-}
-
 .bubble {
   background: rgba(0, 255, 136, 0.1);
   color: #00ff88;
@@ -255,9 +241,7 @@ h2 {
   }
 }
 
-/* Frase inspiradora */
-/* --- resto del CSS igual --- */
-
+/* Frase inspiradora centrada debajo de burbujas principales */
 .quote {
   position: fixed;
   bottom: 3rem;
@@ -275,12 +259,10 @@ h2 {
   z-index: 998;
 }
 
+/* Para evitar scroll cuando softskills está visible */
 body.no-scroll {
   overflow-y: hidden;
 }
-
-/* --- resto del CSS igual --- */
-
 
 /* Responsive */
 @media (max-width: 900px) {
