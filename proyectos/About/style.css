@@ -127,7 +127,7 @@ h2 {
 
 /* Ajuste fino solo para MySQL (burbuja 7) */
 .mindmap:nth-child(1) .bubble:nth-child(7) {
-  margin-top: -28px;
+  margin-top: -27px;
 }
 
 /* Education y Experience normales */
