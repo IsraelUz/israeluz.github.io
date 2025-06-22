@@ -7,10 +7,11 @@ body {
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  min-height: 100vh;
-  overflow-y: auto;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem 1rem;
   position: relative;
 }
@@ -23,7 +24,7 @@ body {
 
 h1 { font-size: 2.5rem; color: #00ff99; }
 h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
-.intro { max-width: 900px; margin: 0 auto 3rem; color: #ccc; line-height: 1.6; }
+.intro { max-width: 900px; margin: 0 auto 2rem; color: #ccc; line-height: 1.6; }
 
 /* Navbar */
 .navbar {
@@ -49,12 +50,13 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   color: #fff;
 }
 
-/* Layout de varios mapas */
+/* Layout de mapas */
 .mindmaps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 60px;
+  margin-top: 2rem;
 }
 
 /* Cada mapa mental */
@@ -76,26 +78,12 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   z-index: 2;
 }
 
-/* Burbujas secundarias */
 .branches {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  position: relative;
-}
-
-.branches::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: #00ff88;
-  transform: translateX(-50%);
-  z-index: 0;
 }
 
 .bubble {
@@ -107,7 +95,6 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   font-size: 0.95rem;
   transition: transform 0.3s, background 0.3s, color 0.3s;
   position: relative;
-  z-index: 1;
 }
 
 .bubble::before {
@@ -128,9 +115,20 @@ h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
   cursor: default;
 }
 
-/* Ajustes responsive */
+/* Responsive */
 @media (max-width: 900px) {
-  .mindmaps { flex-direction: column; gap: 40px; }
+  body {
+    overflow: auto;
+    padding: 3rem 1rem;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .mindmaps {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
 
   .navbar {
     position: static;
