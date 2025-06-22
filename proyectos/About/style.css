@@ -105,9 +105,10 @@ h2 {
   height: 18px;
   background: #00ff88;
   transform: translateX(-50%);
+  z-index: 3;
 }
 
-/* Skills: distribución en filas */
+/* Skills: distribución en filas con grid */
 .mindmap:nth-child(1) .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
@@ -116,13 +117,14 @@ h2 {
   margin-top: 2rem;
 }
 
+/* Burbuja general en Skills */
 .mindmap:nth-child(1) .bubble {
   font-size: 0.8rem;
   padding: 0.4rem 0.7rem;
   position: relative;
 }
 
-/* Nodo general en Skills */
+/* Líneas verticales en las burbujas Skills */
 .mindmap:nth-child(1) .bubble::before {
   content: '';
   position: absolute;
@@ -132,29 +134,32 @@ h2 {
   top: -18px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
-/* Mostrar nodo en las 3 primeras burbujas (HTML, CSS, JavaScript) */
-.mindmap:nth-child(1) .bubble:nth-child(-n+3)::before {
+/* Mostrar línea solo en las 3 primeras burbujas (HTML, CSS, JavaScript) */
+.mindmap:nth-child(1) .bubble:nth-child(1)::before,
+.mindmap:nth-child(1) .bubble:nth-child(2)::before,
+.mindmap:nth-child(1) .bubble:nth-child(3)::before {
   display: block;
 }
 
-/* Eliminar nodo extra en la burbuja CSS para que haya solo uno */
-/* Esto evita líneas dobles entre Skills y CSS */
+/* Corregir línea entre Skills y CSS para que sea una sola del mismo tamaño */
 .mindmap:nth-child(1) .bubble:nth-child(2)::before {
-  height: 18px; /* igual que las demás */
+  height: 18px !important;
+  display: block !important;
 }
 
-/* Conexión entre Python y MySQL: hacer que MySQL tenga nodo superior */
+/* Ubicar MySQL justo debajo de Python para que la línea vertical quede continua */
+.mindmap:nth-child(1) .bubble:nth-child(7) {
+  grid-column: 1 / 2; /* Columna 1 */
+  grid-row: 3 / 4;    /* Fila 3 */
+}
+
+/* Asegurar que el nodo superior de MySQL esté visible */
 .mindmap:nth-child(1) .bubble:nth-child(7)::before {
-  display: block;
-  height: 18px;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #00ff88;
-  position: absolute;
-  content: '';
+  display: block !important;
+  height: 18px !important;
 }
 
 /* EDUCATION & EXPERIENCE mantienen nodos normales */
