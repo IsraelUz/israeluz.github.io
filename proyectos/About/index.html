@@ -79,6 +79,7 @@
           <div class="bubble">Time Management</div>
           <div class="bubble">Adaptability</div>
           <div class="bubble">Creativity</div>
+          <div class="bubble">Spanish & English</div>
         </div>
       </div>
 
@@ -97,8 +98,6 @@
           branches.style.display = 'none';
           bubble.classList.remove('active');
         } else {
-          // Mostrar ramas
-          // Para Skills usar grid, para otros flex
           if (branches.classList.contains('skill-branches')) {
             branches.style.display = 'grid';
           } else {
@@ -108,11 +107,7 @@
         }
       });
     });
-
-    // Opcional: mostrar todas abiertas al cargar, si quieres
-    // document.querySelectorAll('.branches').forEach(b => b.style.display = 'none');
   </script>
 
 </body>
 </html>
-
