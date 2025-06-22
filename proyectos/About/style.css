@@ -140,7 +140,7 @@ h2 {
   margin-top: 2rem;
 
   position: relative;
-  top: -3px;  /* Ajustado para bajar burbujas Skills */
+  top: -1px;  /* Ajustado para bajar burbujas Skills */
   left: -20px;  /* Mover un poco a la izquierda */
 }
 
