@@ -85,15 +85,17 @@
 
     </div>
 
-    <!-- FRASE INSPIRADORA -->
-    <div class="quote" id="inspirationalQuote">
+    <p class="quote">
       It's not about knowing everything, but about being ready to learn from every opportunity.
-    </div>
-
+    </p>
   </div>
 
-  <!-- Script para toggle -->
   <script>
+    // JS para toggle mostrar/ocultar ramas y controlar scroll cuando soft skills está abierta
+    const softSkillsBranches = document.querySelector('.softskills-branches');
+    const quote = document.querySelector('.quote');
+    const body = document.body;
+
     document.querySelectorAll('.main-bubble.collapsible').forEach(bubble => {
       bubble.style.cursor = 'pointer';
       bubble.addEventListener('click', () => {
@@ -103,35 +105,47 @@
         if (branches.style.display === 'grid' || branches.style.display === 'flex') {
           branches.style.display = 'none';
           bubble.classList.remove('active');
+
+          // Mostrar frase solo si todas están cerradas
+          if (
+            !document.querySelector('.skill-branches').style.display ||
+            document.querySelector('.skill-branches').style.display === 'none'
+            &&
+            !document.querySelector('.education-branches').style.display ||
+            document.querySelector('.education-branches').style.display === 'none'
+            &&
+            !document.querySelector('.experience-branches').style.display ||
+            document.querySelector('.experience-branches').style.display === 'none'
+            &&
+            !document.querySelector('.softskills-branches').style.display ||
+            document.querySelector('.softskills-branches').style.display === 'none'
+          ) {
+            quote.style.display = 'block';
+          }
+
+          // Scroll control soft skills
+          if (branches === softSkillsBranches) {
+            body.classList.remove('no-scroll');
+          }
+
         } else {
+          // Mostrar ramas
           if (branches.classList.contains('skill-branches')) {
             branches.style.display = 'grid';
           } else {
             branches.style.display = 'flex';
           }
           bubble.classList.add('active');
+
+          // Ocultar frase
+          quote.style.display = 'none';
+
+          // Scroll control soft skills
+          if (branches === softSkillsBranches) {
+            body.classList.add('no-scroll');
+          }
         }
-
-        // Verificar si todas están cerradas para mostrar la frase
-        setTimeout(() => {
-          const allBranches = document.querySelectorAll('.branches');
-          const quote = document.getElementById('inspirationalQuote');
-          const allClosed = Array.from(allBranches).every(branch =>
-            branch.style.display === 'none' || branch.style.display === ''
-          );
-          quote.classList.toggle('visible', allClosed);
-        }, 200);
       });
-    });
-
-    // Mostrar frase al cargar si están cerradas
-    window.addEventListener('DOMContentLoaded', () => {
-      const allBranches = document.querySelectorAll('.branches');
-      const quote = document.getElementById('inspirationalQuote');
-      const allClosed = Array.from(allBranches).every(branch =>
-        branch.style.display === 'none' || branch.style.display === ''
-      );
-      quote.classList.toggle('visible', allClosed);
     });
   </script>
 
