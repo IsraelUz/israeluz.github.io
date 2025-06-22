@@ -94,6 +94,7 @@ h2 {
   z-index: 2;
 }
 
+/* Branches generales */
 .branches {
   margin-top: 1.2rem;
   display: flex;
@@ -102,7 +103,40 @@ h2 {
   gap: 1rem;
 }
 
-/* Skills en filas compactas */
+/* Burbujas generales */
+.bubble {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 25px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  position: relative;
+  text-align: center;
+}
+
+/* Nodo (línea arriba) */
+.bubble::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background: #00ff88;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hover */
+.bubble:hover {
+  background: #00ff88;
+  color: #000;
+  transform: scale(1.05);
+  cursor: default;
+}
+
+/* SOLO Skills dividido en filas compactas */
 .mindmap:nth-child(1) .branches {
   flex-direction: row;
   flex-wrap: wrap;
@@ -119,37 +153,12 @@ h2 {
   flex: 1 0 auto;
 }
 
-.bubble {
-  background: rgba(0, 255, 136, 0.1);
-  color: #00ff88;
-  border: 1px solid #00ff88;
-  border-radius: 25px;
-  padding: 0.5rem 0.8rem;
-  font-size: 0.85rem;
-  transition: transform 0.3s, background 0.3s, color 0.3s;
-  position: relative;
-  text-align: center;
+/* OCULTAR LOS NODOS EN SKILLS */
+.mindmap:nth-child(1) .bubble::before {
+  display: none;
 }
 
-.bubble::before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 15px;
-  background: #00ff88;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bubble:hover {
-  background: #00ff88;
-  color: #000;
-  transform: scale(1.05);
-  cursor: default;
-}
-
-/* Responsive (por si alguien entra desde móvil) */
+/* Responsive */
 @media (max-width: 900px) {
   body {
     overflow: auto;
