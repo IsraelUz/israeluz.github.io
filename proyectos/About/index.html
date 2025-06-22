@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Israel Uzcátegui - Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="navbar">
@@ -21,8 +21,6 @@
       Disciplined and software-oriented Computer Engineer with over 5 years of experience in IT support, web development,
       database management, and process automation. Known for a structured and proactive approach to problem-solving.
       Actively seeking to join a tech‑driven team. Fully authorized to work in the U.S.
-      <br><br>
-      <strong>English proficiency: approximately 70% – always learning and improving.</strong>
     </p>
 
     <div class="mindmaps">
@@ -74,7 +72,6 @@
           <div class="bubble">Adaptability</div>
           <div class="bubble">Teamwork</div>
           <div class="bubble">Problem Solving</div>
-          <div class="bubble">English and Spanish Speaker</div>
         </div>
       </div>
     </div>
@@ -83,8 +80,15 @@
   <script>
     function toggleBranches(element) {
       const branches = element.nextElementSibling;
-      branches.style.display = branches.style.display === 'grid' || branches.style.display === 'flex' ? 'none' : (branches.classList.contains('softskills-branches') || branches.classList.contains('education-branches') || branches.classList.contains('experience-branches') ? 'flex' : 'grid');
+      if (!branches) return;
+      const isDisplayed = branches.style.display === 'grid' || branches.style.display === 'flex';
+      if (branches.classList.contains('softskills-branches') || branches.classList.contains('education-branches') || branches.classList.contains('experience-branches')) {
+        branches.style.display = isDisplayed ? 'none' : 'flex';
+      } else {
+        branches.style.display = isDisplayed ? 'none' : 'grid';
+      }
     }
   </script>
 </body>
 </html>
+
