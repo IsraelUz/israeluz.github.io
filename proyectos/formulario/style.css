@@ -27,12 +27,12 @@ body {
 /* --- Outer animated border --- */
 .content-box {
   position: relative;
-  padding: 3px;
+  padding: 2px;
   background: linear-gradient(135deg, #00ff99, #003300);
   border-radius: 20px;
   animation: borderRotate 4s linear infinite;
-  width: 95vw;
-  max-width: 500px;
+  width: 92vw;
+  max-width: 460px;
   height: auto;
 }
 
@@ -40,53 +40,60 @@ body {
 .form-content {
   background-color: #000;
   border-radius: 20px;
-  padding: 20px 25px;
+  padding: 16px 20px;
   box-sizing: border-box;
   text-align: center;
   height: auto;
-  max-height: 90vh;
+  max-height: 88vh; /* Clave para evitar desbordes */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* --- Header --- */
+/* --- Headers --- */
 h1 {
   font-family: 'Fira Code', monospace;
   color: #00ff99;
-  margin-bottom: 8px;
-  font-size: 1.6em;
+  margin-bottom: 6px;
+  font-size: 1.5em;
 }
 
 p {
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 0.95em;
+  margin-bottom: 16px;
+  font-size: 0.9em;
 }
 
 /* --- Form --- */
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  flex: 1;
 }
 
-/* --- Labels / Inputs --- */
+/* --- Labels & Inputs --- */
 label {
   text-align: left;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 input, textarea {
-  padding: 8px 10px;
+  padding: 8px;
   border: none;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   background-color: #111;
   color: white;
-  font-size: 0.9em;
+  font-size: 0.85em;
   resize: none;
+}
+
+/* --- Reduce tamaño del textarea --- */
+textarea {
+  min-height: 60px;
+  max-height: 100px;
 }
 
 /* --- Buttons --- */
@@ -94,13 +101,13 @@ input, textarea {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .btn-send {
-  padding: 0.6rem 1.4rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.75rem;
   font-family: 'Press Start 2P', monospace;
   border: 2px solid #00ff88;
   background: transparent;
@@ -121,13 +128,13 @@ input, textarea {
 
 /* --- LinkedIn icon --- */
 .linkedin-icon {
-  margin-top: 15px;
+  margin-top: 10px;
   text-align: center;
 }
 
 .linkedin-icon a {
   color: #00ff88;
-  font-size: 2rem;
+  font-size: 1.6rem;
   transition: color 0.3s ease;
 }
 
@@ -153,19 +160,21 @@ input, textarea {
   }
 
   .btn-send {
-    font-size: 0.75rem;
-    padding: 0.5rem 1.2rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
   }
 
   input, textarea {
-    font-size: 0.85em;
+    font-size: 0.8em;
   }
 
   .form-content {
-    padding: 15px 20px;
+    padding: 12px 16px;
+    max-height: 90vh;
   }
 
   .linkedin-icon {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }
+
