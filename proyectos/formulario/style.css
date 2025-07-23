@@ -1,114 +1,106 @@
-/* General body layout */
+/* --- Body layout --- */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
               url('../img/fondo.gif') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  overflow: hidden; /* Se mantiene, pero puede eliminarse si causa recorte en móviles */
 }
 
-/* Wrapper layout */
+/* --- Wrapper --- */
 .form-wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  padding: 20px; /* Añade espacio en móviles */
-  box-sizing: border-box;
 }
 
-/* Animated border box */
+/* --- Outer animated border --- */
 .content-box {
   position: relative;
   padding: 3px;
   background: linear-gradient(135deg, #00ff99, #003300);
   border-radius: 20px;
   animation: borderRotate 4s linear infinite;
-  width: 100%;
-  max-width: 520px;
+  width: 95vw;
+  max-width: 500px;
+  height: auto;
 }
 
-/* Form content */
+/* --- Form box --- */
 .form-content {
   background-color: #000;
   border-radius: 20px;
-  padding: 25px 30px;
+  padding: 20px 25px;
   box-sizing: border-box;
   text-align: center;
-  position: relative;
   height: auto;
   max-height: 90vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Animation */
-@keyframes borderRotate {
-  0% {
-    background: linear-gradient(135deg, #00ff99, #003300);
-  }
-  50% {
-    background: linear-gradient(135deg, #003300, #00ff99);
-  }
-  100% {
-    background: linear-gradient(135deg, #00ff99, #003300);
-  }
-}
-
+/* --- Header --- */
 h1 {
   font-family: 'Fira Code', monospace;
   color: #00ff99;
-  margin-bottom: 10px;
-  font-size: 2em;
+  margin-bottom: 8px;
+  font-size: 1.6em;
 }
 
 p {
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
 }
 
+/* --- Form --- */
 form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
-/* Labels and Inputs */
+/* --- Labels / Inputs --- */
 label {
   text-align: left;
-  margin: 10px 0 5px;
   font-weight: 600;
+  font-size: 0.9em;
 }
 
 input, textarea {
-  padding: 10px;
+  padding: 8px 10px;
   border: none;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   background-color: #111;
   color: white;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: 0.9em;
+  resize: none;
 }
 
-/* Button group */
+/* --- Buttons --- */
 .btn-group {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
+  margin-top: 10px;
   flex-wrap: wrap;
-  margin-top: 15px;
 }
 
 .btn-send {
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
   font-family: 'Press Start 2P', monospace;
   border: 2px solid #00ff88;
   background: transparent;
@@ -119,8 +111,6 @@ input, textarea {
   text-transform: uppercase;
   transition: all 0.4s ease;
   text-decoration: none;
-  z-index: 15;
-  position: relative;
 }
 
 .btn-send:hover {
@@ -129,11 +119,10 @@ input, textarea {
   border-color: #00cc66;
 }
 
-/* LinkedIn Icon */
+/* --- LinkedIn icon --- */
 .linkedin-icon {
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .linkedin-icon a {
@@ -146,25 +135,37 @@ input, textarea {
   color: #ffffff;
 }
 
-/* Media Queries */
-@media (max-width: 600px) {
-  .form-content {
-    padding: 20px;
-    max-height: 95vh;
+/* --- Animation --- */
+@keyframes borderRotate {
+  0% { background: linear-gradient(135deg, #00ff99, #003300); }
+  50% { background: linear-gradient(135deg, #003300, #00ff99); }
+  100% { background: linear-gradient(135deg, #00ff99, #003300); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.3em;
   }
 
-  h1 {
-    font-size: 1.5em;
+  p {
+    font-size: 0.85em;
   }
 
   .btn-send {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  input, textarea {
+    font-size: 0.85em;
+  }
+
+  .form-content {
+    padding: 15px 20px;
   }
 
   .linkedin-icon {
-    position: static;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 10px;
   }
 }
