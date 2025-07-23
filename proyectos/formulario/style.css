@@ -1,3 +1,4 @@
+/* General body layout */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,36 +10,45 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  overflow: hidden;
+  overflow: hidden; /* Se mantiene, pero puede eliminarse si causa recorte en móviles */
 }
 
+/* Wrapper layout */
 .form-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
+  padding: 20px; /* Añade espacio en móviles */
+  box-sizing: border-box;
 }
 
+/* Animated border box */
 .content-box {
   position: relative;
   padding: 3px;
   background: linear-gradient(135deg, #00ff99, #003300);
   border-radius: 20px;
   animation: borderRotate 4s linear infinite;
+  width: 100%;
+  max-width: 520px;
 }
 
+/* Form content */
 .form-content {
   background-color: #000;
   border-radius: 20px;
-  padding: 30px 40px;
-  width: 90vw;
-  max-width: 500px;
+  padding: 25px 30px;
   box-sizing: border-box;
   text-align: center;
   position: relative;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
+/* Animation */
 @keyframes borderRotate {
   0% {
     background: linear-gradient(135deg, #00ff99, #003300);
@@ -68,6 +78,7 @@ form {
   flex-direction: column;
 }
 
+/* Labels and Inputs */
 label {
   text-align: left;
   margin: 10px 0 5px;
@@ -82,19 +93,22 @@ input, textarea {
   background-color: #111;
   color: white;
   margin-bottom: 10px;
+  font-size: 1rem;
 }
 
+/* Button group */
 .btn-group {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
   margin-top: 15px;
 }
 
 .btn-send {
-  margin-top: 2rem;
-  padding: 0.8rem 2rem;
-  font-size: 1.20rem;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
   font-family: 'Press Start 2P', monospace;
   border: 2px solid #00ff88;
   background: transparent;
@@ -132,3 +146,25 @@ input, textarea {
   color: #ffffff;
 }
 
+/* Media Queries */
+@media (max-width: 600px) {
+  .form-content {
+    padding: 20px;
+    max-height: 95vh;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .btn-send {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .linkedin-icon {
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
